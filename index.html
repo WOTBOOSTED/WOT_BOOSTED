@@ -126,21 +126,29 @@
     flex-shrink: 0;
   }
   .nav-right { display: flex; align-items: center; gap: 32px; }
-  .lang-switcher { display: flex; gap: 4px; }
+  .lang-switcher {
+    display: inline-flex; align-items: center; gap: 2px;
+    padding: 3px;
+    background: #17151f;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+  }
   .lang-btn {
-    background: none;
-    border: 1px solid rgba(255,255,255,0.1);
+    display: inline-flex; align-items: center; gap: 7px;
+    background: transparent; border: 0;
     color: var(--text-muted);
-    padding: 4px 10px; font-size: 11px;
-    letter-spacing: 1px;
-    font-family: 'Oswald', sans-serif;
-    cursor: pointer; transition: all 0.2s;
+    padding: 6px 12px; border-radius: 999px;
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 13px; line-height: 1; letter-spacing: 1px;
     text-transform: uppercase;
+    cursor: pointer; transition: background .2s, color .2s, box-shadow .2s;
   }
-  .lang-btn.active, .lang-btn:hover {
-    border-color: var(--gold); color: var(--gold);
-    background: rgba(225,45,60,0.08);
+  .lang-btn:hover { color: var(--text); }
+  .lang-btn.active {
+    background: var(--gold); color: #fff;
+    box-shadow: 0 2px 10px rgba(225,45,60,0.35);
   }
+  .lang-flag { width: 20px; height: 14px; border-radius: 2px; display: block; flex-shrink: 0; }
   .nav-tg {
     display: flex; align-items: center; gap: 8px;
     background: var(--gold); color: #000;
@@ -796,7 +804,10 @@
     .nav-logo-img { height: 28px; max-width: 110px; }
     .nav-tg { padding: 7px 14px; font-size: 12px; }
     .nav-tg span { display: none; }
-    .lang-btn { padding: 3px 8px; font-size: 10px; }
+    .nav-right { gap: 14px; }
+    .lang-switcher { padding: 2px; }
+    .lang-btn { padding: 5px 7px; font-size: 11px; gap: 4px; letter-spacing: .5px; }
+    .lang-flag { width: 14px; height: 10px; }
 
     /* Сервисы — одна колонка, карточки на всю ширину экрана */
     .services { padding: 72px 10px 48px; }
@@ -1075,8 +1086,8 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
   <div class="nav-right">
     <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('uk')">UA</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" type="button" onclick="setLang('uk')" aria-label="Українська">УКР <svg class="lang-flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></svg></button>
+      <button class="lang-btn" type="button" onclick="setLang('en')" aria-label="English">ENG <svg class="lang-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukT"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#ukT)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></button>
     </div>
     <a href="https://telegram.me/wot_boosted_news" target="_blank" class="nav-tg">
       ✈ <span data-t="nav_tg">Telegram</span>
