@@ -293,11 +293,6 @@
     object-position: center center;
     filter: saturate(1) brightness(1.08);
   }
-  /* Бої на урон — сдвигаем левее чтобы WN8 был виден */
-  .service-card:nth-child(4) .service-img {
-    object-position: 15% center;
-    filter: saturate(1) brightness(1.08);
-  }
   .service-card:hover .service-img,
   .service-card:focus-visible .service-img {
     transform: translate3d(var(--par-x, 0px), var(--par-y, 0px), 0) scale(calc(var(--img-zoom, 1) * 1.06));
@@ -747,10 +742,6 @@
     .service-card:nth-child(6) .service-img {
       object-position: center center;
     }
-    /* Бої на урон — сдвигаем сильно влево чтобы WN8 точно был виден */
-    .service-card:nth-child(4) .service-img {
-      object-position: 5% center;
-    }
     .btn-primary, .btn-secondary { padding: 13px 22px; font-size: 13px; }
 
     .steps { grid-template-columns: 1fr; gap: 32px; }
@@ -1028,7 +1019,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="scan-sheen" aria-hidden="true"></div>
       <div class="service-floor" aria-hidden="true"></div>
       <div class="service-img-wrap">
-        <picture><source srcset="work44.webp" type="image/webp"><img src="work44.jpg" alt="Бої на урон" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
+        <picture><source srcset="dmg.webp" type="image/webp"><img src="dmg.jpg" alt="Бої на урон" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s4_name">Бої на урон</div>
@@ -1339,7 +1330,7 @@ const services = [
   { img: 'fossa-v2.jpg',
     uk: { name: 'ЛБЗ Fossa', desc: 'Операція Fossa — нові особисті бойові задачі з оновлення 2.4: три гілки «Авангард», «Засідка» і «Підтримка» по 21 задачі. Нагорода — Fossa VM 68, німецький колісний середній танк X рівня. Виконаємо всі гілки або вибірково — на ваш вибір.' },
     en: { name: 'ЛБЗ Fossa', desc: 'Операція Fossa — нові особисті бойові задачі з оновлення 2.4: три гілки «Авангард», «Засідка» і «Підтримка» по 21 задачі. Нагорода — Fossa VM 68, німецький колісний середній танк X рівня. Виконаємо всі гілки або вибірково — на ваш вибір.' } },
-  { img: 'work44.jpg',
+  { img: 'dmg.jpg',
     uk: { name: 'Бої на урон', desc:
       '<strong>Про послугу</strong><br>' +
       'Топовий урон — це найбільш затребуваний показник статистики на даний момент. Тому такі замовлення робляться у взводі, коли взводні ведуть гру на ключовий аккаунт в бою. Головна перевага в тому, що кожен замовник може дивитись за виконанням свого замовлення на YouTube (видно трансляцію тільки замовнику).' +
