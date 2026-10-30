@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WOT BOOSTED — Профессиональный буст World of Tanks</title>
-<meta name="description" content="WOT BOOSTED — профессиональный буст World of Tanks. ЛБЗ, Отметки, Мастер, бои на урон. Быстро, безопасно, честно.">
+<title>WOT BOOSTED — Професійний буст World of Tanks</title>
+<meta name="description" content="WOT BOOSTED — професійний буст World of Tanks. ЛБЗ, Відмітки, Майстер, бої на урон. Швидко, безпечно, чесно.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wotboosted.com/">
-<meta property="og:title" content="WOT BOOSTED — Профессиональный буст World of Tanks">
-<meta property="og:description" content="ЛБЗ, Отметки, Мастер, бои на урон. Быстро, безопасно, честно.">
+<meta property="og:title" content="WOT BOOSTED — Професійний буст World of Tanks">
+<meta property="og:description" content="ЛБЗ, Відмітки, Майстер, бої на урон. Швидко, безпечно, чесно.">
 <meta property="og:image" content="https://wotboosted.com/work1.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -1077,7 +1077,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="nav-right">
     <div class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('uk')">UA</button>
-      <button class="lang-btn" onclick="setLang('ru')">RU</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
     <a href="https://telegram.me/wot_boosted_news" target="_blank" class="nav-tg">
@@ -1378,36 +1377,6 @@ const translations = {
     footer_follow: 'Слідкуйте за нами',
     modal_btn: 'Замовити в Telegram'
   },
-  ru: {
-    nav_tg: 'Telegram',
-    hero_badge: 'Профессиональный буст WoT',
-    hero_sub: 'Профессиональный бустинг World of Tanks. Отметки, ЛБЗ, Мастер — выполняем быстро и честно.',
-    hero_btn1: 'Заказать сейчас', hero_btn2: 'Наши услуги',
-    stat1: 'Заказов', stat2: 'Выполнение', stat3: 'Поддержка', stat4: 'Лет опыта',
-    services_label: 'Услуги', services_title: 'НАШИ УСЛУГИ',
-    services_desc: 'Нажмите на услугу, чтобы узнать детали и связаться с нами',
-    s1_name: 'ЛБЗ 1.0', s1_short: 'Кампания с топовыми наградами',
-    s2_name: 'ЛБЗ 2.0', s2_short: 'Второй фронт — Объект 279',
-    s3_name: 'ЛБЗ 3.0', s3_short: 'Сектор 9: Black Rock XI',
-    s4_name: 'Бои на урон', s4_short: 'Повышение среднего урона',
-    s5_name: 'Отметки', s5_short: '1, 2 и 3 отметки на любую технику',
-    s6_name: 'Мастер', s6_short: 'Знак классности «Мастер» на технику',
-    how_label: 'Процесс', how_title: 'КАК ЭТО РАБОТАЕТ',
-    step1_title: 'Выбери услугу', step1_text: 'Выбери нужную услугу из списка и нажми заказать',
-    step2_title: 'Напиши в Telegram', step2_text: 'Перейди в наш Telegram и опиши что нужно',
-    step3_title: 'Согласуй детали', step3_text: 'Обсудим сроки, условия и стоимость',
-    step4_title: 'Получи результат', step4_text: 'Наш бустер выполнит задачу быстро и качественно',
-    why_label: 'Преимущества', why_title: 'ПОЧЕМУ МЫ',
-    f1_title: 'Быстро', f1_text: 'Выполняем заказы в кратчайшие сроки. Без задержек и пустых обещаний.',
-    f2_title: 'Безопасно', f2_text: 'Работаем аккуратно, минимальный риск для аккаунта. Опыт 8+ лет.',
-    f3_title: 'Гарантия', f3_text: 'Берёмся только за то, что можем выполнить.',
-    f4_title: 'На связи', f4_text: 'Всегда онлайн в Telegram. Отвечаем быстро, держим в курсе процесса.',
-    cta_title: 'ГОТОВ ЗАКАЗАТЬ?', cta_sub: 'Напиши нам в Telegram — ответим быстро',
-    footer_copy: '© 2025 WOT BOOSTED. Все права защищены.',
-    footer_tagline: 'Профессиональный буст WoT',
-    footer_follow: 'Следите за нами',
-    modal_btn: 'Заказать в Telegram'
-  },
   en: {
     nav_tg: 'Telegram',
     hero_badge: 'Professional WoT Boosting',
@@ -1464,13 +1433,13 @@ function setLang(lang) {
     const key = el.getAttribute('data-t');
     if (t[key]) {
       if (key === 'services_title') {
-        el.innerHTML = lang === 'en' ? 'OUR <span>SERVICES</span>' : lang === 'ru' ? 'НАШИ <span>УСЛУГИ</span>' : 'НАШІ <span>ПОСЛУГИ</span>';
+        el.innerHTML = lang === 'en' ? 'OUR <span>SERVICES</span>' : 'НАШІ <span>ПОСЛУГИ</span>';
       } else if (key === 'how_title') {
-        el.innerHTML = lang === 'en' ? 'HOW IT <span>WORKS</span>' : lang === 'ru' ? 'КАК ЭТО <span>РАБОТАЕТ</span>' : 'ЯК ЦЕ <span>ПРАЦЮЄ</span>';
+        el.innerHTML = lang === 'en' ? 'HOW IT <span>WORKS</span>' : 'ЯК ЦЕ <span>ПРАЦЮЄ</span>';
       } else if (key === 'why_title') {
-        el.innerHTML = lang === 'en' ? 'WHY <span>US</span>' : lang === 'ru' ? 'ПОЧЕМУ <span>МЫ</span>' : 'ЧОМУ <span>МИ</span>';
+        el.innerHTML = lang === 'en' ? 'WHY <span>US</span>' : 'ЧОМУ <span>МИ</span>';
       } else if (key === 'cta_title') {
-        el.innerHTML = lang === 'en' ? 'READY TO <span>ORDER?</span>' : lang === 'ru' ? 'ГОТОВ <span>ЗАКАЗАТЬ?</span>' : 'ГОТОВИЙ <span>ЗАМОВИТИ?</span>';
+        el.innerHTML = lang === 'en' ? 'READY TO <span>ORDER?</span>' : 'ГОТОВИЙ <span>ЗАМОВИТИ?</span>';
       } else {
         el.textContent = t[key];
       }
@@ -1525,15 +1494,12 @@ function applyImageFallbacks() {
 const services = [
   { img: 'work11.jpg',
     uk: { name: 'ЛБЗ 1.0', desc: 'Кампанія «Перший сектор» включає 15 оперативних завдань з нагородою у вигляді унікальної техніки та обладнання. Виконаємо всі завдання або вибіркові — на ваш вибір.' },
-    ru: { name: 'ЛБЗ 1.0', desc: 'Кампания «Первый сектор» включает 15 оперативных заданий с наградой в виде уникальной техники и оборудования. Выполним все задания или выборочные — на ваш выбор.' },
     en: { name: 'LBZ 1.0', desc: 'Campaign "First Sector" includes 15 combat missions with rewards including unique tanks and equipment. We complete all missions or selective ones — your choice.' } },
   { img: 'work22.jpg',
     uk: { name: 'ЛБЗ 2.0', desc: 'Кампанія «Другий фронт» — складніший рівень з нагородою Об\'єкт 279 (р). Вимагає високого рівня гри. Наші бустери мають багатий досвід проходження.' },
-    ru: { name: 'ЛБЗ 2.0', desc: 'Кампания «Второй фронт» — более сложный уровень с наградой Объект 279 (р). Требует высокого уровня игры. Наши бустеры имеют большой опыт прохождения.' },
     en: { name: 'LBZ 2.0', desc: 'Campaign "Second Front" — harder level with Object 279(r) as reward. Requires high skill. Our boosters have extensive experience completing it.' } },
   { img: 'work33.jpg',
     uk: { name: 'ЛБЗ 3.0', desc: 'Кампанія «Сектор 9» — найскладніша кампанія в World of Tanks з нагородою Black Rock XI рівня. Завдання надзвичайно важкі, але наші фахівці впораються.' },
-    ru: { name: 'ЛБЗ 3.0', desc: 'Кампания «Сектор 9» — самая сложная кампания в World of Tanks с наградой Black Rock XI уровня. Задания крайне сложные, но наши специалисты справятся.' },
     en: { name: 'LBZ 3.0', desc: 'Campaign "Sector 9" — the hardest campaign in World of Tanks with Black Rock Tier XI as reward. Missions are extremely difficult, but our specialists will handle it.' } },
   { img: 'work44.jpg',
     uk: { name: 'Бої на урон', desc:
@@ -1547,18 +1513,6 @@ const services = [
       '<li>Можливість перенавчити екіпаж.</li>' +
       '<li>Танк повинен бути в повній комплектації.</li>' +
       '<li>Під час виконання послуги ви не граєте на замовленій техніці.</li>' +
-      '</ul>' },
-    ru: { name: 'Бои на урон', desc:
-      '<strong>Про услугу</strong><br>' +
-      'Топовый урон — один из самых востребованных показателей статистики. Поэтому такие заказы выполняются во взводе: взводные ведут игру на ключевой аккаунт. Главное преимущество — заказчик может наблюдать за выполнением на YouTube (трансляция видна только заказчику).' +
-      '<br><br><strong>Условия выполнения</strong>' +
-      '<ul style="margin:12px 0 0 18px; color: rgba(232,232,232,0.74); line-height:1.7;">' +
-      '<li>Наличие серебра (50 боёв — от 1 млн серебра).</li>' +
-      '<li>Наличие 100 золота для смены оборудования.</li>' +
-      '<li>Активный премиум-аккаунт.</li>' +
-      '<li>Возможность переобучить экипаж.</li>' +
-      '<li>Танк должен быть в полной комплектации.</li>' +
-      '<li>Во время выполнения услуги вы не играете на заказанной технике.</li>' +
       '</ul>' },
     en: { name: 'Damage Battles', desc:
       '<strong>About the service</strong><br>' +
@@ -1574,11 +1528,9 @@ const services = [
       '</ul>' } },
   { img: 'work55.png',
     uk: { name: 'Відмітки', desc: 'Відмітки на стволі — престижний показник майстерності. Вибий 1, 2 або 3 відмітки на будь-якій техніці. Швидко та ефективно.' },
-    ru: { name: 'Отметки', desc: 'Отметки на стволе — престижный показатель мастерства. Получи 1, 2 или 3 отметки на любой технике. Быстро и эффективно.' },
     en: { name: 'Marks of Excellence', desc: 'Barrel marks are a prestigious mastery indicator. Get 1, 2 or 3 marks on any tank. Fast and efficient.' } },
   { img: 'work66.jpg',
     uk: { name: 'Майстер', desc: 'Знак класності «Майстер» — найвища нагорода за бій. Присуджується гравцям, які набрали найбільше досвіду за бій серед усіх на даній техніці.' },
-    ru: { name: 'Мастер', desc: 'Знак классности «Мастер» — высшая награда за бой. Присуждается игрокам, набравшим наибольший опыт за бой среди всех на данной технике.' },
     en: { name: 'Ace Tanker', desc: 'Ace Tanker mastery badge — the highest battle award. Awarded to players who earned the most XP in a battle among all players on that tank.' } }
 ];
 
@@ -1593,7 +1545,7 @@ function openModal(idx) {
   modalImg.onload = () => modalImg.classList.remove('loading');
   modalImg.onerror = () => modalImg.classList.remove('loading');
   modalImg.src = s.img;
-  document.getElementById('modal-tag').textContent = (lang === 'en' ? 'Service' : lang === 'ru' ? 'Услуга' : 'Послуга');
+  document.getElementById('modal-tag').textContent = (lang === 'en' ? 'Service' : 'Послуга');
   document.getElementById('modal-title').textContent = s[lang].name;
   document.getElementById('modal-desc').innerHTML = s[lang].desc;
   document.getElementById('modal').classList.add('open');
@@ -1744,7 +1696,7 @@ if ('serviceWorker' in navigator) {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "WOT BOOSTED",
-  "description": "Профессиональный буст World of Tanks. ЛБЗ, Отметки, Мастер, бои на урон.",
+  "description": "Професійний буст World of Tanks. ЛБЗ, Відмітки, Майстер, бої на урон.",
   "url": "https://wotboosted.com/",
   "contactPoint": {
     "@type": "ContactPoint",
