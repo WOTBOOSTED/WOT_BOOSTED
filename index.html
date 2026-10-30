@@ -29,7 +29,6 @@
 <meta name="keywords" content="буст WoT, ЛБЗ, відмітки, Майстер, World of Tanks boosting, бої на урон, WN8">
 <!-- Canonical — замените на ваш реальный домен -->
 <link rel="canonical" href="https://wotboosted.com/">
-<!-- Preload hero image -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Montserrat:wght@800&family=Rajdhani:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -203,67 +202,7 @@
     section { scroll-margin-top: 116px; }
     body { padding-top: 40px; }
   }
-  .hero {
-    position: relative; min-height: 100vh;
-    display: flex; align-items: center; overflow: hidden;
-  }
   /* фон без фото: графіт з м'яким червоним світінням, як у шапці */
-  .hero-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 55% 65% at 12% 45%, rgba(225,45,60,0.20), rgba(225,45,60,0) 70%),
-      radial-gradient(ellipse 45% 55% at 88% 75%, rgba(217,70,239,0.07), rgba(217,70,239,0) 70%),
-      linear-gradient(180deg, #16171e 0%, #0e0d14 100%);
-  }
-  .hero-scanline {
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    animation: scanline 4s ease-in-out infinite;
-    opacity: 0.6;
-  }
-  @keyframes scanline {
-    0% { top: 0; opacity: 0; }
-    10% { opacity: 0.6; }
-    90% { opacity: 0.6; }
-    100% { top: 100%; opacity: 0; }
-  }
-  .hero-content {
-    position: relative; z-index: 2;
-    max-width: var(--container); margin: 0 auto;
-    padding: 120px 40px 80px; width: 100%;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    border: 1px solid var(--gold); color: var(--gold);
-    padding: 6px 16px;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 12px; font-weight: 600;
-    letter-spacing: 3px; text-transform: uppercase;
-    margin-bottom: 28px;
-    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
-  }
-  .hero-badge::before { content: '▶'; font-size: 8px; }
-  .hero-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(52px, 7vw, 140px);
-    font-weight: 700; line-height: 0.9; letter-spacing: -1px;
-    text-transform: uppercase; margin-bottom: 24px;
-    opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
-  }
-  .hero-title .gold { color: var(--gold); }
-  .hero-title .outline { -webkit-text-stroke: 2px rgba(255,255,255,0.3); color: transparent; }
-  .hero-sub {
-    font-size: clamp(14px, 1.1vw, 20px); color: var(--text-muted);
-    max-width: 520px; line-height: 1.7;
-    margin-bottom: 48px; font-weight: 300;
-    opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
-  }
-  .hero-sub { color: rgba(232,232,232,0.78); }
-  .hero-cta {
-    display: flex; gap: 16px; flex-wrap: wrap;
-    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
-  }
   .btn-primary {
     display: inline-flex; align-items: center; gap: 10px;
     background: var(--gold); color: #000;
@@ -278,36 +217,6 @@
   .btn-primary:hover {
     background: var(--gold-light); transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(225,45,60,0.4);
-  }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 10px;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: var(--text); text-decoration: none;
-    padding: 16px 36px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 15px; font-weight: 600;
-    letter-spacing: 2px; text-transform: uppercase;
-    transition: all 0.25s;
-  }
-  .btn-secondary:hover {
-    border-color: var(--gold); color: var(--gold);
-    background: rgba(225,45,60,0.05);
-  }
-  .hero-stats {
-    position: absolute; bottom: 60px; right: 40px;
-    display: flex; gap: 40px;
-    opacity: 0; animation: fadeUp 0.8s 1s forwards;
-  }
-  .stat { text-align: right; }
-  .stat-num {
-    font-family: 'Oswald', sans-serif;
-    font-size: 36px; font-weight: 700;
-    color: var(--gold); line-height: 1;
-  }
-  .stat-label {
-    font-size: 11px; color: var(--text-muted);
-    letter-spacing: 2px; text-transform: uppercase;
-    margin-top: 4px;
   }
   .services {
     padding: 96px 40px;
@@ -805,16 +714,8 @@
   .services-grid .service-card.reveal:nth-child(4) { transition-delay: 0s; }
   .services-grid .service-card.reveal:nth-child(5) { transition-delay: .08s; }
   .services-grid .service-card.reveal:nth-child(6) { transition-delay: .16s; }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
   @media (max-width: 900px) {
     nav { padding: 0 20px; }
-    .hero-content { padding: 100px 20px 80px; }
-    .hero-stats { right: 20px; gap: 20px; }
-    .stat-num { font-size: 28px; }
-    .stat-label { font-size: 10px; }
     .services { padding: 88px 20px 60px; }
     .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .how { padding: 60px 20px; }
@@ -861,23 +762,7 @@
     .service-card:nth-child(4) .service-img {
       object-position: 5% center;
     }
-
-    .hero-content { padding: 80px 14px 60px; }
-    .hero-title { font-size: clamp(44px, 14vw, 72px); }
-    .hero-sub { font-size: 14px; margin-bottom: 32px; }
-    .hero-cta { gap: 10px; }
     .btn-primary, .btn-secondary { padding: 13px 22px; font-size: 13px; }
-
-    .hero-stats {
-      position: static;
-      margin-top: 36px;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 18px 28px;
-    }
-    .stat { text-align: left; }
-    .stat-num { font-size: 26px; }
-    .stat-label { font-size: 9px; }
 
     .steps { grid-template-columns: 1fr; gap: 32px; }
     .step { padding: 0 0 0 16px; }
@@ -923,22 +808,6 @@
     .services, .why {
       max-width: 1600px;
       margin: 0 auto;
-    }
-    .hero-title {
-      font-size: clamp(80px, 7vw, 120px);
-    }
-    .hero-sub {
-      font-size: 18px;
-      max-width: 620px;
-    }
-    .hero-content {
-      padding: 140px 60px 100px;
-    }
-    .stat-num {
-      font-size: 48px;
-    }
-    .stat-label {
-      font-size: 13px;
     }
     .services {
       padding: 120px 60px;
@@ -1069,13 +938,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // 2. Hero "Замовити зараз" button
-  var heroCta = document.querySelector('.hero-cta a.btn-primary');
-  if (heroCta) {
-    heroCta.addEventListener('click', function() {
-      gtag('event', 'telegram_click', { event_category: 'conversion', event_label: 'hero_zamovity' });
-    });
-  }
 
   // 3. CTA banner Telegram button (Готовий замовити?)
   var ctaTg = document.querySelector('.contact-link.tg');
@@ -1111,7 +973,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="skip-link" href="#services">Skip to services</a>
 
 <nav id="navbar">
-  <a href="#home" class="nav-logo" aria-label="Go to home section">
+  <a href="/" class="nav-logo" aria-label="WOT BOOSTED">
     <img src="logo.png" alt="" class="nav-logo-img" width="160" height="36" loading="eager" decoding="async">
     WOT <span>BOOSTED</span>
   </a>
@@ -1134,7 +996,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="section-header reveal">
     <div>
       <div class="section-label" data-t="services_label">Послуги</div>
-      <h2 class="section-title" data-t="services_title">НАШІ <span>ПОСЛУГИ</span></h2>
+      <h1 class="section-title" data-t="services_title">НАШІ <span>ПОСЛУГИ</span></h1>
     </div>
     <p class="section-desc" data-t="services_desc">
       Натисніть на послугу щоб дізнатись деталі і зв'язатись з нами
@@ -1215,48 +1077,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </a>
   </div>
 </section>
-
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-scanline"></div>
-  <div class="hero-content">
-    <div class="hero-badge" data-t="hero_badge">Професійний буст WoT</div>
-    <h1 class="hero-title">
-      <span class="gold">WOT</span><br>
-      <span class="outline">BOOSTED</span>
-    </h1>
-    <p class="hero-sub" data-t="hero_sub">
-      Професійний бустинг World of Tanks. Відмітки, ЛБЗ, Майстер — виконуємо швидко і чесно.
-    </p>
-    <div class="hero-cta">
-      <a href="https://telegram.me/wot_boosted_news" target="_blank" class="btn-primary">
-        ✈ <span data-t="hero_btn1">Замовити зараз</span>
-      </a>
-      <a href="#services" class="btn-secondary">
-        <span data-t="hero_btn2">Наші послуги</span> →
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">500+</div>
-        <div class="stat-label" data-t="stat1">Замовлень</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">100%</div>
-        <div class="stat-label" data-t="stat2">Виконання</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">24/7</div>
-        <div class="stat-label" data-t="stat3">Підтримка</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">8+</div>
-        <div class="stat-label" data-t="stat4">Років досвіду</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="how">
   <div class="how-inner">
     <div class="reveal">
@@ -1394,10 +1214,6 @@ document.addEventListener('DOMContentLoaded', function() {
 const translations = {
   uk: {
     nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків',
-    hero_badge: 'Професійний буст WoT',
-    hero_sub: 'Професійний бустинг World of Tanks. Відмітки, ЛБЗ, Майстер — виконуємо швидко і чесно.',
-    hero_btn1: 'Замовити зараз', hero_btn2: 'Наші послуги',
-    stat1: 'Замовлень', stat2: 'Виконання', stat3: 'Підтримка', stat4: 'Років досвіду',
     services_label: 'Послуги', services_title: 'НАШІ ПОСЛУГИ',
     services_desc: 'Натисніть на послугу щоб дізнатись деталі і зв\'язатись з нами',
     s1_name: 'ЛБЗ 1.0', s1_short: 'Кампанія з топовими нагородами',
@@ -1424,10 +1240,6 @@ const translations = {
   },
   en: {
     nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks',
-    hero_badge: 'Professional WoT Boosting',
-    hero_sub: 'Professional World of Tanks boosting. Marks, LBZ, Master — fast and reliable.',
-    hero_btn1: 'Order Now', hero_btn2: 'Our Services',
-    stat1: 'Orders', stat2: 'Completion', stat3: 'Support', stat4: 'Years Experience',
     services_label: 'Services', services_title: 'OUR SERVICES',
     services_desc: 'Click on a service to learn details and contact us',
     s1_name: 'LBZ 1.0', s1_short: 'Campaign with top rewards',
@@ -1533,7 +1345,6 @@ function applyImageFallbacks() {
     }
   });
 
-  setSafeBackground('.hero-bg');
   setSafeBackground('.contact-banner-bg');
 }
 
