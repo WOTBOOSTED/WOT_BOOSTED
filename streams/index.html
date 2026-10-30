@@ -252,7 +252,9 @@
     font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 600;
     letter-spacing: .5px; text-transform: uppercase; color: #fff; line-height: 1.25;
   }
-  .stream-meta { color: var(--text-muted); font-size: 13px; }
+  .stream-meta { color: var(--text-muted); font-size: 13px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: auto; }
+  .stream-date { color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .5px; white-space: nowrap; }
+  .stream-info { flex: 1; }
   @media (max-width: 1000px) { .streams-grid { grid-template-columns: 1fr; max-width: 640px; } }
   footer {
     background: var(--dark2);
@@ -414,7 +416,7 @@
       </div>
       <div class="stream-info">
         <h3 class="stream-title">VK 72.01(K) чи варто брати за маневри?</h3>
-        <div class="stream-meta"><span data-t="stream_kind">Трансляція</span> · 1:36:06</div>
+        <div class="stream-meta"><span><span data-t="stream_kind">Трансляція</span> · 1:36:06</span><time class="stream-date" datetime="2026-10-28T11:47:39Z">28.10.2026</time></div>
       </div>
     </article>
     <article class="stream-card">
@@ -427,7 +429,7 @@
       </div>
       <div class="stream-info">
         <h3 class="stream-title">T95/FV4201 Chieftain чи варто брати за маневри?</h3>
-        <div class="stream-meta"><span data-t="stream_kind">Трансляція</span> · 1:32:51</div>
+        <div class="stream-meta"><span><span data-t="stream_kind">Трансляція</span> · 1:32:51</span><time class="stream-date" datetime="2026-10-27T11:58:44Z">27.10.2026</time></div>
       </div>
     </article>
     <article class="stream-card">
@@ -440,7 +442,7 @@
       </div>
       <div class="stream-info">
         <h3 class="stream-title">116-F3 чи варто брати за маневри?</h3>
-        <div class="stream-meta"><span data-t="stream_kind">Трансляція</span> · 1:52:12</div>
+        <div class="stream-meta"><span><span data-t="stream_kind">Трансляція</span> · 1:52:12</span><time class="stream-date" datetime="2026-10-26T12:12:14Z">26.10.2026</time></div>
       </div>
     </article>
   </div>
