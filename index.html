@@ -186,7 +186,7 @@
     border-radius: 2px; background: linear-gradient(90deg, #e65c66, #c9434e);
   }
   /* вузькі екрани: посилання окремою смужкою під шапкою */
-  @media (max-width: 1180px) {
+  @media (max-width: 1260px) {
     .nav-center {
       position: fixed; top: 64px; left: 0; right: 0; transform: none;
       justify-content: center; gap: 4px; height: 42px;
@@ -966,6 +966,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="nav-center">
     <a href="/" class="nav-link active" data-t="nav_boost">Буст</a>
     <a href="/top-tanks/" class="nav-link" data-t="nav_top">Топ танків</a>
+    <a href="/streams/" class="nav-link" data-t="nav_streams">Стріми</a>
   </div>
   <div class="nav-right">
     <div class="lang-switcher">
@@ -1193,7 +1194,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 const translations = {
   uk: {
-    nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків',
+    nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
     services_label: 'Послуги', services_title: 'НАШІ ПОСЛУГИ',
     services_desc: 'Натисніть на послугу щоб дізнатись деталі і зв\'язатись з нами',
     s1_name: 'ЛБЗ 1.0',
@@ -1219,7 +1220,7 @@ const translations = {
     modal_btn: 'Замовити в Telegram'
   },
   en: {
-    nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks',
+    nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
     services_label: 'Services', services_title: 'OUR SERVICES',
     services_desc: 'Click on a service to learn details and contact us',
     s1_name: 'LBZ 1.0',
