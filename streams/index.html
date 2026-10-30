@@ -205,43 +205,54 @@
     margin-top: 18px; color: var(--text-muted);
     font-size: 15px; line-height: 1.7; font-weight: 300;
   }
-  /* три вікна під стріми з YouTube */
+  /* стріми: постер із YouTube, плеєр вмикається по кліку (як у bizzord) */
+  .streams-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .streams-all {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .6px; text-transform: uppercase;
+    color: var(--text); text-decoration: none; padding: 10px 18px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12); transition: border-color .2s, color .2s, background .2s;
+  }
+  .streams-all:hover { border-color: var(--gold); color: #fff; background: rgba(225,45,60,0.08); }
+  .streams-all svg { width: 14px; height: 14px; }
   .streams-grid {
-    margin-top: 40px;
+    margin-top: 32px;
     display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;
   }
   .stream-card {
     background: var(--dark2);
     border: 1px solid var(--border-subtle);
     display: flex; flex-direction: column;
-    transition: border-color .25s ease, box-shadow .25s ease;
+    transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
   }
-  .stream-card:hover { border-color: var(--border); box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
-  .stream-frame {
-    position: relative; aspect-ratio: 16 / 9; overflow: hidden;
-    background:
-      radial-gradient(ellipse 60% 70% at 50% 50%, rgba(225,45,60,0.16), rgba(225,45,60,0) 70%),
-      linear-gradient(180deg, #1b1c24 0%, #111118 100%);
-  }
+  .stream-card:hover { border-color: var(--border); box-shadow: 0 16px 40px rgba(0,0,0,0.45); transform: translateY(-2px); }
+  .stream-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #0d0c12; }
   .stream-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .stream-empty {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
-    color: var(--text-muted);
-    font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
-  }
+  .stream-poster { position: absolute; inset: 0; display: block; color: #fff; }
+  .stream-poster img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease, filter .3s ease; }
+  .stream-poster::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.35)); }
+  .stream-card:hover .stream-poster img { transform: scale(1.04); filter: brightness(1.06); }
   .stream-play {
-    width: 64px; height: 64px; border-radius: 50%;
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1;
+    width: 68px; height: 68px; border-radius: 50%;
     background: linear-gradient(180deg, #e65c66 0%, #c9434e 100%);
-    box-shadow: 0 6px 22px rgba(225,45,60,0.35);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5), 0 0 0 6px rgba(225,45,60,0.18);
     display: flex; align-items: center; justify-content: center;
+    transition: transform .2s ease, box-shadow .2s ease;
   }
   .stream-play svg { width: 26px; height: 26px; margin-left: 4px; fill: #fff; }
-  .stream-info { padding: 18px 22px; }
-  .stream-title {
-    font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600;
-    letter-spacing: 1px; text-transform: uppercase; color: #fff; line-height: 1.2;
+  .stream-poster:hover .stream-play, .stream-poster:focus-visible .stream-play { transform: translate(-50%, -50%) scale(1.08); box-shadow: 0 8px 28px rgba(0,0,0,0.55), 0 0 0 9px rgba(225,45,60,0.22); }
+  .stream-dur {
+    position: absolute; right: 10px; bottom: 10px; z-index: 1;
+    background: rgba(0,0,0,0.78); color: #fff; border-radius: 6px; padding: 3px 7px;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: .3px;
   }
+  .stream-info { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 8px; }
+  .stream-title {
+    font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 600;
+    letter-spacing: .5px; text-transform: uppercase; color: #fff; line-height: 1.25;
+  }
+  .stream-meta { color: var(--text-muted); font-size: 13px; }
   @media (max-width: 1000px) { .streams-grid { grid-template-columns: 1fr; max-width: 640px; } }
   footer {
     background: var(--dark2);
@@ -388,26 +399,50 @@
 <main class="top-page">
   <div class="section-label" data-t="top_label">Ефіри</div>
   <h1 class="section-title" data-t-html="top_title"><span>СТРІМИ</span></h1>
-  <p class="section-sub" data-t="top_soon">Наші останні трансляції з YouTube.</p>
+  <div class="streams-head">
+    <p class="section-sub" data-t="top_soon">Наші останні трансляції з YouTube.</p>
+    <a class="streams-all" href="https://www.youtube.com/@wot_boosted/streams" target="_blank" rel="noopener"><span data-t="streams_all">Усі стріми</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8.5 7H17v8.5" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></a>
+  </div>
   <div class="streams-grid">
-    <div class="stream-card" data-yt="">
-      <div class="stream-frame">
-        <div class="stream-empty"><div class="stream-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div><span data-t="stream_empty">Тут буде стрім</span></div>
+    <article class="stream-card">
+      <div class="stream-frame" data-player>
+        <a class="stream-poster" href="https://www.youtube.com/watch?v=_2eE7OVNd1U" target="_blank" rel="noopener" data-embed-id="_2eE7OVNd1U" data-embed-title="VK 72.01(K) чи варто брати за маневри?" aria-label="Увімкнути відео: VK 72.01(K) чи варто брати за маневри?">
+          <img src="/streams/thumbs/_2eE7OVNd1U-640.webp" srcset="/streams/thumbs/_2eE7OVNd1U-640.webp 640w, /streams/thumbs/_2eE7OVNd1U-1280.webp 1280w" sizes="(max-width: 1000px) 100vw, 33vw" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          <span class="stream-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg></span>
+          <span class="stream-dur">1:36:06</span>
+        </a>
       </div>
-      <div class="stream-info"><div class="stream-title" data-t="stream_title">Скоро</div></div>
-    </div>
-    <div class="stream-card" data-yt="">
-      <div class="stream-frame">
-        <div class="stream-empty"><div class="stream-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div><span data-t="stream_empty">Тут буде стрім</span></div>
+      <div class="stream-info">
+        <h3 class="stream-title">VK 72.01(K) чи варто брати за маневри?</h3>
+        <div class="stream-meta"><span data-t="stream_kind">Трансляція</span> · 1:36:06</div>
       </div>
-      <div class="stream-info"><div class="stream-title" data-t="stream_title">Скоро</div></div>
-    </div>
-    <div class="stream-card" data-yt="">
-      <div class="stream-frame">
-        <div class="stream-empty"><div class="stream-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div><span data-t="stream_empty">Тут буде стрім</span></div>
+    </article>
+    <article class="stream-card">
+      <div class="stream-frame" data-player>
+        <a class="stream-poster" href="https://www.youtube.com/watch?v=27KzIp0ZLzc" target="_blank" rel="noopener" data-embed-id="27KzIp0ZLzc" data-embed-title="T95/FV4201 Chieftain чи варто брати за маневри?" aria-label="Увімкнути відео: T95/FV4201 Chieftain чи варто брати за маневри?">
+          <img src="/streams/thumbs/27KzIp0ZLzc-640.webp" srcset="/streams/thumbs/27KzIp0ZLzc-640.webp 640w, /streams/thumbs/27KzIp0ZLzc-1280.webp 1280w" sizes="(max-width: 1000px) 100vw, 33vw" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          <span class="stream-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg></span>
+          <span class="stream-dur">1:32:51</span>
+        </a>
       </div>
-      <div class="stream-info"><div class="stream-title" data-t="stream_title">Скоро</div></div>
-    </div>
+      <div class="stream-info">
+        <h3 class="stream-title">T95/FV4201 Chieftain чи варто брати за маневри?</h3>
+        <div class="stream-meta"><span data-t="stream_kind">Трансляція</span> · 1:32:51</div>
+      </div>
+    </article>
+    <article class="stream-card">
+      <div class="stream-frame" data-player>
+        <a class="stream-poster" href="https://www.youtube.com/watch?v=Yu8elnrRYvU" target="_blank" rel="noopener" data-embed-id="Yu8elnrRYvU" data-embed-title="116-F3 чи варто брати за маневри?" aria-label="Увімкнути відео: 116-F3 чи варто брати за маневри?">
+          <img src="/streams/thumbs/Yu8elnrRYvU-640.webp" srcset="/streams/thumbs/Yu8elnrRYvU-640.webp 640w, /streams/thumbs/Yu8elnrRYvU-1280.webp 1280w" sizes="(max-width: 1000px) 100vw, 33vw" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          <span class="stream-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg></span>
+          <span class="stream-dur">1:52:12</span>
+        </a>
+      </div>
+      <div class="stream-info">
+        <h3 class="stream-title">116-F3 чи варто брати за маневри?</h3>
+        <div class="stream-meta"><span data-t="stream_kind">Трансляція</span> · 1:52:12</div>
+      </div>
+    </article>
   </div>
 </main>
 
@@ -441,12 +476,12 @@
 const translations = {
   uk: { nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
         top_label: 'Ефіри', top_title: '<span>СТРІМИ</span>',
-        top_soon: "Наші останні трансляції з YouTube.", stream_empty: 'Тут буде стрім', stream_title: 'Скоро',
+        top_soon: "Наші останні трансляції з YouTube.", stream_kind: 'Трансляція', streams_all: 'Усі стріми',
         footer_tagline: 'Професійний буст WoT', footer_follow: 'Слідкуйте за нами',
         footer_copy: '© ' + new Date().getFullYear() + ' WOT BOOSTED. Всі права захищені.' },
   en: { nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
         top_label: 'Live', top_title: '<span>STREAMS</span>',
-        top_soon: 'Our latest YouTube streams.', stream_empty: 'Stream coming soon', stream_title: 'Soon',
+        top_soon: 'Our latest YouTube streams.', stream_kind: 'Stream', streams_all: 'All streams',
         footer_tagline: 'Professional WoT boosting', footer_follow: 'Follow us',
         footer_copy: '© ' + new Date().getFullYear() + ' WOT BOOSTED. All rights reserved.' }
 };
@@ -464,22 +499,28 @@ function setLang(lang) {
 let startLang = 'uk';
 try { startLang = localStorage.getItem('wb_lang') || 'uk'; } catch (e) {}
 setLang(startLang);
-// Стріми: щоб показати стрім, впишіть ID відео YouTube у data-yt картки (напр. data-yt="dQw4w9WgXcQ")
-// і за бажанням назву в data-title. Порожній data-yt — показується заглушка.
-document.querySelectorAll('.stream-card').forEach(card => {
-  const id = (card.getAttribute('data-yt') || '').trim();
-  if (!/^[A-Za-z0-9_-]{6,20}$/.test(id)) return;
-  const frame = card.querySelector('.stream-frame');
+// Стріми: постер (мініатюра з YouTube) → по кліку вмикається плеєр youtube-nocookie.
+// Одночасно грає лише один плеєр: при запуску іншого попередній повертається до постера.
+// Щоб замінити стрім: змінити ID відео в href/data-embed-id картки, назву, тривалість і мініатюри в /streams/thumbs/.
+let activeStream = null;
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[data-embed-id]');
+  if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+  const id = a.getAttribute('data-embed-id');
+  if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
+  const box = a.closest('[data-player]');
+  if (!box) return;
+  e.preventDefault();
+  if (activeStream && activeStream.box !== box) activeStream.box.replaceChildren(...activeStream.poster);
+  activeStream = { box, poster: [...box.children] };
   const f = document.createElement('iframe');
-  f.src = 'https://www.youtube-nocookie.com/embed/' + id;
-  f.title = card.getAttribute('data-title') || 'YouTube';
-  f.loading = 'lazy';
-  f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-  f.referrerPolicy = 'strict-origin-when-cross-origin';
+  f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+  f.title = a.getAttribute('data-embed-title') || 'YouTube';
+  f.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
   f.allowFullscreen = true;
-  frame.innerHTML = ''; frame.appendChild(f);
-  const t = card.querySelector('.stream-title');
-  if (t && card.getAttribute('data-title')) { t.removeAttribute('data-t'); t.textContent = card.getAttribute('data-title'); }
+  f.referrerPolicy = 'strict-origin-when-cross-origin';
+  box.replaceChildren(f);
+  f.focus();
 });
 </script>
 </body>
