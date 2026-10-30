@@ -147,25 +147,27 @@
   }
   .lang-btn:hover { color: var(--text); }
   .lang-btn.active {
-    background: var(--gold); color: #fff;
-    box-shadow: 0 2px 10px rgba(225,45,60,0.35);
+    background: linear-gradient(180deg, #e65c66 0%, #c9434e 100%); color: #fff;
+    box-shadow: 0 2px 10px rgba(201,67,78,0.3);
   }
   .lang-flag { width: 26px; height: 17px; border-radius: 3px; display: block; flex-shrink: 0; box-shadow: 0 0 0 1px rgba(0,0,0,0.25); }
   .nav-tg {
-    display: flex; align-items: center; gap: 8px;
-    background: var(--gold); color: #000;
-    text-decoration: none; padding: 8px 18px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 13px; font-weight: 600;
-    letter-spacing: 1.5px; text-transform: uppercase;
+    display: flex; align-items: center; gap: 9px;
+    /* м'якший червоний замість різкого + білий текст */
+    background: linear-gradient(180deg, #e65c66 0%, #c9434e 100%); color: #fff;
+    text-decoration: none; padding: 9px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px; font-weight: 800;
+    letter-spacing: 0.6px; text-transform: uppercase;
     transition: all 0.2s;
     clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
   }
   .nav-tg:hover {
-    background: var(--gold-light);
+    background: linear-gradient(180deg, #ee6d76 0%, #d44f5a 100%);
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(225,45,60,0.3);
+    box-shadow: 0 8px 24px rgba(225,45,60,0.25);
   }
+  .nav-tg-icon { width: 18px; height: 18px; display: block; flex-shrink: 0; }
   .hero {
     position: relative; min-height: 100vh;
     display: flex; align-items: center; overflow: hidden;
@@ -804,7 +806,8 @@
     nav { padding: 0 14px; height: 56px; }
     .nav-logo { font-size: 14px; letter-spacing: 0; gap: 8px; }
     .nav-logo-img { height: 28px; max-width: 110px; }
-    .nav-tg { padding: 7px 14px; font-size: 12px; }
+    .nav-tg { padding: 7px 13px; font-size: 12px; }
+    .nav-tg-icon { width: 16px; height: 16px; }
     .nav-tg span { display: none; }
     .nav-right { gap: 10px; }
     .lang-switcher { padding: 2px; gap: 1px; }
@@ -1092,7 +1095,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <button class="lang-btn" type="button" onclick="setLang('en')" aria-label="English">ENG <svg class="lang-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukT"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#ukT)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></button>
     </div>
     <a href="https://telegram.me/wot_boosted_news" target="_blank" class="nav-tg">
-      ✈ <span data-t="nav_tg">Telegram</span>
+      <svg class="nav-tg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path fill="#d24d58" d="M5.43 11.87 16.9 7.45c.53-.19 1 .13.82.94l-1.95 9.2c-.15.65-.53.81-1.08.5l-2.98-2.2-1.44 1.39c-.16.16-.29.29-.6.29l.21-3.03 5.52-4.99c.24-.21-.05-.33-.37-.12l-6.82 4.3-2.94-.92c-.64-.2-.65-.64.14-.95z"/></svg><span data-t="nav_tg">Замовити</span>
     </a>
   </div>
 </nav>
@@ -1360,7 +1363,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 const translations = {
   uk: {
-    nav_tg: 'Telegram',
+    nav_tg: 'Замовити',
     hero_badge: 'Професійний буст WoT',
     hero_sub: 'Професійний бустинг World of Tanks. Відмітки, ЛБЗ, Майстер — виконуємо швидко і чесно.',
     hero_btn1: 'Замовити зараз', hero_btn2: 'Наші послуги',
@@ -1390,7 +1393,7 @@ const translations = {
     modal_btn: 'Замовити в Telegram'
   },
   en: {
-    nav_tg: 'Telegram',
+    nav_tg: 'Order',
     hero_badge: 'Professional WoT Boosting',
     hero_sub: 'Professional World of Tanks boosting. Marks, LBZ, Master — fast and reliable.',
     hero_btn1: 'Order Now', hero_btn2: 'Our Services',
