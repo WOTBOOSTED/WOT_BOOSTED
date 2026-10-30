@@ -298,10 +298,6 @@
     object-position: 15% center;
     filter: saturate(1) brightness(1.08);
   }
-  /* ЛБЗ 3.0 чуть посветлее — очень тёмная исходно */
-  .service-card:nth-child(3) .service-img {
-    filter: saturate(1) brightness(1.2) contrast(1.05);
-  }
   .service-card:hover .service-img,
   .service-card:focus-visible .service-img {
     transform: translate3d(var(--par-x, 0px), var(--par-y, 0px), 0) scale(calc(var(--img-zoom, 1) * 1.06));
@@ -1032,11 +1028,11 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="scan-sheen" aria-hidden="true"></div>
       <div class="service-floor" aria-hidden="true"></div>
       <div class="service-img-wrap">
-        <picture><source srcset="work33.webp" type="image/webp"><img src="work33.jpg" alt="ЛБЗ 3.0" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
+        <picture><source srcset="fossa.webp" type="image/webp"><img src="fossa.jpg" alt="ЛБЗ Fossa" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
       </div>
       <div class="service-info">
-        <div class="service-name" data-t="s3_name">ЛБЗ 3.0</div>
-        <div class="service-desc" data-t="s3_short">Сектор 9 — найскладніша кампанія</div>
+        <div class="service-name" data-t="s3_name">ЛБЗ Fossa</div>
+        <div class="service-desc" data-t="s3_short">Операція Fossa — колісний СТ X рівня</div>
       </div>
     </a>
 
@@ -1218,7 +1214,7 @@ const translations = {
     services_desc: 'Натисніть на послугу щоб дізнатись деталі і зв\'язатись з нами',
     s1_name: 'ЛБЗ 1.0', s1_short: 'Кампанія з топовими нагородами',
     s2_name: 'ЛБЗ 2.0', s2_short: 'Другий фронт — Об\'єкт 279',
-    s3_name: 'ЛБЗ 3.0', s3_short: 'Сектор 9: Black Rock XI',
+    s3_name: 'ЛБЗ Fossa', s3_short: 'Операція Fossa — колісний СТ X рівня',
     s4_name: 'Бої на урон', s4_short: 'Підвищення середнього урону',
     s5_name: 'Відмітки', s5_short: '1, 2 та 3 відмітки на будь-яку техніку',
     s6_name: 'Майстер', s6_short: 'Знак класності «Майстер» на техніку',
@@ -1244,7 +1240,7 @@ const translations = {
     services_desc: 'Click on a service to learn details and contact us',
     s1_name: 'LBZ 1.0', s1_short: 'Campaign with top rewards',
     s2_name: 'LBZ 2.0', s2_short: 'Second Front — Object 279',
-    s3_name: 'LBZ 3.0', s3_short: 'Sector 9: Black Rock XI',
+    s3_name: 'ЛБЗ Fossa', s3_short: 'Операція Fossa — колісний СТ X рівня',
     s4_name: 'Damage Battles', s4_short: 'Increase average damage stats',
     s5_name: 'Marks', s5_short: '1, 2 and 3 marks on any tank',
     s6_name: 'Ace Tanker', s6_short: 'Ace Tanker mastery badge',
@@ -1355,9 +1351,9 @@ const services = [
   { img: 'lbz2-hq.jpg',
     uk: { name: 'ЛБЗ 2.0', desc: 'Кампанія «Другий фронт» — складніший рівень з нагородою Об\'єкт 279 (р). Вимагає високого рівня гри. Наші бустери мають багатий досвід проходження.' },
     en: { name: 'LBZ 2.0', desc: 'Campaign "Second Front" — harder level with Object 279(r) as reward. Requires high skill. Our boosters have extensive experience completing it.' } },
-  { img: 'work33.jpg',
-    uk: { name: 'ЛБЗ 3.0', desc: 'Кампанія «Сектор 9» — найскладніша кампанія в World of Tanks з нагородою Black Rock XI рівня. Завдання надзвичайно важкі, але наші фахівці впораються.' },
-    en: { name: 'LBZ 3.0', desc: 'Campaign "Sector 9" — the hardest campaign in World of Tanks with Black Rock Tier XI as reward. Missions are extremely difficult, but our specialists will handle it.' } },
+  { img: 'fossa.jpg',
+    uk: { name: 'ЛБЗ Fossa', desc: 'Операція Fossa — нові особисті бойові задачі з оновлення 2.4: три гілки «Авангард», «Засідка» і «Підтримка» по 21 задачі. Нагорода — Fossa VM 68, німецький колісний середній танк X рівня. Виконаємо всі гілки або вибірково — на ваш вибір.' },
+    en: { name: 'ЛБЗ Fossa', desc: 'Операція Fossa — нові особисті бойові задачі з оновлення 2.4: три гілки «Авангард», «Засідка» і «Підтримка» по 21 задачі. Нагорода — Fossa VM 68, німецький колісний середній танк X рівня. Виконаємо всі гілки або вибірково — на ваш вибір.' } },
   { img: 'work44.jpg',
     uk: { name: 'Бої на урон', desc:
       '<strong>Про послугу</strong><br>' +
@@ -1558,7 +1554,7 @@ if ('serviceWorker' in navigator) {
   "offers": [
     { "@type": "Offer", "name": "ЛБЗ 1.0" },
     { "@type": "Offer", "name": "ЛБЗ 2.0" },
-    { "@type": "Offer", "name": "ЛБЗ 3.0" },
+    { "@type": "Offer", "name": "ЛБЗ Fossa" },
     { "@type": "Offer", "name": "Бої на урон" },
     { "@type": "Offer", "name": "Відмітки" },
     { "@type": "Offer", "name": "Майстер" }
