@@ -350,7 +350,7 @@
     transform: translateY(0);
   }
   .service-info {
-    padding: 24px 24px 26px;
+    padding: 22px 24px;
     display: flex; flex-direction: column; gap: 10px;
     background: var(--dark2); position: relative;
     flex: 1;
@@ -393,12 +393,6 @@
     line-height: 1.15; color: #fff;
     text-wrap: balance;
     transition: color 0.25s ease;
-  }
-  .service-desc {
-    font-size: clamp(12px, 0.9vw, 16px); color: var(--text-muted);
-    line-height: 1.55; font-weight: 300;
-    text-wrap: pretty;
-    margin-top: auto;
   }
   .how {
     background: var(--dark2);
@@ -743,8 +737,7 @@
     /* Широкая картинка 16:9 — всё видно, ничего не съедается */
     .service-img-wrap { aspect-ratio: 16 / 9; }
     .service-name { font-size: 22px; letter-spacing: 0.5px; }
-    .service-desc { font-size: 14px; line-height: 1.6; }
-    .service-info { padding: 20px 20px 24px; gap: 10px; }
+    .service-info { padding: 18px 20px; gap: 10px; }
 
     /* На мобиле все картинки по центру — шире кадр, не режется */
     .service-card:nth-child(1) .service-img,
@@ -817,11 +810,8 @@
     .service-name {
       font-size: 26px;
     }
-    .service-desc {
-      font-size: 15px;
-    }
     .service-info {
-      padding: 28px 28px 32px;
+      padding: 26px 28px;
     }
     .how {
       padding: 100px 60px;
@@ -1008,7 +998,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s1_name">ЛБЗ 1.0</div>
-        <div class="service-desc" data-t="s1_short">Кампанія з топовими нагородами</div>
       </div>
     </a>
 
@@ -1020,7 +1009,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s2_name">ЛБЗ 2.0</div>
-        <div class="service-desc" data-t="s2_short">Другий фронт — Об'єкт 279</div>
       </div>
     </a>
 
@@ -1032,7 +1020,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s3_name">ЛБЗ Fossa</div>
-        <div class="service-desc" data-t="s3_short">Операція Fossa — колісний СТ X рівня</div>
       </div>
     </a>
 
@@ -1044,7 +1031,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s4_name">Бої на урон</div>
-        <div class="service-desc" data-t="s4_short">Підвищення середнього урону</div>
       </div>
     </a>
 
@@ -1056,7 +1042,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s5_name">Відмітки</div>
-        <div class="service-desc" data-t="s5_short">1, 2 та 3 відмітки на будь-яку техніку</div>
       </div>
     </a>
 
@@ -1068,7 +1053,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s6_name">Майстер</div>
-        <div class="service-desc" data-t="s6_short">Знак класності «Майстер» на техніку</div>
       </div>
     </a>
   </div>
@@ -1212,12 +1196,12 @@ const translations = {
     nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків',
     services_label: 'Послуги', services_title: 'НАШІ ПОСЛУГИ',
     services_desc: 'Натисніть на послугу щоб дізнатись деталі і зв\'язатись з нами',
-    s1_name: 'ЛБЗ 1.0', s1_short: 'Кампанія з топовими нагородами',
-    s2_name: 'ЛБЗ 2.0', s2_short: 'Другий фронт — Об\'єкт 279',
-    s3_name: 'ЛБЗ Fossa', s3_short: 'Операція Fossa — колісний СТ X рівня',
-    s4_name: 'Бої на урон', s4_short: 'Підвищення середнього урону',
-    s5_name: 'Відмітки', s5_short: '1, 2 та 3 відмітки на будь-яку техніку',
-    s6_name: 'Майстер', s6_short: 'Знак класності «Майстер» на техніку',
+    s1_name: 'ЛБЗ 1.0',
+    s2_name: 'ЛБЗ 2.0',
+    s3_name: 'ЛБЗ Fossa',
+    s4_name: 'Бої на урон',
+    s5_name: 'Відмітки',
+    s6_name: 'Майстер',
     how_label: 'Процес', how_title: 'ЯК ЦЕ ПРАЦЮЄ',
     step1_title: 'Обери послугу', step1_text: 'Вибери потрібну послугу зі списку і натисни кнопку замовити',
     step2_title: 'Напиши в Telegram', step2_text: 'Перейди в наш Telegram і опиши що потрібно',
@@ -1238,12 +1222,12 @@ const translations = {
     nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks',
     services_label: 'Services', services_title: 'OUR SERVICES',
     services_desc: 'Click on a service to learn details and contact us',
-    s1_name: 'LBZ 1.0', s1_short: 'Campaign with top rewards',
-    s2_name: 'LBZ 2.0', s2_short: 'Second Front — Object 279',
-    s3_name: 'ЛБЗ Fossa', s3_short: 'Операція Fossa — колісний СТ X рівня',
-    s4_name: 'Damage Battles', s4_short: 'Increase average damage stats',
-    s5_name: 'Marks', s5_short: '1, 2 and 3 marks on any tank',
-    s6_name: 'Ace Tanker', s6_short: 'Ace Tanker mastery badge',
+    s1_name: 'LBZ 1.0',
+    s2_name: 'LBZ 2.0',
+    s3_name: 'ЛБЗ Fossa',
+    s4_name: 'Damage Battles',
+    s5_name: 'Marks',
+    s6_name: 'Ace Tanker',
     how_label: 'Process', how_title: 'HOW IT WORKS',
     step1_title: 'Choose Service', step1_text: 'Pick the service you need and hit order',
     step2_title: 'Message us', step2_text: 'Go to our Telegram and describe what you need',
