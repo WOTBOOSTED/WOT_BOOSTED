@@ -437,8 +437,11 @@
   .why { padding: 24px 40px 100px; max-width: 1200px; margin: 0 auto; }
   .why-grid {
     display: grid; grid-template-columns: 1.25fr 0.95fr;
-    gap: 60px; align-items: center; margin-top: 60px;
+    gap: 60px; align-items: stretch;
   }
+  /* ліва колонка: заголовок зверху, гравець знизу; пункти праворуч починаються на рівні заголовка */
+  .why-left { display: flex; flex-direction: column; justify-content: space-between; min-width: 0; }
+  .why-left .section-header { margin-bottom: 24px; }
   .why-img-wrap {
     position: relative; height: 520px;
     display: flex; justify-content: center; align-items: flex-end;
@@ -1048,15 +1051,17 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <section class="why">
-  <div class="section-header reveal">
-    <div>
-      <div class="section-label" data-t="why_label">Переваги</div>
-      <h2 class="section-title" data-t="why_title">ЧОМУ <span>МИ</span></h2>
-    </div>
-  </div>
   <div class="why-grid">
-    <div class="why-img-wrap reveal">
-      <picture><source srcset="why-player.webp" type="image/webp"><img src="why-player.png" alt="" class="why-img" width="1040" height="1253" loading="lazy" decoding="async" fetchpriority="low"></picture>
+    <div class="why-left">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label" data-t="why_label">Переваги</div>
+          <h2 class="section-title" data-t="why_title">ЧОМУ <span>МИ</span></h2>
+        </div>
+      </div>
+      <div class="why-img-wrap reveal">
+        <picture><source srcset="why-player.webp" type="image/webp"><img src="why-player.png" alt="" class="why-img" width="1040" height="1253" loading="lazy" decoding="async" fetchpriority="low"></picture>
+      </div>
     </div>
     <div class="why-features">
       <div class="feature reveal">
