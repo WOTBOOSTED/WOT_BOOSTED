@@ -168,7 +168,7 @@
     border-radius: 2px; background: linear-gradient(90deg, #e65c66, #c9434e);
   }
   /* вузькі екрани: посилання окремою смужкою під шапкою */
-  @media (max-width: 1260px) {
+  @media (max-width: 1320px) {
     .nav-center {
       position: fixed; top: 64px; left: 0; right: 0; transform: none;
       justify-content: center; gap: 4px; height: 42px;
@@ -183,6 +183,10 @@
     .nav-center { top: 56px; height: 40px; }
     section { scroll-margin-top: 116px; }
     body { padding-top: 40px; }
+  }
+  @media (max-width: 400px) {
+    .nav-link { font-size: 11px; padding: 8px 9px; letter-spacing: 0.3px; }
+    .nav-link.active::after { left: 9px; right: 9px; }
   }
   .section-label {
     font-family: 'Rajdhani', sans-serif;
@@ -340,6 +344,7 @@
     <a href="/" class="nav-link" data-t="nav_boost">Буст</a>
     <a href="/top-tanks/" class="nav-link active" data-t="nav_top" aria-current="page">Топ танків</a>
     <a href="/streams/" class="nav-link" data-t="nav_streams">Стріми</a>
+    <a href="/group/" class="nav-link" data-t="nav_group">Група</a>
   </div>
   <div class="nav-right">
     <div class="lang-switcher">
@@ -386,12 +391,12 @@
 
 <script>
 const translations = {
-  uk: { nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
+  uk: { nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми', nav_group: 'Група',
         top_label: 'Рейтинг', top_title: 'ТОП <span>ТАНКІВ</span>',
         top_soon: "Сторінка в розробці — скоро тут з'явиться топ танків.",
         footer_tagline: 'Професійний буст WoT', footer_follow: 'Слідкуйте за нами',
         footer_copy: '© 2025–2026 WOT BOOSTED. Всі права захищені.' },
-  en: { nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
+  en: { nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams', nav_group: 'Group',
         top_label: 'Rating', top_title: 'TOP <span>TANKS</span>',
         top_soon: 'This page is under construction — the top tanks list is coming soon.',
         footer_tagline: 'Professional WoT boosting', footer_follow: 'Follow us',

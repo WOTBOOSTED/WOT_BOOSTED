@@ -186,7 +186,7 @@
     border-radius: 2px; background: linear-gradient(90deg, #e65c66, #c9434e);
   }
   /* вузькі екрани: посилання окремою смужкою під шапкою */
-  @media (max-width: 1260px) {
+  @media (max-width: 1320px) {
     .nav-center {
       position: fixed; top: 64px; left: 0; right: 0; transform: none;
       justify-content: center; gap: 4px; height: 42px;
@@ -201,6 +201,10 @@
     .nav-center { top: 56px; height: 40px; }
     section { scroll-margin-top: 116px; }
     body { padding-top: 40px; }
+  }
+  @media (max-width: 400px) {
+    .nav-link { font-size: 11px; padding: 8px 9px; letter-spacing: 0.3px; }
+    .nav-link.active::after { left: 9px; right: 9px; }
   }
   /* фон без фото: графіт з м'яким червоним світінням, як у шапці */
   .btn-primary {
@@ -968,6 +972,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a href="/" class="nav-link active" data-t="nav_boost">Буст</a>
     <a href="/top-tanks/" class="nav-link" data-t="nav_top">Топ танків</a>
     <a href="/streams/" class="nav-link" data-t="nav_streams">Стріми</a>
+    <a href="/group/" class="nav-link" data-t="nav_group">Група</a>
   </div>
   <div class="nav-right">
     <div class="lang-switcher">
@@ -1174,7 +1179,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 const translations = {
   uk: {
-    nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
+    nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми', nav_group: 'Група',
     services_label: 'Послуги', services_title: 'НАШІ ПОСЛУГИ',
     services_desc: 'Натисніть на послугу щоб дізнатись деталі і зв\'язатись з нами',
     s1_name: 'ЛБЗ 1.0',
@@ -1201,7 +1206,7 @@ const translations = {
     modal_btn: 'Замовити в Telegram'
   },
   en: {
-    nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
+    nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams', nav_group: 'Group',
     services_label: 'Services', services_title: 'OUR SERVICES',
     services_desc: 'Click on a service to learn details and contact us',
     s1_name: 'LBZ 1.0',
