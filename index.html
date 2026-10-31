@@ -727,6 +727,7 @@
     transition: opacity 0.25s ease;
   }
   .modal-img.loading { opacity: 0; }
+  .modal-img { transition: opacity 0.12s ease; }
   .modal-body { padding: 36px; }
   .modal-tag {
     font-family: 'Rajdhani', sans-serif;
@@ -1469,10 +1470,18 @@ function openModal(idx) {
   const s = services[idx];
   const lang = currentLang;
   const modalImg = document.getElementById('modal-img');
-  modalImg.classList.add('loading');
-  modalImg.onload = () => modalImg.classList.remove('loading');
-  modalImg.onerror = () => modalImg.classList.remove('loading');
-  modalImg.src = (lang === 'en' && s.img_en) ? s.img_en : s.img;
+  // та сама картинка, що вже завантажена в картці (webp з кешу) — показується одразу, без очікування
+  const base = s.img.replace(/\.jpg$/, '');
+  const cardImg = document.querySelector('img[data-img="' + base + '"]');
+  const fallback = (lang === 'en' && s.img_en) ? s.img_en : s.img;
+  const src = (cardImg && cardImg.complete && cardImg.naturalWidth && cardImg.currentSrc) ? cardImg.currentSrc : fallback;
+  if (modalImg.src !== src) {
+    modalImg.classList.add('loading');
+    modalImg.onload = () => modalImg.classList.remove('loading');
+    modalImg.onerror = () => modalImg.classList.remove('loading');
+    modalImg.src = src;
+    if (modalImg.complete && modalImg.naturalWidth) modalImg.classList.remove('loading');
+  }
   document.getElementById('modal-tag').textContent = (lang === 'en' ? 'Service' : 'Послуга');
   document.getElementById('modal-title').textContent = s[lang].name;
   document.getElementById('modal-desc').innerHTML = s[lang].desc;
