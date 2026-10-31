@@ -205,19 +205,20 @@
   /* фон без фото: графіт з м'яким червоним світінням, як у шапці */
   .btn-primary {
     display: inline-flex; align-items: center; gap: 10px;
-    background: var(--gold); color: #000;
-    text-decoration: none; padding: 16px 36px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 15px; font-weight: 600;
-    letter-spacing: 2px; text-transform: uppercase;
-    transition: all 0.25s;
+    background: linear-gradient(180deg, #e65c66 0%, #c9434e 100%); color: #fff;
+    text-decoration: none; padding: 14px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px; font-weight: 800;
+    letter-spacing: 0.6px; text-transform: uppercase;
+    transition: all 0.2s;
     clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
     border: none; cursor: pointer;
   }
   .btn-primary:hover {
-    background: var(--gold-light); transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(225,45,60,0.4);
+    background: linear-gradient(180deg, #ee6d76 0%, #d44f5a 100%); transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(225,45,60,0.25);
   }
+  .btn-tg-icon { width: 20px; height: 20px; display: block; flex-shrink: 0; }
   .services {
     padding: 84px 40px 20px;
     max-width: var(--container);
@@ -521,19 +522,19 @@
   .contact-links { display: flex; gap: 16px; flex-wrap: wrap; }
   .contact-link {
     display: flex; align-items: center; gap: 10px;
-    padding: 14px 28px; text-decoration: none;
-    font-family: 'Oswald', sans-serif;
-    font-size: 14px; font-weight: 600;
-    letter-spacing: 1.5px; text-transform: uppercase;
-    transition: all 0.25s;
+    padding: 12px 28px; text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px; font-weight: 800;
+    letter-spacing: 0.6px; text-transform: uppercase;
+    transition: all 0.2s;
   }
   .contact-link.tg {
-    background: var(--gold); color: #000;
+    background: linear-gradient(180deg, #e65c66 0%, #c9434e 100%); color: #fff;
     clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
   }
   .contact-link.tg:hover {
-    background: var(--gold-light); transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(225,45,60,0.35);
+    background: linear-gradient(180deg, #ee6d76 0%, #d44f5a 100%); transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(225,45,60,0.25);
   }
   footer {
     background: var(--dark2);
@@ -1117,7 +1118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="contact-links">
       <a href="https://telegram.me/wot_boosted_news" target="_blank" class="contact-link tg">
-        ✈ Telegram
+        <svg class="btn-tg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path fill="#d24d58" d="M5.43 11.87 16.9 7.45c.53-.19 1 .13.82.94l-1.95 9.2c-.15.65-.53.81-1.08.5l-2.98-2.2-1.44 1.39c-.16.16-.29.29-.6.29l.21-3.03 5.52-4.99c.24-.21-.05-.33-.37-.12l-6.82 4.3-2.94-.92c-.64-.2-.65-.64.14-.95z"/></svg><span data-t="nav_tg">Замовити</span>
       </a>
     </div>
   </div>
@@ -1158,7 +1159,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="modal-title" id="modal-title"></div>
       <div class="modal-desc" id="modal-desc"></div>
       <a href="https://telegram.me/wot_boosted_news" target="_blank" class="btn-primary" style="display:inline-flex; text-decoration:none;">
-        ✈ <span data-t="modal_btn">Замовити в Telegram</span>
+        <svg class="btn-tg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path fill="#d24d58" d="M5.43 11.87 16.9 7.45c.53-.19 1 .13.82.94l-1.95 9.2c-.15.65-.53.81-1.08.5l-2.98-2.2-1.44 1.39c-.16.16-.29.29-.6.29l.21-3.03 5.52-4.99c.24-.21-.05-.33-.37-.12l-6.82 4.3-2.94-.92c-.64-.2-.65-.64.14-.95z"/></svg><span data-t="modal_btn">Замовити в Telegram</span>
       </a>
     </div>
   </div>
