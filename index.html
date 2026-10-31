@@ -229,10 +229,19 @@
       justify-content: center; gap: 4px; height: 42px;
       background: #15161d; border-bottom: 1px solid var(--border);
     }
-    .nav-link { font-size: 12px; padding: 8px 14px; }
-    .nav-link.active::after { left: 14px; right: 14px; bottom: 2px; }
-    section { scroll-margin-top: 126px; }
-    body { padding-top: 42px; }
+    /* у смужці під шапкою — той самий розмір, що й у повному вікні */
+    .nav-center { gap: 8px; height: 48px; }
+    .nav-link { font-size: 16px; padding: 10px 20px; }
+    .nav-link.active::after { left: 20px; right: 20px; bottom: 3px; }
+    section { scroll-margin-top: 132px; }
+    body { padding-top: 48px; }
+  }
+  /* планшети: трохи компактніше, щоб 5 пунктів вміщалися */
+  @media (max-width: 760px) {
+    .nav-center { gap: 2px; height: 44px; }
+    .nav-link { font-size: 14px; padding: 9px 12px; }
+    .nav-link.active::after { left: 12px; right: 12px; }
+    body { padding-top: 44px; }
   }
   @media (max-width: 600px) {
     .nav-center { top: 56px; height: 40px; }
