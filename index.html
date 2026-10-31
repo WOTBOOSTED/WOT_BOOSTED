@@ -219,7 +219,7 @@
     box-shadow: 0 12px 40px rgba(225,45,60,0.4);
   }
   .services {
-    padding: 96px 40px;
+    padding: 96px 40px 40px;
     max-width: var(--container);
     margin: 0 auto;
   }
@@ -434,7 +434,7 @@
     font-size: clamp(12px, 0.85vw, 16px); color: var(--text-muted);
     line-height: 1.6; font-weight: 300;
   }
-  .why { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+  .why { padding: 56px 40px 100px; max-width: 1200px; margin: 0 auto; }
   .why-grid {
     display: grid; grid-template-columns: 1.25fr 0.95fr;
     gap: 60px; align-items: center; margin-top: 60px;
@@ -698,12 +698,12 @@
   .services-grid .service-card.reveal:nth-child(6) { transition-delay: .16s; }
   @media (max-width: 900px) {
     nav { padding: 0 20px; }
-    .services { padding: 88px 20px 60px; }
+    .services { padding: 88px 20px 36px; }
     .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .how { padding: 60px 20px; }
     .steps { grid-template-columns: 1fr 1fr; gap: 40px; }
     .steps::before { display: none; }
-    .why { padding: 60px 20px; }
+    .why { padding: 36px 20px 60px; }
     .why-grid { grid-template-columns: 1fr; gap: 40px; }
     .why-img-wrap { height: 400px; }
     .contact-banner { margin: 0 20px 60px; }
@@ -724,7 +724,7 @@
     .lang-flag { width: 16px; height: 11px; border-radius: 2px; }
 
     /* Сервисы — одна колонка, карточки на всю ширину экрана */
-    .services { padding: 72px 10px 48px; }
+    .services { padding: 72px 10px 28px; }
     .services-grid { grid-template-columns: 1fr; gap: 18px; }
     /* Широкая картинка 16:9 — всё видно, ничего не съедается */
     .service-img-wrap { aspect-ratio: 16 / 9; }
@@ -744,7 +744,7 @@
     .steps { grid-template-columns: 1fr; gap: 32px; }
     .step { padding: 0 0 0 16px; }
 
-    .why { padding: 48px 14px; }
+    .why { padding: 28px 14px 48px; }
     .why-img-wrap { height: 330px; }
     .feature { padding: 16px; gap: 14px; }
 
@@ -787,7 +787,7 @@
       margin: 0 auto;
     }
     .services {
-      padding: 120px 60px;
+      padding: 120px 60px 48px;
     }
     .services-grid {
       gap: 28px;
@@ -815,7 +815,7 @@
       font-size: 26px;
     }
     .why {
-      padding: 120px 60px;
+      padding: 64px 60px 120px;
       max-width: 1600px;
     }
     .feature {
