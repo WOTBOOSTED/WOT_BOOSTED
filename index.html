@@ -556,6 +556,8 @@
   }
   .seo p { color: var(--text-muted); font-size: 14px; line-height: 1.7; font-weight: 300; text-wrap: pretty; }
   .seo p + p { margin-top: 6px; }
+  /* друга частина першого абзацу — з нового рядка на ПК, щоб рядки були рівні */
+  @media (min-width: 1100px) { .seo-l2 { display: block; } }
   @media (max-width: 900px) { .seo { padding: 0 20px 40px; } }
   @media (max-width: 600px) { .seo { padding: 0 14px 32px; } .seo p { font-size: 13px; } }
   footer {
@@ -1161,7 +1163,7 @@ window.addEventListener('load', function () {
 
 <section class="seo" aria-labelledby="seoTitle">
   <h2 class="seo-title" id="seoTitle" data-t="seo_title">Буст World of Tanks від WOT BOOSTED</h2>
-  <p data-t="seo_p1">WOT BOOSTED — професійний буст акаунтів World of Tanks: проходжу ЛБЗ 1.0, 2.0, 3.0 і 4.0 (Об'єкт 260, Об'єкт 279 (р), Black Rock, Fossa), вибиваю відмітки на стволі та знак класності «Майстер», граю бої на шкоду, щоб підняти WN8 і рейтинг.</p>
+  <p><span data-t="seo_p1a">WOT BOOSTED — професійний буст акаунтів World of Tanks: проходжу ЛБЗ 1.0, 2.0, 3.0 і 4.0 (Об'єкт 260, Об'єкт 279 (р), Black Rock, Fossa),</span> <span class="seo-l2" data-t="seo_p1b">вибиваю відмітки на стволі та знак класності «Майстер», граю бої на шкоду, щоб підняти WN8 і рейтинг.</span></p>
   <p data-t="seo_p2">Кожне замовлення транслюю на YouTube — трансляцію бачить лише замовник. Досвід 8+ років, працюю акуратно й завжди на зв'язку в Telegram.</p>
 </section>
 
@@ -1234,7 +1236,8 @@ const translations = {
     cta_title: 'ГОТОВИЙ ЗАМОВИТИ?', cta_sub: 'Напиши мені в Telegram — відповім швидко',
     seo_h1: 'Буст World of Tanks — WOT BOOSTED',
     seo_title: 'Буст World of Tanks від WOT BOOSTED',
-    seo_p1: 'WOT BOOSTED — професійний буст акаунтів World of Tanks: проходжу ЛБЗ 1.0, 2.0, 3.0 і 4.0 (Об\'єкт 260, Об\'єкт 279 (р), Black Rock, Fossa), вибиваю відмітки на стволі та знак класності «Майстер», граю бої на шкоду, щоб підняти WN8 і рейтинг.',
+    seo_p1a: 'WOT BOOSTED — професійний буст акаунтів World of Tanks: проходжу ЛБЗ 1.0, 2.0, 3.0 і 4.0 (Об\'єкт 260, Об\'єкт 279 (р), Black Rock, Fossa),',
+    seo_p1b: 'вибиваю відмітки на стволі та знак класності «Майстер», граю бої на шкоду, щоб підняти WN8 і рейтинг.',
     seo_p2: 'Кожне замовлення транслюю на YouTube — трансляцію бачить лише замовник. Досвід 8+ років, працюю акуратно й завжди на зв\'язку в Telegram.',
     footer_copy: '© 2025–2026 WOT BOOSTED. Всі права захищені.',
     footer_tagline: 'Професійний буст WoT',
@@ -1265,7 +1268,8 @@ const translations = {
     cta_title: 'READY TO ORDER?', cta_sub: 'Message me on Telegram — I reply fast',
     seo_h1: 'World of Tanks boosting — WOT BOOSTED',
     seo_title: 'World of Tanks boosting by WOT BOOSTED',
-    seo_p1: 'WOT BOOSTED is a professional World of Tanks account boosting service: I complete Personal Missions 1.0, 2.0, 3.0 and 4.0 (Object 260, Object 279 (e), Black Rock, Fossa), earn Marks of Excellence and the Ace Tanker badge, and play damage battles to raise your WN8 and rating.',
+    seo_p1a: 'WOT BOOSTED is a professional World of Tanks account boosting service: I complete Personal Missions 1.0, 2.0, 3.0 and 4.0 (Object 260, Object 279 (e), Black Rock, Fossa),',
+    seo_p1b: 'earn Marks of Excellence and the Ace Tanker badge, and play damage battles to raise your WN8 and rating.',
     seo_p2: 'Every order is streamed on YouTube — only you can see the stream. 8+ years of experience, careful work and always in touch on Telegram.',
     footer_copy: '© 2025–2026 WOT BOOSTED. All rights reserved.',
     footer_tagline: 'Professional WoT Boosting',
