@@ -22,7 +22,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Montserrat:wght@800&family=Rajdhani:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Montserrat:wght@800&family=Rajdhani:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
     /* Палитра под баннер: глубокий красный + неон пурпур + циан */
@@ -64,7 +64,7 @@
     border: 1px solid var(--border);
     color: var(--text);
     text-decoration: none;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Russo One', sans-serif;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     transform: translateY(-200%);
@@ -210,7 +210,7 @@
     margin-bottom: 12px;
   }
   .section-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Russo One', sans-serif;
     font-size: clamp(28px, 3.5vw, 68px);
     font-weight: 700; text-transform: uppercase; line-height: 1;
   }
@@ -234,7 +234,7 @@
   /* стрічка постів з Telegram-каналу */
   .tg-feed-wrap { margin-top: 56px; }
   .tg-feed-title {
-    font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;
+    font-family: 'Russo One', sans-serif; font-weight: 700; text-transform: uppercase;
     font-size: 22px; letter-spacing: 1px; color: #fff; margin-bottom: 20px;
   }
   .tg-feed { columns: 2 420px; column-gap: 24px; max-width: 1160px; }
@@ -369,6 +369,8 @@
     .footer-social { width: 48px; height: 48px; }
     .footer-social svg { width: 20px; height: 20px; }
   }
+  /* заголовки: Russo One — рівні «У» і «Д» (один насичений накреслення, без штучного жирного) */
+  .skip-link, .section-title, .tg-feed-title { font-weight: 400; }
 </style>
 <script>
 /* після оновлення сторінки завжди починаємо згори (телефон не «з'їдає» заголовок) */
