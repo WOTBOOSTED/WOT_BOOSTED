@@ -202,10 +202,10 @@
   .nav-soc svg { width: 26px; height: 26px; display: block; }
   .nav-soc-tt svg g { filter: drop-shadow(-1px -1px 0 #25f4ee) drop-shadow(1px 1px 0 #fe2c55); }
   /* ПК: меню по центру; на ноутбуках — по центру між логотипом і кнопками, щоб не налазило */
-  @media (min-width: 1361px) {
+  @media (min-width: 1600px) {
     .nav-center { position: static; transform: none; margin: 0 auto; }
   }
-  @media (min-width: 1800px) {
+  @media (min-width: 1880px) {
     .nav-center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
   }
   @media (max-width: 1100px) { .nav-socials { display: none; } }
@@ -223,7 +223,7 @@
     .nav-link.active::after { left: 20px; right: 20px; }
   }
   /* вузькі екрани: посилання окремою смужкою під шапкою */
-  @media (max-width: 1360px) {
+  @media (max-width: 1599px) {
     .nav-center {
       position: fixed; top: 64px; left: 0; right: 0; transform: none;
       justify-content: center; gap: 4px; height: 42px;
@@ -239,9 +239,15 @@
     section { scroll-margin-top: 116px; }
     body { padding-top: 40px; }
   }
-  @media (max-width: 400px) {
-    .nav-link { font-size: 11px; padding: 8px 9px; letter-spacing: 0.3px; }
-    .nav-link.active::after { left: 9px; right: 9px; }
+  @media (max-width: 600px) {
+    .nav-center { gap: 0; overflow-x: auto; scrollbar-width: none; }
+    .nav-center::-webkit-scrollbar { display: none; }
+    .nav-link { font-size: 11px; padding: 8px 8px; letter-spacing: 0.2px; white-space: nowrap; }
+    .nav-link.active::after { left: 8px; right: 8px; }
+  }
+  @media (max-width: 360px) {
+    .nav-link { font-size: 10px; padding: 8px 5px; letter-spacing: 0; }
+    .nav-link.active::after { left: 5px; right: 5px; }
   }
   /* фон без фото: графіт з м'яким червоним світінням, як у шапці */
   .btn-primary {
@@ -975,6 +981,7 @@
   /* дуже вузькі телефони (≤360px): шапка вміщується повністю */
   @media (max-width: 360px) { nav { padding: 0 8px; } .nav-logo { font-size: 12px; gap: 6px; } .nav-logo-img { height: 24px; } .nav-right { gap: 6px; } }
   @media (max-width: 360px) { .services .section-title { font-size: 24px; } .svc-socials { gap: 2px; } .svc-socials .nav-soc { width: 30px; height: 30px; } .svc-socials .nav-soc svg { width: 22px; height: 22px; } }
+  @media (max-width: 700px) { .nav-tg { padding: 7px 13px; } .nav-tg span { display: none; } }
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z32GCKDDHZ"></script>
@@ -1046,6 +1053,7 @@ window.addEventListener('load', function () {
     <a href="/top-tanks/" class="nav-link" data-t="nav_top">Топ танків</a>
     <a href="/streams/" class="nav-link" data-t="nav_streams">Стріми</a>
     <a href="/group/" class="nav-link" data-t="nav_group">Група</a>
+    <a href="/modpack/" class="nav-link" data-t="nav_modpack">Модпак</a>
   </div>
   <div class="nav-right">
     <div class="lang-switcher">
@@ -1264,7 +1272,7 @@ window.addEventListener('load', function () {
 <script>
 const translations = {
   uk: {
-    nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми', nav_group: 'Група',
+    nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми', nav_group: 'Група', nav_modpack: 'Модпак',
     services_label: 'Послуги', services_title: 'НАШІ ПОСЛУГИ',
     services_desc: 'Натисніть на послугу щоб дізнатись деталі і зв\'язатись зі мною',
     s1_name: 'ЛБЗ 1.0',
@@ -1296,7 +1304,7 @@ const translations = {
     modal_btn: 'Замовити в Telegram'
   },
   en: {
-    nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams', nav_group: 'Group',
+    nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams', nav_group: 'Group', nav_modpack: 'Modpack',
     services_label: 'Services', services_title: 'OUR SERVICES',
     services_desc: 'Click on a service to learn details and contact me',
     s1_name: 'PM 1.0',
