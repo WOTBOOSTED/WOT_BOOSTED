@@ -383,6 +383,13 @@
     .footer-social svg { width: 20px; height: 20px; }
   }
 </style>
+<script>
+/* після оновлення сторінки завжди починаємо згори (телефон не «з'їдає» заголовок) */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('load', function () {
+  if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+});
+</script>
 </head>
 <body>
 

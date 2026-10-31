@@ -741,7 +741,7 @@
     .lang-flag { width: 16px; height: 11px; border-radius: 2px; }
 
     /* Сервисы — одна колонка, карточки на всю ширину экрана */
-    .services { padding: 72px 10px 12px; }
+    .services { padding: 84px 10px 12px; }
     .services-grid { grid-template-columns: 1fr; gap: 18px; }
     /* Широкая картинка 16:9 — всё видно, ничего не съедается */
     .service-img-wrap { aspect-ratio: 16 / 9; }
@@ -954,6 +954,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+});
+</script>
+<script>
+/* після оновлення сторінки завжди починаємо згори (телефон не «з'їдає» заголовок) */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('load', function () {
+  if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 });
 </script>
 </head>
