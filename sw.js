@@ -1,9 +1,8 @@
-const CACHE_VERSION = 'wot-boosted-v4';
+const CACHE_VERSION = 'wot-boosted-v5';
 const STATIC_CACHE = [
   '/',
   '/index.html',
-  '/logo.png',
-  '/manifest.json'
+  '/logo.png'
 ];
 
 self.addEventListener('install', event => {
