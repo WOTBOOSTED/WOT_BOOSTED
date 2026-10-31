@@ -205,6 +205,23 @@
     max-width: var(--container); margin: 0 auto;
     padding: 120px 40px 96px;
   }
+  /* підпис «Особистий топ від WOT_BOOSTED» праворуч від заголовка */
+  .top-title-row { display: flex; align-items: center; gap: 18px 28px; flex-wrap: wrap; }
+  .top-author {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 18px 8px 10px;
+    background: var(--dark2); border: 1px solid var(--border);
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .top-author-logo { width: 40px; height: auto; display: block; }
+  .top-author-label {
+    font-family: 'Rajdhani', sans-serif; font-weight: 600;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold);
+  }
+  .top-author-name {
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: 15px; letter-spacing: 0.4px; color: #fff; margin-top: 2px;
+  }
   /* топ танків: 4 колонки рівнів, у кожній топ-5 */
   .tiers {
     display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -418,7 +435,16 @@
 
 <main class="top-page">
   <div class="section-label" data-t="top_label">Рейтинг</div>
-  <h1 class="section-title" data-t-html="top_title">ТОП <span>ТАНКІВ</span></h1>
+  <div class="top-title-row">
+    <h1 class="section-title" data-t-html="top_title">ТОП <span>ТАНКІВ</span></h1>
+    <div class="top-author">
+      <img src="/logo.png" alt="" class="top-author-logo" width="552" height="452" decoding="async">
+      <div>
+        <div class="top-author-label" data-t="top_author_label">Особистий топ</div>
+        <div class="top-author-name"><span data-t="top_author_by">від</span> WOT_BOOSTED</div>
+      </div>
+    </div>
+  </div>
   <p class="section-sub" data-t="top_sub">Топ-5 найкращих танків кожного рівня — від XI до VIII.</p>
   <div class="tiers">
     <article class="tier-card">
@@ -507,11 +533,13 @@ const translations = {
   uk: { nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми', nav_group: 'Група',
         top_label: 'Рейтинг', top_title: 'ТОП <span>ТАНКІВ</span>',
         top_sub: 'Топ-5 найкращих танків кожного рівня — від XI до VIII.', tier_lvl: 'рівень', tank_soon: 'Скоро',
+        top_author_label: 'Особистий топ', top_author_by: 'від',
         footer_tagline: 'Професійний буст WoT', footer_follow: 'Слідкуйте за нами',
         footer_copy: '© 2025–2026 WOT BOOSTED. Всі права захищені.' },
   en: { nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams', nav_group: 'Group',
         top_label: 'Rating', top_title: 'TOP <span>TANKS</span>',
         top_sub: 'Top 5 best tanks of each tier — from XI to VIII.', tier_lvl: 'tier', tank_soon: 'Soon',
+        top_author_label: 'Personal top', top_author_by: 'by',
         footer_tagline: 'Professional WoT boosting', footer_follow: 'Follow us',
         footer_copy: '© 2025–2026 WOT BOOSTED. All rights reserved.' }
 };
