@@ -47,18 +47,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.wotboosted.com"
-        }
-      ],
-      "destination": "https://wotboosted.com/:path*",
-      "permanent": true
-    }
   ]
 }
