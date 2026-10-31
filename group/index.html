@@ -438,14 +438,14 @@ window.addEventListener('load', function () {
 
 <script>
 const translations = {
-  uk: { nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
+  uk: { page_title: 'Група — WOT BOOSTED', nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
         nav_group: 'Група',
         group_label: 'Telegram', group_title: 'НАША <span>ГРУПА</span>',
         group_text: 'Новини та оновлення WOT BOOSTED — у нашій групі в Telegram.', group_btn: 'Приєднатися до групи',
         feed_title: 'Останні пости', feed_loading: 'Завантажуємо пости…', feed_error: 'Не вдалося завантажити пости — відкрийте канал у Telegram.',
         footer_tagline: 'Професійний буст WoT', footer_follow: 'Слідкуйте за нами',
         footer_copy: '© 2025–2026 WOT BOOSTED. Всі права захищені.' },
-  en: { nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
+  en: { page_title: 'Group — WOT BOOSTED', nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
         nav_group: 'Group',
         group_label: 'Telegram', group_title: 'OUR <span>GROUP</span>',
         group_text: 'WOT BOOSTED news and updates — in our Telegram group.', group_btn: 'Join the group',
@@ -463,6 +463,8 @@ function setLang(lang) {
   const t = translations[lang];
   document.querySelectorAll('[data-t]').forEach(el => { const k = el.getAttribute('data-t'); if (t[k]) el.textContent = t[k]; });
   document.querySelectorAll('[data-t-html]').forEach(el => { const k = el.getAttribute('data-t-html'); if (t[k]) el.innerHTML = t[k]; });
+  document.querySelectorAll('[data-t-aria]').forEach(el => { const k = el.getAttribute('data-t-aria'); if (t[k]) el.setAttribute('aria-label', t[k]); });
+  if (t.page_title) document.title = t.page_title;
 }
 let startLang = 'uk';
 try { startLang = localStorage.getItem('wb_lang') || 'uk'; } catch (e) {}
