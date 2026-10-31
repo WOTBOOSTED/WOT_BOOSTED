@@ -196,9 +196,12 @@
   .nav-soc:hover { transform: translateY(-1px); background: rgba(255,255,255,0.06); }
   .nav-soc svg { width: 26px; height: 26px; display: block; }
   .nav-soc-tt svg g { filter: drop-shadow(-1px -1px 0 #25f4ee) drop-shadow(1px 1px 0 #fe2c55); }
-  /* ПК: меню одразу після логотипу, ліворуч */
+  /* ПК: меню по центру; на ноутбуках — по центру між логотипом і кнопками, щоб не налазило */
   @media (min-width: 1361px) {
-    .nav-center { position: static; transform: none; margin: 0 auto 0 48px; }
+    .nav-center { position: static; transform: none; margin: 0 auto; }
+  }
+  @media (min-width: 1800px) {
+    .nav-center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
   }
   @media (max-width: 1100px) { .nav-socials { display: none; } }
   /* ПК (від 1440px): пункти меню більші; ноутбуки й телефон — без змін */
