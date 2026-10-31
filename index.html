@@ -219,7 +219,7 @@
     box-shadow: 0 12px 40px rgba(225,45,60,0.4);
   }
   .services {
-    padding: 96px 40px 40px;
+    padding: 96px 40px 20px;
     max-width: var(--container);
     margin: 0 auto;
   }
@@ -434,7 +434,7 @@
     font-size: clamp(12px, 0.85vw, 16px); color: var(--text-muted);
     line-height: 1.6; font-weight: 300;
   }
-  .why { padding: 56px 40px 100px; max-width: 1200px; margin: 0 auto; }
+  .why { padding: 24px 40px 100px; max-width: 1200px; margin: 0 auto; }
   .why-grid {
     display: grid; grid-template-columns: 1.25fr 0.95fr;
     gap: 60px; align-items: center; margin-top: 60px;
@@ -549,9 +549,9 @@
   .footer-center { justify-self: center; }
   .footer-right { justify-self: end; text-align: right; }
   .footer-logo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px; font-weight: 700;
-    letter-spacing: 3px; color: var(--gold);
+    font-family: 'Montserrat', sans-serif; /* як логотип у шапці */
+    font-size: 20px; font-weight: 800;
+    letter-spacing: 0.5px; color: var(--gold);
     display: block;
     margin-bottom: 8px;
   }
@@ -698,12 +698,12 @@
   .services-grid .service-card.reveal:nth-child(6) { transition-delay: .16s; }
   @media (max-width: 900px) {
     nav { padding: 0 20px; }
-    .services { padding: 88px 20px 36px; }
+    .services { padding: 88px 20px 16px; }
     .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .how { padding: 60px 20px; }
     .steps { grid-template-columns: 1fr 1fr; gap: 40px; }
     .steps::before { display: none; }
-    .why { padding: 36px 20px 60px; }
+    .why { padding: 20px 20px 60px; }
     .why-grid { grid-template-columns: 1fr; gap: 40px; }
     .why-img-wrap { height: 400px; }
     .contact-banner { margin: 0 20px 60px; }
@@ -724,7 +724,7 @@
     .lang-flag { width: 16px; height: 11px; border-radius: 2px; }
 
     /* Сервисы — одна колонка, карточки на всю ширину экрана */
-    .services { padding: 72px 10px 28px; }
+    .services { padding: 72px 10px 12px; }
     .services-grid { grid-template-columns: 1fr; gap: 18px; }
     /* Широкая картинка 16:9 — всё видно, ничего не съедается */
     .service-img-wrap { aspect-ratio: 16 / 9; }
@@ -744,7 +744,7 @@
     .steps { grid-template-columns: 1fr; gap: 32px; }
     .step { padding: 0 0 0 16px; }
 
-    .why { padding: 28px 14px 48px; }
+    .why { padding: 16px 14px 48px; }
     .why-img-wrap { height: 330px; }
     .feature { padding: 16px; gap: 14px; }
 
@@ -787,7 +787,7 @@
       margin: 0 auto;
     }
     .services {
-      padding: 120px 60px 48px;
+      padding: 120px 60px 24px;
     }
     .services-grid {
       gap: 28px;
@@ -815,7 +815,7 @@
       font-size: 26px;
     }
     .why {
-      padding: 64px 60px 120px;
+      padding: 28px 60px 120px;
       max-width: 1600px;
     }
     .feature {
@@ -1134,7 +1134,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
     <div class="footer-right">
-      <div class="footer-copy" data-t="footer_copy">© 2025 WOT BOOSTED. Всі права захищені.</div>
+      <div class="footer-copy" data-t="footer_copy">© 2025–2026 WOT BOOSTED. Всі права захищені.</div>
     </div>
   </div>
 </footer>
@@ -1180,7 +1180,7 @@ const translations = {
     f4_title: 'Гарантія', f4_text: 'Беремось тільки за те, що можемо виконати.',
     f5_title: 'На зв\'язку', f5_text: 'Завжди онлайн у Telegram. Відповідаємо швидко, тримаємо в курсі процесу.',
     cta_title: 'ГОТОВИЙ ЗАМОВИТИ?', cta_sub: 'Напиши нам у Telegram — відповімо швидко',
-    footer_copy: '© 2025 WOT BOOSTED. Всі права захищені.',
+    footer_copy: '© 2025–2026 WOT BOOSTED. Всі права захищені.',
     footer_tagline: 'Професійний буст WoT',
     footer_follow: 'Слідкуйте за нами',
     modal_btn: 'Замовити в Telegram'
@@ -1207,7 +1207,7 @@ const translations = {
     f4_title: 'Guarantee', f4_text: 'We only take on what we can deliver.',
     f5_title: 'Always in touch', f5_text: 'Always online on Telegram. Fast replies, we keep you posted.',
     cta_title: 'READY TO ORDER?', cta_sub: 'Message us on Telegram — we reply fast',
-    footer_copy: '© 2025 WOT BOOSTED. All rights reserved.',
+    footer_copy: '© 2025–2026 WOT BOOSTED. All rights reserved.',
     footer_tagline: 'Professional WoT Boosting',
     footer_follow: 'Follow us',
     modal_btn: 'Order on Telegram'
