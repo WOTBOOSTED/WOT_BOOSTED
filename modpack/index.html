@@ -310,6 +310,8 @@
     margin-top: 8px;
     display: block;
   }
+  .footer-copy .cr-y { white-space: nowrap; }
+  .footer-copy .cr-r { display: inline-block; }
   .footer-socials-label {
     font-family: 'Rajdhani', sans-serif;
     font-size: 11px; color: var(--text-muted);
@@ -477,7 +479,7 @@ window.addEventListener('load', function () {
       </div>
     </div>
     <div class="footer-right">
-      <div class="footer-copy" data-t="footer_copy">©&nbsp;2025&#8288;–&#8288;2026 WOT&nbsp;BOOSTED. Всі&nbsp;права&nbsp;захищені.</div>
+      <div class="footer-copy"><span class="cr-y">©&nbsp;2025&#8288;–&#8288;2026</span> <span class="cr-r" data-t="footer_copy">WOT&nbsp;BOOSTED. Всі&nbsp;права&nbsp;захищені.</span></div>
     </div>
   </div>
 </footer>
@@ -489,13 +491,13 @@ const translations = {
         mp_label: 'World of Tanks', mp_title: 'МОД<span>ПАК</span>',
         mp_soon: "Сторінка в розробці — скоро тут з'явиться мій модпак.",
         footer_tagline: 'Професійний буст WoT', footer_follow: 'Слідкуйте за мною',
-        footer_copy: '©\u00a02025\u2060–\u20602026 WOT\u00a0BOOSTED. Всі\u00a0права\u00a0захищені.' },
+        footer_copy: 'WOT\u00a0BOOSTED. Всі\u00a0права\u00a0захищені.' },
   en: { page_title: 'Modpack — WOT BOOSTED', nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
         nav_group: 'Group', nav_modpack: 'Modpack',
         mp_label: 'World of Tanks', mp_title: 'MOD<span>PACK</span>',
         mp_soon: 'This page is under construction — my modpack is coming soon.',
         footer_tagline: 'Professional WoT boosting', footer_follow: 'Follow me',
-        footer_copy: '©\u00a02025\u2060–\u20602026 WOT\u00a0BOOSTED. All\u00a0rights\u00a0reserved.' }
+        footer_copy: 'WOT\u00a0BOOSTED. All\u00a0rights\u00a0reserved.' }
 };
 let currentLang = 'uk';
 function setLang(lang) {

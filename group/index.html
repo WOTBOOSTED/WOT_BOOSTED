@@ -332,6 +332,8 @@
     margin-top: 8px;
     display: block;
   }
+  .footer-copy .cr-y { white-space: nowrap; }
+  .footer-copy .cr-r { display: inline-block; }
   .footer-socials-label {
     font-family: 'Rajdhani', sans-serif;
     font-size: 11px; color: var(--text-muted);
@@ -507,7 +509,7 @@ window.addEventListener('load', function () {
       </div>
     </div>
     <div class="footer-right">
-      <div class="footer-copy" data-t="footer_copy">©&nbsp;2025&#8288;–&#8288;2026 WOT&nbsp;BOOSTED. Всі&nbsp;права&nbsp;захищені.</div>
+      <div class="footer-copy"><span class="cr-y">©&nbsp;2025&#8288;–&#8288;2026</span> <span class="cr-r" data-t="footer_copy">WOT&nbsp;BOOSTED. Всі&nbsp;права&nbsp;захищені.</span></div>
     </div>
   </div>
 </footer>
@@ -520,14 +522,14 @@ const translations = {
         group_text: 'Новини та оновлення WOT BOOSTED — у моїй групі в Telegram.', group_btn: 'Приєднатися до групи',
         feed_title: 'Останні пости', feed_loading: 'Завантаження постів…', feed_error: 'Не вдалося завантажити пости — відкрийте канал у Telegram.',
         footer_tagline: 'Професійний буст WoT', footer_follow: 'Слідкуйте за мною',
-        footer_copy: '©\u00a02025\u2060–\u20602026 WOT\u00a0BOOSTED. Всі\u00a0права\u00a0захищені.' },
+        footer_copy: 'WOT\u00a0BOOSTED. Всі\u00a0права\u00a0захищені.' },
   en: { page_title: 'Group — WOT BOOSTED', nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
         nav_group: 'Group', nav_modpack: 'Modpack',
         group_label: 'Telegram', group_title: 'MY <span>GROUP</span>',
         group_text: 'WOT BOOSTED news and updates — in my Telegram group.', group_btn: 'Join the group',
         feed_title: 'Latest posts', feed_loading: 'Loading posts…', feed_error: 'Could not load posts — open the channel in Telegram.',
         footer_tagline: 'Professional WoT boosting', footer_follow: 'Follow me',
-        footer_copy: '©\u00a02025\u2060–\u20602026 WOT\u00a0BOOSTED. All\u00a0rights\u00a0reserved.' }
+        footer_copy: 'WOT\u00a0BOOSTED. All\u00a0rights\u00a0reserved.' }
 };
 let currentLang = 'uk';
 function setLang(lang) {
