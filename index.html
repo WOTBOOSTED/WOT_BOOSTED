@@ -181,8 +181,14 @@
     content: ''; position: absolute; left: 18px; right: 18px; bottom: 3px; height: 2px;
     border-radius: 2px; background: linear-gradient(90deg, #e65c66, #c9434e);
   }
+  /* ПК (від 1440px): пункти меню більші; ноутбуки й телефон — без змін */
+  @media (min-width: 1440px) {
+    .nav-center { gap: 8px; }
+    .nav-link { font-size: 16px; padding: 10px 20px; }
+    .nav-link.active::after { left: 20px; right: 20px; }
+  }
   /* вузькі екрани: посилання окремою смужкою під шапкою */
-  @media (max-width: 1320px) {
+  @media (max-width: 1360px) {
     .nav-center {
       position: fixed; top: 64px; left: 0; right: 0; transform: none;
       justify-content: center; gap: 4px; height: 42px;
