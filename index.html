@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WOT BOOSTED — Професійний буст World of Tanks</title>
-<meta name="description" content="WOT BOOSTED — професійний буст World of Tanks. ЛБЗ, Відмітки, Майстер, бої на шкоду. Швидко, безпечно, чесно.">
+<title>WOT BOOSTED — буст WoT: ЛБЗ, відмітки, Майстер, бої на шкоду</title>
+<meta name="description" content="Буст World of Tanks від WOT BOOSTED: ЛБЗ 1.0–4.0, відмітки на стволі, Майстер, бої на шкоду для WN8. Кожне замовлення — на YouTube-трансляції. Досвід 8+ років.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wotboosted.com/">
 <meta property="og:title" content="WOT BOOSTED — Професійний буст World of Tanks">
@@ -545,6 +545,17 @@
     background: linear-gradient(180deg, #ee6d76 0%, #d44f5a 100%); transform: translateY(-1px);
     box-shadow: 0 8px 24px rgba(225,45,60,0.25);
   }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  /* короткий текст про сервіс для пошуку */
+  .seo { max-width: var(--container); margin: 0 auto; padding: 0 40px 48px; }
+  .seo-title {
+    font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;
+    font-size: 18px; letter-spacing: .6px; color: #fff; margin-bottom: 10px;
+  }
+  .seo p { color: var(--text-muted); font-size: 14px; line-height: 1.7; font-weight: 300; max-width: 980px; }
+  .seo p + p { margin-top: 6px; }
+  @media (max-width: 900px) { .seo { padding: 0 20px 40px; } }
+  @media (max-width: 600px) { .seo { padding: 0 14px 32px; } .seo p { font-size: 13px; } }
   footer {
     background: var(--dark2);
     border-top: 1px solid var(--border);
@@ -561,6 +572,8 @@
   .footer-left { justify-self: start; }
   .footer-center { justify-self: center; }
   .footer-right { justify-self: end; text-align: right; }
+  /* щоб кнопка «вгору» не перекривала напис справа на ноутбуках */
+  @media (min-width: 601px) and (max-width: 1560px) { .footer-right { padding-right: 52px; } }
   .footer-logo {
     font-family: 'Montserrat', sans-serif; /* як логотип у шапці */
     font-size: 20px; font-weight: 800;
@@ -997,7 +1010,8 @@ window.addEventListener('load', function () {
 <section class="services" id="services">
   <div class="section-header reveal">
     <div>
-      <h1 class="section-title" data-t="services_title">НАШІ <span>ПОСЛУГИ</span></h1>
+      <h1 class="sr-only" data-t="seo_h1">Буст World of Tanks — WOT BOOSTED</h1>
+      <h2 class="section-title" data-t="services_title">НАШІ <span>ПОСЛУГИ</span></h2>
     </div>
   </div>
 
@@ -1137,6 +1151,12 @@ window.addEventListener('load', function () {
   </div>
 </div>
 
+<section class="seo" aria-labelledby="seoTitle">
+  <h2 class="seo-title" id="seoTitle" data-t="seo_title">Буст World of Tanks від WOT BOOSTED</h2>
+  <p data-t="seo_p1">WOT BOOSTED — професійний буст акаунтів World of Tanks: проходимо ЛБЗ 1.0, 2.0, 3.0 і 4.0 (Об'єкт 260, Об'єкт 279 (р), Black Rock, Fossa), вибиваємо відмітки на стволі та знак класності «Майстер», граємо бої на шкоду, щоб підняти WN8 і рейтинг.</p>
+  <p data-t="seo_p2">Кожне замовлення транслюємо на YouTube — трансляцію бачить лише замовник. Досвід 8+ років, працюємо акуратно й завжди на зв'язку в Telegram.</p>
+</section>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
@@ -1204,6 +1224,10 @@ const translations = {
     f4_title: 'Гарантія', f4_text: 'Беремось тільки за те, що можемо виконати.',
     f5_title: 'На зв\'язку', f5_text: 'Завжди онлайн у Telegram. Відповідаємо швидко, доводимо повну інформацію щодо замовлення.',
     cta_title: 'ГОТОВИЙ ЗАМОВИТИ?', cta_sub: 'Напиши нам у Telegram — відповімо швидко',
+    seo_h1: 'Буст World of Tanks — WOT BOOSTED',
+    seo_title: 'Буст World of Tanks від WOT BOOSTED',
+    seo_p1: 'WOT BOOSTED — професійний буст акаунтів World of Tanks: проходимо ЛБЗ 1.0, 2.0, 3.0 і 4.0 (Об\'єкт 260, Об\'єкт 279 (р), Black Rock, Fossa), вибиваємо відмітки на стволі та знак класності «Майстер», граємо бої на шкоду, щоб підняти WN8 і рейтинг.',
+    seo_p2: 'Кожне замовлення транслюємо на YouTube — трансляцію бачить лише замовник. Досвід 8+ років, працюємо акуратно й завжди на зв\'язку в Telegram.',
     footer_copy: '© 2025–2026 WOT BOOSTED. Всі права захищені.',
     footer_tagline: 'Професійний буст WoT',
     footer_follow: 'Слідкуйте за нами',
@@ -1231,6 +1255,10 @@ const translations = {
     f4_title: 'Guarantee', f4_text: 'We only take on what we can deliver.',
     f5_title: 'Always in touch', f5_text: 'Always online on Telegram. Fast replies and full details on your order.',
     cta_title: 'READY TO ORDER?', cta_sub: 'Message us on Telegram — we reply fast',
+    seo_h1: 'World of Tanks boosting — WOT BOOSTED',
+    seo_title: 'World of Tanks boosting by WOT BOOSTED',
+    seo_p1: 'WOT BOOSTED is a professional World of Tanks account boosting service: we complete Personal Missions 1.0, 2.0, 3.0 and 4.0 (Object 260, Object 279 (e), Black Rock, Fossa), earn Marks of Excellence and the Ace Tanker badge, and play damage battles to raise your WN8 and rating.',
+    seo_p2: 'Every order is streamed on YouTube — only you can see the stream. 8+ years of experience, careful work and always in touch on Telegram.',
     footer_copy: '© 2025–2026 WOT BOOSTED. All rights reserved.',
     footer_tagline: 'Professional WoT Boosting',
     footer_follow: 'Follow us',
@@ -1283,7 +1311,7 @@ function setLang(lang) {
     img.alt = img.getAttribute(lang === 'en' ? 'data-alt-en' : 'data-alt-uk');
   });
   document.documentElement.lang = lang === 'en' ? 'en' : 'uk';
-  document.title = lang === 'en' ? 'WOT BOOSTED — Professional World of Tanks Boosting' : 'WOT BOOSTED — Професійний буст World of Tanks';
+  document.title = lang === 'en' ? 'WOT BOOSTED — WoT boosting: Personal Missions, Marks, Ace Tanker' : 'WOT BOOSTED — буст WoT: ЛБЗ, відмітки, Майстер, бої на шкоду';
   updateModalLang();
 }
 
@@ -1539,7 +1567,7 @@ if ('serviceWorker' in navigator) {
   "offers": [
     { "@type": "Offer", "name": "ЛБЗ 1.0" },
     { "@type": "Offer", "name": "ЛБЗ 2.0" },
-    { "@type": "Offer", "name": "ЛБЗ Fossa" },
+    { "@type": "Offer", "name": "ЛБЗ 3.0 та 4.0 (Black Rock, Fossa)" },
     { "@type": "Offer", "name": "Бої на шкоду" },
     { "@type": "Offer", "name": "Відмітки" },
     { "@type": "Offer", "name": "Майстер" }
