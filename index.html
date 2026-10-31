@@ -502,14 +502,15 @@
   }
   .contact-banner-bg {
     position: absolute; inset: 0;
-    background-image: url('wot8.jpg');
+    /* фон: карта ЛБЗ з Об'єктом 279 у кольорах сайту */
+    background-image: url('cta-map-v1.jpg');
+    background-image: image-set(url('cta-map-v1.webp') type('image/webp'), url('cta-map-v1.jpg') type('image/jpeg'));
     background-size: cover; background-position: center;
-    filter: brightness(0.6) saturate(0.85) contrast(1.02);
   }
   .contact-banner::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(90deg, rgba(10,11,13,0.45) 0%, rgba(10,11,13,0.2) 55%, rgba(10,11,13,0.45) 100%);
+    background: linear-gradient(90deg, rgba(10,11,13,0.6) 0%, rgba(10,11,13,0) 32%, rgba(10,11,13,0) 80%, rgba(10,11,13,0.3) 100%);
     pointer-events: none;
   }
   .contact-banner-content { position: relative; z-index: 1; }
@@ -553,7 +554,7 @@
     font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;
     font-size: 18px; letter-spacing: .6px; color: #fff; margin-bottom: 10px;
   }
-  .seo p { color: var(--text-muted); font-size: 14px; line-height: 1.7; font-weight: 300; max-width: 980px; }
+  .seo p { color: var(--text-muted); font-size: 14px; line-height: 1.7; font-weight: 300; text-wrap: pretty; }
   .seo p + p { margin-top: 6px; }
   @media (max-width: 900px) { .seo { padding: 0 20px 40px; } }
   @media (max-width: 600px) { .seo { padding: 0 14px 32px; } .seo p { font-size: 13px; } }
@@ -739,6 +740,12 @@
     .why-grid { grid-template-columns: 1fr; gap: 40px; }
     .why-img-wrap, .why-left .why-img-wrap { flex: none; height: 400px; min-height: 0; margin-top: 0; }
     .contact-banner { margin: 0 20px 60px; }
+    .contact-banner-bg {
+      background-image: url('cta-map-m-v1.jpg');
+      background-image: image-set(url('cta-map-m-v1.webp') type('image/webp'), url('cta-map-m-v1.jpg') type('image/jpeg'));
+      background-position: right bottom;
+    }
+    .contact-banner::after { background: linear-gradient(90deg, rgba(10,11,13,0.55) 0%, rgba(10,11,13,0) 60%); }
     .contact-banner-content { padding: 16px 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
     footer { padding: 22px 20px 28px; }
     .service-name { font-size: 19px; }
