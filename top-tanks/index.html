@@ -215,9 +215,10 @@
   }
   .top-author-logo { width: 40px; height: auto; display: block; }
   .top-author-label {
-    text-align: center;
+    text-align: center; white-space: nowrap;
     font-family: 'Rajdhani', sans-serif; font-weight: 600;
-    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold);
+    font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold);
+    line-height: 1.2;
   }
   .top-author-name {
     font-family: 'Montserrat', sans-serif; font-weight: 800;
@@ -558,6 +559,25 @@ function setLang(lang) {
 let startLang = 'uk';
 try { startLang = localStorage.getItem('wb_lang') || 'uk'; } catch (e) {}
 setLang(startLang);
+
+// «Особистий топ» розтягуємо рівно на ширину «від WOT_BOOSTED» (без країв зліва і справа)
+function fitAuthor() {
+  var l = document.querySelector('.top-author-label'), n = document.querySelector('.top-author-name');
+  if (!l || !n) return;
+  function textW(el) { var r = document.createRange(); r.selectNodeContents(el); return r.getBoundingClientRect().width; }
+  l.style.letterSpacing = '0px'; l.style.marginRight = '0px';
+  var chars = l.textContent.trim().length;
+  if (chars < 2) return;
+  var ls = (textW(n) - textW(l)) / (chars - 1);
+  if (ls < 0) ls = 0;
+  l.style.letterSpacing = ls + 'px';
+  l.style.marginRight = (-ls) + 'px';
+}
+var _setLangBase = setLang;
+setLang = function (lang) { _setLangBase(lang); fitAuthor(); };
+fitAuthor();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAuthor);
+window.addEventListener('load', fitAuthor);
 </script>
 </body>
 </html>
