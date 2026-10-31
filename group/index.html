@@ -216,6 +216,17 @@
   }
   .group-btn:hover { background: linear-gradient(180deg, #ee6d76 0%, #d44f5a 100%); transform: translateY(-1px); }
   .group-btn-icon { width: 20px; height: 20px; display: block; flex-shrink: 0; }
+  /* стрічка постів з Telegram-каналу */
+  .tg-feed-wrap { margin-top: 56px; }
+  .tg-feed-title {
+    font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase;
+    font-size: 22px; letter-spacing: 1px; color: #fff; margin-bottom: 20px;
+  }
+  .tg-feed { columns: 2 420px; column-gap: 24px; max-width: 1160px; }
+  .tg-post { break-inside: avoid; margin: 0 0 24px; min-height: 80px; }
+  .tg-post iframe { width: 100% !important; min-width: 0 !important; border-radius: 12px; }
+  .tg-feed-note { color: var(--text-muted); font-size: 14px; }
+  .tg-feed-note a { color: var(--gold-light, #ff5a68); }
   .top-page .section-sub {
     margin-top: 18px; color: var(--text-muted);
     font-size: 15px; line-height: 1.7; font-weight: 300;
@@ -373,6 +384,13 @@
   <h1 class="section-title" data-t-html="group_title">НАША <span>ГРУПА</span></h1>
   <p class="section-sub" data-t="group_text">Новини та оновлення WOT BOOSTED — у нашій групі в Telegram.</p>
   <a href="https://t.me/wot_boosted_news" target="_blank" rel="noopener" class="group-btn"><svg class="group-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path fill="#d24d58" d="M5.43 11.87 16.9 7.45c.53-.19 1 .13.82.94l-1.95 9.2c-.15.65-.53.81-1.08.5l-2.98-2.2-1.44 1.39c-.16.16-.29.29-.6.29l.21-3.03 5.52-4.99c.24-.21-.05-.33-.37-.12l-6.82 4.3-2.94-.92c-.64-.2-.65-.64.14-.95z"/></svg><span data-t="group_btn">Приєднатися</span></a>
+
+  <section class="tg-feed-wrap" aria-labelledby="feedTitle">
+    <h2 class="tg-feed-title" id="feedTitle" data-t="feed_title">Останні пости</h2>
+    <div class="tg-feed" id="tgFeed" aria-live="polite">
+      <p class="tg-feed-note" id="tgFeedNote" data-t="feed_loading">Завантажуємо пости…</p>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -407,12 +425,14 @@ const translations = {
         nav_group: 'Група',
         group_label: 'Telegram', group_title: 'НАША <span>ГРУПА</span>',
         group_text: 'Новини та оновлення WOT BOOSTED — у нашій групі в Telegram.', group_btn: 'Приєднатися',
+        feed_title: 'Останні пости', feed_loading: 'Завантажуємо пости…', feed_error: 'Не вдалося завантажити пости — відкрийте канал у Telegram.',
         footer_tagline: 'Професійний буст WoT', footer_follow: 'Слідкуйте за нами',
         footer_copy: '© 2025–2026 WOT BOOSTED. Всі права захищені.' },
   en: { nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
         nav_group: 'Group',
         group_label: 'Telegram', group_title: 'OUR <span>GROUP</span>',
         group_text: 'WOT BOOSTED news and updates — in our Telegram group.', group_btn: 'Join',
+        feed_title: 'Latest posts', feed_loading: 'Loading posts…', feed_error: 'Could not load posts — open the channel in Telegram.',
         footer_tagline: 'Professional WoT boosting', footer_follow: 'Follow us',
         footer_copy: '© 2025–2026 WOT BOOSTED. All rights reserved.' }
 };
@@ -430,6 +450,37 @@ function setLang(lang) {
 let startLang = 'uk';
 try { startLang = localStorage.getItem('wb_lang') || 'uk'; } catch (e) {}
 setLang(startLang);
+
+// Стрічка: беремо номери свіжих постів у /api/tg-posts і показуємо їх віджетами Telegram
+(function () {
+  var feed = document.getElementById('tgFeed');
+  var note = document.getElementById('tgFeedNote');
+  function fail() {
+    note.setAttribute('data-t', 'feed_error');
+    note.textContent = translations[currentLang].feed_error;
+  }
+  fetch('/api/tg-posts', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (data) {
+      if (!data.posts || !data.posts.length) return fail();
+      note.remove();
+      data.posts.forEach(function (key) {
+        var box = document.createElement('div');
+        box.className = 'tg-post';
+        var sc = document.createElement('script');
+        sc.async = true;
+        sc.src = 'https://telegram.org/js/telegram-widget.js?22';
+        sc.setAttribute('data-telegram-post', key);
+        sc.setAttribute('data-width', '100%');
+        sc.setAttribute('data-dark', '1');
+        sc.setAttribute('data-color', 'E65C66');
+        sc.setAttribute('data-dark-color', 'FF6B75');
+        box.appendChild(sc);
+        feed.appendChild(box);
+      });
+    })
+    .catch(fail);
+})();
 </script>
 </body>
 </html>
