@@ -325,6 +325,12 @@
     border-color: var(--border);
     box-shadow: 0 16px 40px rgba(0,0,0,0.45);
   }
+  /* порожні місця в сітці послуг (поки без послуги) */
+  .service-slot {
+    background: var(--dark2);
+    border: 1px solid var(--border-subtle);
+    min-height: 100%;
+  }
   .service-img-wrap {
     position: relative; width: 100%;
     aspect-ratio: 16 / 9;
@@ -344,8 +350,6 @@
   /* Все карточки — центр, одинаковая яркость */
   .service-card:nth-child(1) .service-img,
   .service-card:nth-child(2) .service-img,
-  .service-card:nth-child(3) .service-img,
-  .service-card:nth-child(5) .service-img,
   .service-card:nth-child(6) .service-img {
     object-position: center center;
     filter: saturate(1) brightness(1.08);
@@ -788,6 +792,7 @@
     nav { padding: 0 20px; }
     .services { padding: 88px 20px 16px; }
     .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .service-slot { display: none; }
     .how { padding: 60px 20px; }
     .steps { grid-template-columns: 1fr 1fr; gap: 40px; }
     .steps::before { display: none; }
@@ -1118,17 +1123,6 @@ window.addEventListener('load', function () {
       </div>
     </a>
 
-    <a href="#" class="service-card reveal" onclick="openModal(2); return false;">
-      <div class="scan-sheen" aria-hidden="true"></div>
-      <div class="service-floor" aria-hidden="true"></div>
-      <div class="service-img-wrap">
-        <picture><source srcset="lbz34-v2.webp" type="image/webp"><img src="lbz34-v2.jpg" alt="ЛБЗ 3.0 та 4.0" data-img="lbz34-v2" data-alt-uk="ЛБЗ 3.0 та 4.0" data-alt-en="Personal Missions 3.0 &amp; 4.0" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
-      </div>
-      <div class="service-info">
-        <div class="service-name" data-t="s3_name">ЛБЗ на Black Rock та Fossa</div>
-      </div>
-    </a>
-
     <a href="#" class="service-card reveal" onclick="openModal(3); return false;">
       <div class="scan-sheen" aria-hidden="true"></div>
       <div class="service-floor" aria-hidden="true"></div>
@@ -1140,6 +1134,10 @@ window.addEventListener('load', function () {
       </div>
     </a>
 
+    <div class="service-slot" aria-hidden="true"></div>
+
+    <div class="service-slot" aria-hidden="true"></div>
+
     <a href="#" class="service-card reveal" onclick="openModal(4); return false;">
       <div class="scan-sheen" aria-hidden="true"></div>
       <div class="service-floor" aria-hidden="true"></div>
@@ -1148,17 +1146,6 @@ window.addEventListener('load', function () {
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s5_name">Відмітки</div>
-      </div>
-    </a>
-
-    <a href="#" class="service-card reveal" onclick="openModal(5); return false;">
-      <div class="scan-sheen" aria-hidden="true"></div>
-      <div class="service-floor" aria-hidden="true"></div>
-      <div class="service-img-wrap">
-        <picture><source srcset="master.webp" type="image/webp"><img src="master.jpg" alt="Майстер" data-img="master" data-alt-uk="Майстер" data-alt-en="Ace Tanker" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
-      </div>
-      <div class="service-info">
-        <div class="service-name" data-t="s6_name">Майстер</div>
       </div>
     </a>
   </div>
