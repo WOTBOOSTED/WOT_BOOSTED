@@ -350,6 +350,7 @@
   /* Все карточки — центр, одинаковая яркость */
   .service-card:nth-child(1) .service-img,
   .service-card:nth-child(2) .service-img,
+  .service-card:nth-child(4) .service-img,
   .service-card:nth-child(6) .service-img {
     object-position: center center;
     filter: saturate(1) brightness(1.08);
@@ -1134,7 +1135,16 @@ window.addEventListener('load', function () {
       </div>
     </a>
 
-    <div class="service-slot" aria-hidden="true"></div>
+    <a href="#" class="service-card reveal" onclick="openModal(6); return false;">
+      <div class="scan-sheen" aria-hidden="true"></div>
+      <div class="service-floor" aria-hidden="true"></div>
+      <div class="service-img-wrap">
+        <picture><source srcset="fossa4-v1.webp" type="image/webp"><img src="fossa4-v1.jpg" alt="ЛБЗ 4.0 на Fossa" data-img="fossa4-v1" data-alt-uk="ЛБЗ 4.0 на Fossa" data-alt-en="Personal Missions 4.0 for Fossa" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
+      </div>
+      <div class="service-info">
+        <div class="service-name" data-t="s7_name">ЛБЗ 4.0</div>
+      </div>
+    </a>
 
     <div class="service-slot" aria-hidden="true"></div>
 
@@ -1279,6 +1289,7 @@ const translations = {
     s4_name: 'Бої на шкоду',
     s5_name: 'Відмітки',
     s6_name: 'Майстер',
+    s7_name: 'ЛБЗ 4.0',
     how_label: 'Процес', how_title: 'ЯК ЦЕ ПРАЦЮЄ',
     step1_title: 'Обери послугу', step1_text: 'Вибери потрібну послугу зі списку і натисни кнопку замовити',
     step2_title: 'Напиши в Telegram', step2_text: 'Перейди в мій Telegram і опиши що потрібно',
@@ -1311,6 +1322,7 @@ const translations = {
     s4_name: 'Damage Battles',
     s5_name: 'Marks of Excellence',
     s6_name: 'Ace Tanker',
+    s7_name: 'PM 4.0',
     how_label: 'Process', how_title: 'HOW IT WORKS',
     step1_title: 'Choose Service', step1_text: 'Pick the service you need and hit order',
     step2_title: 'Message me', step2_text: 'Go to my Telegram and describe what you need',
@@ -1460,7 +1472,10 @@ const services = [
     en: { name: 'Marks of Excellence', desc: 'Barrel marks are a prestigious mastery indicator. Get 1, 2 or 3 marks on any tank. Fast and efficient.' } },
   { img: 'master.jpg', img_en: 'master-en.jpg',
     uk: { name: 'Майстер', desc: 'Знак класності «Майстер» — найвища нагорода за бій. Присуджується гравцям, які набрали найбільше досвіду за бій серед усіх на даній техніці.' },
-    en: { name: 'Ace Tanker', desc: 'Ace Tanker mastery badge — the highest battle award. Awarded to players who earned the most XP in a battle among all players on that tank.' } }
+    en: { name: 'Ace Tanker', desc: 'Ace Tanker mastery badge — the highest battle award. Awarded to players who earned the most XP in a battle among all players on that tank.' } },
+  { img: 'fossa4-v1.jpg', img_en: 'fossa4-v1-en.jpg',
+    uk: { name: 'ЛБЗ 4.0 на Fossa', desc: 'Виконую ЛБЗ 4.0 — операцію Fossa з оновлення 2.4: три гілки «Авангард», «Засідка» і «Підтримка» по 21 задачі, нагорода — Fossa VM 68, німецький колісний середній танк X рівня. Виконаю всі гілки або вибірково — на ваш вибір.' },
+    en: { name: 'PM 4.0 for Fossa', desc: 'I complete Personal Missions 4.0 — Operation Fossa from update 2.4: three branches, Vanguard, Ambush and Support, with 21 missions each; the reward is the Fossa VM 68, a German tier X wheeled medium tank. I complete all branches or only the ones you choose.' } }
 ];
 
 let currentModal = -1;
