@@ -350,7 +350,7 @@
   /* Все карточки — центр, одинаковая яркость */
   .service-card:nth-child(1) .service-img,
   .service-card:nth-child(2) .service-img,
-  .service-card:nth-child(4) .service-img,
+  .service-card:nth-child(5) .service-img,
   .service-card:nth-child(6) .service-img {
     object-position: center center;
     filter: saturate(1) brightness(1.08);
@@ -1135,6 +1135,8 @@ window.addEventListener('load', function () {
       </div>
     </a>
 
+    <div class="service-slot" aria-hidden="true"></div>
+
     <a href="#" class="service-card reveal" onclick="openModal(6); return false;">
       <div class="scan-sheen" aria-hidden="true"></div>
       <div class="service-floor" aria-hidden="true"></div>
@@ -1145,8 +1147,6 @@ window.addEventListener('load', function () {
         <div class="service-name" data-t="s7_name">ЛБЗ 4.0</div>
       </div>
     </a>
-
-    <div class="service-slot" aria-hidden="true"></div>
 
     <a href="#" class="service-card reveal" onclick="openModal(4); return false;">
       <div class="scan-sheen" aria-hidden="true"></div>
