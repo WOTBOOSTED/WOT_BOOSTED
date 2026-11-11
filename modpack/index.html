@@ -4,13 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Модпак — WOT BOOSTED</title>
-<meta name="description" content="Модпак WOT BOOSTED для World of Tanks — скоро.">
+<meta name="description" content="Модпак WOT BOOSTED для World of Tanks — авторська збірка модів від бустера. Сторінка в розробці, модпак з'явиться незабаром.">
 <link rel="canonical" href="https://wotboosted.com/modpack/">
+<link rel="alternate" hreflang="uk" href="https://wotboosted.com/modpack/">
+<link rel="alternate" hreflang="en" href="https://wotboosted.com/en/modpack/">
+<link rel="alternate" hreflang="x-default" href="https://wotboosted.com/modpack/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="WOT BOOSTED">
 <meta property="og:url" content="https://wotboosted.com/modpack/">
 <meta property="og:title" content="Модпак — WOT BOOSTED">
-<meta property="og:description" content="Модпак WOT BOOSTED для World of Tanks — скоро.">
+<meta property="og:description" content="Модпак WOT BOOSTED для World of Tanks — авторська збірка модів від бустера. Сторінка в розробці, модпак з'явиться незабаром.">
 <meta property="og:image" content="https://wotboosted.com/og-wotboosted-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -140,7 +143,7 @@
   }
   .lang-btn {
     display: inline-flex; align-items: center; gap: 10px;
-    background: transparent; border: 0;
+    background: transparent; border: 0; text-decoration: none;
     color: var(--text-muted);
     padding: 9px 18px; border-radius: 999px;
     font-family: 'Montserrat', sans-serif; font-weight: 800;
@@ -414,6 +417,14 @@ window.addEventListener('load', function () {
   if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 });
 </script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z32GCKDDHZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z32GCKDDHZ');
+</script>
 </head>
 <body>
 
@@ -431,8 +442,8 @@ window.addEventListener('load', function () {
   </div>
   <div class="nav-right">
     <div class="lang-switcher">
-      <button class="lang-btn active" type="button" onclick="setLang('uk')" aria-label="Українська">УКР <svg class="lang-flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></svg></button>
-      <button class="lang-btn" type="button" onclick="setLang('en')" aria-label="English">ENG <svg class="lang-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukT"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#ukT)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></button>
+      <a class="lang-btn active" href="/modpack/" hreflang="uk" lang="uk" aria-label="Українська">УКР <svg class="lang-flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></svg></a>
+      <a class="lang-btn" href="/en/modpack/" hreflang="en" lang="en" aria-label="English">ENG <svg class="lang-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukT"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#ukT)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></a>
     </div>
     <a href="https://t.me/wot_boosted" target="_blank" class="nav-tg">
       <svg class="nav-tg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path fill="#d24d58" d="M5.43 11.87 16.9 7.45c.53-.19 1 .13.82.94l-1.95 9.2c-.15.65-.53.81-1.08.5l-2.98-2.2-1.44 1.39c-.16.16-.29.29-.6.29l.21-3.03 5.52-4.99c.24-.21-.05-.33-.37-.12l-6.82 4.3-2.94-.92c-.64-.2-.65-.64.14-.95z"/></svg><span data-t="nav_tg">Замовити</span>
@@ -503,18 +514,15 @@ let currentLang = 'uk';
 function setLang(lang) {
   if (!translations[lang]) return;
   currentLang = lang;
-  try { localStorage.setItem('wb_lang', lang); } catch (e) {}
   document.documentElement.lang = lang === 'en' ? 'en' : 'uk';
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('onclick') === "setLang('" + lang + "')"));
   const t = translations[lang];
   document.querySelectorAll('[data-t]').forEach(el => { const k = el.getAttribute('data-t'); if (t[k]) el.textContent = t[k]; });
   document.querySelectorAll('[data-t-html]').forEach(el => { const k = el.getAttribute('data-t-html'); if (t[k]) el.innerHTML = t[k]; });
   document.querySelectorAll('[data-t-aria]').forEach(el => { const k = el.getAttribute('data-t-aria'); if (t[k]) el.setAttribute('aria-label', t[k]); });
   if (t.page_title) document.title = t.page_title;
 }
-let startLang = 'uk';
-try { startLang = localStorage.getItem('wb_lang') || 'uk'; } catch (e) {}
-setLang(startLang);
+// мова сторінки задається адресою: /… — українська, /en/… — англійська
+setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
 
 </script>
 </body>

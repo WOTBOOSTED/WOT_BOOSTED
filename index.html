@@ -18,13 +18,16 @@
 <!-- PWA -->
 <meta name="theme-color" content="#e12d3c">
 <!-- Фавикон -->
-<link rel="icon" href="favicon.ico?v=4" sizes="48x48">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=4">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=4">
+<link rel="icon" href="/favicon.ico?v=4" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=4">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
 <!-- SEO -->
 <meta name="keywords" content="буст WoT, ЛБЗ, відмітки, Майстер, World of Tanks boosting, бої на шкоду, WN8">
 <!-- Canonical — замените на ваш реальный домен -->
 <link rel="canonical" href="https://wotboosted.com/">
+<link rel="alternate" hreflang="uk" href="https://wotboosted.com/">
+<link rel="alternate" hreflang="en" href="https://wotboosted.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://wotboosted.com/">
 <link rel="preload" href="/fonts/wbhead-cyrillic-v2.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,7 +148,7 @@
   }
   .lang-btn {
     display: inline-flex; align-items: center; gap: 10px;
-    background: transparent; border: 0;
+    background: transparent; border: 0; text-decoration: none;
     color: var(--text-muted);
     padding: 9px 18px; border-radius: 999px;
     font-family: 'Montserrat', sans-serif; font-weight: 800;
@@ -558,8 +561,8 @@
   .contact-banner-bg {
     position: absolute; inset: 0;
     /* фон: темний силует танка з червоним контуром і смугами */
-    background-image: url('cta-rim-v1.jpg');
-    background-image: image-set(url('cta-rim-v1.webp') type('image/webp'), url('cta-rim-v1.jpg') type('image/jpeg'));
+    background-image: url('/cta-rim-v1.jpg');
+    background-image: image-set(url('/cta-rim-v1.webp') type('image/webp'), url('/cta-rim-v1.jpg') type('image/jpeg'));
     background-size: cover; background-position: center;
   }
   .contact-banner::after {
@@ -802,8 +805,8 @@
     .why-img-wrap, .why-left .why-img-wrap { flex: none; height: 400px; min-height: 0; margin-top: 0; }
     .contact-banner { margin: 0 20px 60px; }
     .contact-banner-bg {
-      background-image: url('cta-rim-m-v1.jpg');
-      background-image: image-set(url('cta-rim-m-v1.webp') type('image/webp'), url('cta-rim-m-v1.jpg') type('image/jpeg'));
+      background-image: url('/cta-rim-m-v1.jpg');
+      background-image: image-set(url('/cta-rim-m-v1.webp') type('image/webp'), url('/cta-rim-m-v1.jpg') type('image/jpeg'));
       background-position: right bottom;
     }
     .contact-banner::after { background: linear-gradient(90deg, rgba(10,11,13,0.55) 0%, rgba(10,11,13,0) 60%); }
@@ -1062,7 +1065,7 @@ window.addEventListener('load', function () {
 
 <nav id="navbar">
   <a href="/" class="nav-logo" aria-label="WOT BOOSTED">
-    <img src="logo.png" alt="" class="nav-logo-img" width="160" height="36" loading="eager" decoding="async">
+    <img src="/logo.png" alt="" class="nav-logo-img" width="160" height="36" loading="eager" decoding="async">
     WOT <span>BOOSTED</span>
   </a>
   <div class="nav-center">
@@ -1074,8 +1077,8 @@ window.addEventListener('load', function () {
   </div>
   <div class="nav-right">
     <div class="lang-switcher">
-      <button class="lang-btn active" type="button" onclick="setLang('uk')" aria-label="Українська">УКР <svg class="lang-flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></svg></button>
-      <button class="lang-btn" type="button" onclick="setLang('en')" aria-label="English">ENG <svg class="lang-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukT"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#ukT)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></button>
+      <a class="lang-btn active" href="/" hreflang="uk" lang="uk" aria-label="Українська">УКР <svg class="lang-flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></svg></a>
+      <a class="lang-btn" href="/en/" hreflang="en" lang="en" aria-label="English">ENG <svg class="lang-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukT"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#ukT)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></a>
     </div>
     <a href="https://t.me/wot_boosted" target="_blank" class="nav-tg">
       <svg class="nav-tg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path fill="#d24d58" d="M5.43 11.87 16.9 7.45c.53-.19 1 .13.82.94l-1.95 9.2c-.15.65-.53.81-1.08.5l-2.98-2.2-1.44 1.39c-.16.16-.29.29-.6.29l.21-3.03 5.52-4.99c.24-.21-.05-.33-.37-.12l-6.82 4.3-2.94-.92c-.64-.2-.65-.64.14-.95z"/></svg><span data-t="nav_tg">Замовити</span>
@@ -1106,7 +1109,7 @@ window.addEventListener('load', function () {
       <div class="scan-sheen" aria-hidden="true"></div>
       <div class="service-floor" aria-hidden="true"></div>
       <div class="service-img-wrap">
-        <picture><source srcset="lbz1-v4.webp" type="image/webp"><img src="lbz1-v4.jpg" alt="ЛБЗ 1.0" data-img="lbz1-v4" data-alt-uk="ЛБЗ 1.0" data-alt-en="Personal Missions 1.0" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
+        <picture><source srcset="/lbz1-v4.webp" type="image/webp"><img src="/lbz1-v4.jpg" alt="ЛБЗ 1.0" data-img="/lbz1-v4" data-alt-uk="ЛБЗ 1.0" data-alt-en="Personal Missions 1.0" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s1_name">ЛБЗ 1.0</div>
@@ -1117,7 +1120,7 @@ window.addEventListener('load', function () {
       <div class="scan-sheen" aria-hidden="true"></div>
       <div class="service-floor" aria-hidden="true"></div>
       <div class="service-img-wrap">
-        <picture><source srcset="lbz2-hq.webp" type="image/webp"><img src="lbz2-hq.jpg" alt="ЛБЗ 2.0" data-img="lbz2-hq" data-alt-uk="ЛБЗ 2.0" data-alt-en="Personal Missions 2.0" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
+        <picture><source srcset="/lbz2-hq.webp" type="image/webp"><img src="/lbz2-hq.jpg" alt="ЛБЗ 2.0" data-img="/lbz2-hq" data-alt-uk="ЛБЗ 2.0" data-alt-en="Personal Missions 2.0" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s2_name">ЛБЗ 2.0</div>
@@ -1128,7 +1131,7 @@ window.addEventListener('load', function () {
       <div class="scan-sheen" aria-hidden="true"></div>
       <div class="service-floor" aria-hidden="true"></div>
       <div class="service-img-wrap">
-        <picture><source srcset="dmg-v4.webp" type="image/webp"><img src="dmg-v4.jpg" alt="Бої на шкоду" data-img="dmg-v4" data-alt-uk="Бої на шкоду" data-alt-en="Damage battles" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
+        <picture><source srcset="/dmg-v4.webp" type="image/webp"><img src="/dmg-v4.jpg" alt="Бої на шкоду" data-img="/dmg-v4" data-alt-uk="Бої на шкоду" data-alt-en="Damage battles" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s4_name">Бої на шкоду</div>
@@ -1141,7 +1144,7 @@ window.addEventListener('load', function () {
       <div class="scan-sheen" aria-hidden="true"></div>
       <div class="service-floor" aria-hidden="true"></div>
       <div class="service-img-wrap">
-        <picture><source srcset="fossa4-v11.webp" type="image/webp"><img src="fossa4-v11.jpg" alt="ЛБЗ 4.0 на Fossa" data-img="fossa4-v11" data-alt-uk="ЛБЗ 4.0 на Fossa" data-alt-en="Personal Missions 4.0 for Fossa" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
+        <picture><source srcset="/fossa4-v11.webp" type="image/webp"><img src="/fossa4-v11.jpg" alt="ЛБЗ 4.0 на Fossa" data-img="/fossa4-v11" data-alt-uk="ЛБЗ 4.0 на Fossa" data-alt-en="Personal Missions 4.0 for Fossa" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s7_name">ЛБЗ 4.0</div>
@@ -1152,7 +1155,7 @@ window.addEventListener('load', function () {
       <div class="scan-sheen" aria-hidden="true"></div>
       <div class="service-floor" aria-hidden="true"></div>
       <div class="service-img-wrap">
-        <picture><source srcset="otm-v4.webp" type="image/webp"><img src="otm-v4.jpg" alt="Відмітки" data-img="otm-v4" data-alt-uk="Відмітки" data-alt-en="Marks of Excellence" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
+        <picture><source srcset="/otm-v4.webp" type="image/webp"><img src="/otm-v4.jpg" alt="Відмітки" data-img="/otm-v4" data-alt-uk="Відмітки" data-alt-en="Marks of Excellence" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
       </div>
       <div class="service-info">
         <div class="service-name" data-t="s5_name">Відмітки</div>
@@ -1170,7 +1173,7 @@ window.addEventListener('load', function () {
         </div>
       </div>
       <div class="why-img-wrap reveal">
-        <picture><source srcset="why-player.webp" type="image/webp"><img src="why-player.png" alt="" class="why-img" width="1040" height="1253" loading="lazy" decoding="async" fetchpriority="low"></picture>
+        <picture><source srcset="/why-player.webp" type="image/webp"><img src="/why-player.png" alt="" class="why-img" width="1040" height="1253" loading="lazy" decoding="async" fetchpriority="low"></picture>
       </div>
     </div>
     <div class="why-features">
@@ -1363,10 +1366,6 @@ const fallbackImageDataUrl = "data:image/svg+xml;charset=UTF-8," + fallbackImage
 
 function setLang(lang) {
   currentLang = lang;
-  try { localStorage.setItem('wb_lang', lang); } catch (e) {}
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  const btn = document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]');
-  if (btn) btn.classList.add('active');
   const t = translations[lang];
   document.querySelectorAll('[data-t]').forEach(el => {
     const key = el.getAttribute('data-t');
@@ -1439,16 +1438,16 @@ function applyImageFallbacks() {
 }
 
 const services = [
-  { img: 'lbz1-v4.jpg', img_en: 'lbz1-v4-en.jpg',
+  { img: '/lbz1-v4.jpg', img_en: '/lbz1-v4-en.jpg',
     uk: { name: 'ЛБЗ 1.0', desc: 'Кампанія «Перший сектор» включає 15 оперативних завдань з нагородою у вигляді унікальної техніки та обладнання. Виконаю всі завдання або вибіркові — на ваш вибір.' },
     en: { name: 'PM 1.0', desc: 'Personal Missions, "First Sector" campaign: 15 missions with rewards including unique vehicles and equipment. I complete all missions or only the ones you choose.' } },
-  { img: 'lbz2-hq.jpg', img_en: 'lbz2-hq-en.jpg',
+  { img: '/lbz2-hq.jpg', img_en: '/lbz2-hq-en.jpg',
     uk: { name: 'ЛБЗ 2.0', desc: 'Кампанія «Другий фронт» — складніший рівень з нагородою Об\'єкт 279 (р). Вимагає високого рівня гри.' },
     en: { name: 'PM 2.0', desc: 'Personal Missions, "Second Front" campaign — a harder level with Object 279 (e) as the reward. It requires a high level of play.' } },
-  { img: 'lbz34-v2.jpg', img_en: 'lbz34-v2-en.jpg',
+  { img: '/lbz34-v2.jpg', img_en: '/lbz34-v2-en.jpg',
     uk: { name: 'ЛБЗ на Black Rock та Fossa', desc: 'Виконую ЛБЗ 3.0 (Black Rock) і ЛБЗ 4.0 (Fossa). Операція Fossa — нові особисті бойові задачі з оновлення 2.4: три гілки «Авангард», «Засідка» і «Підтримка» по 21 задачі, нагорода — Fossa VM 68, німецький колісний середній танк X рівня. Виконаю всі гілки або вибірково — на ваш вибір.' },
     en: { name: 'PM for Black Rock & Fossa', desc: 'I complete Personal Missions 3.0 (Black Rock) and 4.0 (Fossa). Operation Fossa — new personal missions from update 2.4: three branches, Vanguard, Ambush and Support, with 21 missions each; the reward is the Fossa VM 68, a German tier X wheeled medium tank. I complete all branches or only the ones you choose.' } },
-  { img: 'dmg-v4.jpg', img_en: 'dmg-v4-en.jpg',
+  { img: '/dmg-v4.jpg', img_en: '/dmg-v4-en.jpg',
     uk: { name: 'Бої на шкоду', desc:
       'Висока шкода — це найбільш затребуваний показник статистики на даний момент. Тому такі замовлення робляться у взводі, коли взводні ведуть гру на ключовий аккаунт в бою.' +
       '<br><br><strong>Умови для виконання</strong>' +
@@ -1467,13 +1466,13 @@ const services = [
       '<li>The tank must be fully equipped.</li>' +
       '<li>You don’t play the ordered vehicle during the service.</li>' +
       '</ul>' } },
-  { img: 'otm-v4.jpg', img_en: 'otm-v4-en.jpg',
+  { img: '/otm-v4.jpg', img_en: '/otm-v4-en.jpg',
     uk: { name: 'Відмітки', desc: 'Відмітки на стволі — престижний показник майстерності. Вибий 1, 2 або 3 відмітки на будь-якій техніці. Швидко та ефективно.' },
     en: { name: 'Marks of Excellence', desc: 'Barrel marks are a prestigious mastery indicator. Get 1, 2 or 3 marks on any tank. Fast and efficient.' } },
-  { img: 'master.jpg', img_en: 'master-en.jpg',
+  { img: '/master.jpg', img_en: '/master-en.jpg',
     uk: { name: 'Майстер', desc: 'Знак класності «Майстер» — найвища нагорода за бій. Присуджується гравцям, які набрали найбільше досвіду за бій серед усіх на даній техніці.' },
     en: { name: 'Ace Tanker', desc: 'Ace Tanker mastery badge — the highest battle award. Awarded to players who earned the most XP in a battle among all players on that tank.' } },
-  { img: 'fossa4-v11.jpg', img_en: 'fossa4-v11-en.jpg',
+  { img: '/fossa4-v11.jpg', img_en: '/fossa4-v11-en.jpg',
     uk: { name: 'ЛБЗ 4.0 на Fossa', desc: 'Виконую ЛБЗ 4.0 — операцію Fossa з оновлення 2.4: три гілки «Авангард», «Засідка» і «Підтримка» по 21 задачі, нагорода — Fossa VM 68, німецький колісний середній танк X рівня. Виконаю всі гілки або вибірково — на ваш вибір.' },
     en: { name: 'PM 4.0 for Fossa', desc: 'I complete Personal Missions 4.0 — Operation Fossa from update 2.4: three branches, Vanguard, Ambush and Support, with 21 missions each; the reward is the Fossa VM 68, a German tier X wheeled medium tank. I complete all branches or only the ones you choose.' } }
 ];
@@ -1624,16 +1623,13 @@ if (enableHeavyEffects) {
 updateScrollProgress();
 applyImageFallbacks();
 
-// мова, обрана на іншій сторінці сайту
-try {
-  const savedLang = localStorage.getItem('wb_lang');
-  if (savedLang && savedLang !== currentLang && translations[savedLang]) setLang(savedLang);
-} catch (e) {}
+// мова сторінки задається адресою: / — українська, /en/ — англійська
+if (document.documentElement.lang === 'en') setLang('en');
 
 // PWA service worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
   });
 }
 </script>

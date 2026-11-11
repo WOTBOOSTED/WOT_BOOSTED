@@ -4,13 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Топ танків — WOT BOOSTED</title>
-<meta name="description" content="Топ танків World of Tanks від WOT BOOSTED.">
+<meta name="description" content="Особистий топ танків World of Tanks від WOT BOOSTED: найкращі машини 8, 9, 10 та 11 рівнів — по п'ять танків на кожному рівні, які варто качати й брати.">
 <link rel="canonical" href="https://wotboosted.com/top-tanks/">
+<link rel="alternate" hreflang="uk" href="https://wotboosted.com/top-tanks/">
+<link rel="alternate" hreflang="en" href="https://wotboosted.com/en/top-tanks/">
+<link rel="alternate" hreflang="x-default" href="https://wotboosted.com/top-tanks/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="WOT BOOSTED">
 <meta property="og:url" content="https://wotboosted.com/top-tanks/">
 <meta property="og:title" content="Топ танків — WOT BOOSTED">
-<meta property="og:description" content="Топ танків World of Tanks від WOT BOOSTED.">
+<meta property="og:description" content="Особистий топ танків World of Tanks від WOT BOOSTED: найкращі машини 8, 9, 10 та 11 рівнів — по п'ять танків на кожному рівні, які варто качати й брати.">
 <meta property="og:image" content="https://wotboosted.com/og-wotboosted-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -140,7 +143,7 @@
   }
   .lang-btn {
     display: inline-flex; align-items: center; gap: 10px;
-    background: transparent; border: 0;
+    background: transparent; border: 0; text-decoration: none;
     color: var(--text-muted);
     padding: 9px 18px; border-radius: 999px;
     font-family: 'Montserrat', sans-serif; font-weight: 800;
@@ -492,6 +495,14 @@ window.addEventListener('load', function () {
   if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 });
 </script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z32GCKDDHZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z32GCKDDHZ');
+</script>
 </head>
 <body>
 
@@ -509,8 +520,8 @@ window.addEventListener('load', function () {
   </div>
   <div class="nav-right">
     <div class="lang-switcher">
-      <button class="lang-btn active" type="button" onclick="setLang('uk')" aria-label="Українська">УКР <svg class="lang-flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></svg></button>
-      <button class="lang-btn" type="button" onclick="setLang('en')" aria-label="English">ENG <svg class="lang-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukT"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#ukT)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></button>
+      <a class="lang-btn active" href="/top-tanks/" hreflang="uk" lang="uk" aria-label="Українська">УКР <svg class="lang-flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></svg></a>
+      <a class="lang-btn" href="/en/top-tanks/" hreflang="en" lang="en" aria-label="English">ENG <svg class="lang-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukT"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#ukT)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></a>
     </div>
     <a href="https://t.me/wot_boosted" target="_blank" class="nav-tg">
       <svg class="nav-tg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path fill="#d24d58" d="M5.43 11.87 16.9 7.45c.53-.19 1 .13.82.94l-1.95 9.2c-.15.65-.53.81-1.08.5l-2.98-2.2-1.44 1.39c-.16.16-.29.29-.6.29l.21-3.03 5.52-4.99c.24-.21-.05-.33-.37-.12l-6.82 4.3-2.94-.92c-.64-.2-.65-.64.14-.95z"/></svg><span data-t="nav_tg">Замовити</span>
@@ -550,11 +561,11 @@ window.addEventListener('load', function () {
         <span class="tier-lvl"><b>11</b> <span data-t="tier_lvl">рівень</span></span>
       </header>
       <ol class="tier-list">
-          <li class="tier-row"><span class="tier-rank r1">1</span><img class="tier-icon" src="img/pz-kpfw-neu.png" alt="" width="140" height="46" loading="lazy" decoding="async"><span class="tier-tank">Pz.Kpfw. Neu</span></li>
-          <li class="tier-row"><span class="tier-rank r2">2</span><img class="tier-icon" src="img/fauteur.png" alt="" width="139" height="33" loading="lazy" decoding="async"><span class="tier-tank">Fauteur</span></li>
-          <li class="tier-row"><span class="tier-rank r3">3</span><img class="tier-icon" src="img/amx-67-imbattable.png" alt="" width="134" height="33" loading="lazy" decoding="async"><span class="tier-tank">AMX 67 Imbattable</span></li>
-          <li class="tier-row"><span class="tier-rank r4">4</span><img class="tier-icon" src="img/stk-2.png" alt="" width="151" height="42" loading="lazy" decoding="async"><span class="tier-tank">STK-2</span></li>
-          <li class="tier-row"><span class="tier-rank r5">5</span><img class="tier-icon" src="img/vz-63p.png" alt="" width="130" height="37" loading="lazy" decoding="async"><span class="tier-tank">Vz. 63P</span></li>
+          <li class="tier-row"><span class="tier-rank r1">1</span><img class="tier-icon" src="/top-tanks/img/pz-kpfw-neu.png" alt="" width="140" height="46" loading="lazy" decoding="async"><span class="tier-tank">Pz.Kpfw. Neu</span></li>
+          <li class="tier-row"><span class="tier-rank r2">2</span><img class="tier-icon" src="/top-tanks/img/fauteur.png" alt="" width="139" height="33" loading="lazy" decoding="async"><span class="tier-tank">Fauteur</span></li>
+          <li class="tier-row"><span class="tier-rank r3">3</span><img class="tier-icon" src="/top-tanks/img/amx-67-imbattable.png" alt="" width="134" height="33" loading="lazy" decoding="async"><span class="tier-tank">AMX 67 Imbattable</span></li>
+          <li class="tier-row"><span class="tier-rank r4">4</span><img class="tier-icon" src="/top-tanks/img/stk-2.png" alt="" width="151" height="42" loading="lazy" decoding="async"><span class="tier-tank">STK-2</span></li>
+          <li class="tier-row"><span class="tier-rank r5">5</span><img class="tier-icon" src="/top-tanks/img/vz-63p.png" alt="" width="130" height="37" loading="lazy" decoding="async"><span class="tier-tank">Vz. 63P</span></li>
       </ol>
     </article>
     <article class="tier-card">
@@ -563,11 +574,11 @@ window.addEventListener('load', function () {
         <span class="tier-lvl"><b>10</b> <span data-t="tier_lvl">рівень</span></span>
       </header>
       <ol class="tier-list">
-          <li class="tier-row"><span class="tier-rank r1">1</span><img class="tier-icon" src="img/vz-60s-dravec.png" alt="" width="118" height="35" loading="lazy" decoding="async"><span class="tier-tank">Vz. 60S Dravec</span></li>
-          <li class="tier-row"><span class="tier-rank r2">2</span><img class="tier-icon" src="img/amx-50-b.png" alt="" width="132" height="36" loading="lazy" decoding="async"><span class="tier-tank">AMX 50 B</span></li>
-          <li class="tier-row"><span class="tier-rank r3">3</span><img class="tier-icon" src="img/vk-72-01-k.png" alt="" width="86" height="36" loading="lazy" decoding="async"><span class="tier-tank">VK 72.01 (K)</span></li>
-          <li class="tier-row"><span class="tier-rank r4">4</span><img class="tier-icon" src="img/type-5-heavy.png" alt="" width="128" height="42" loading="lazy" decoding="async"><span class="tier-tank">Type 5 Heavy</span></li>
-          <li class="tier-row"><span class="tier-rank r5">5</span><img class="tier-icon" src="img/t95-fv4201-chieftain.png" alt="" width="122" height="36" loading="lazy" decoding="async"><span class="tier-tank">T95/FV4201 Chieftain</span></li>
+          <li class="tier-row"><span class="tier-rank r1">1</span><img class="tier-icon" src="/top-tanks/img/vz-60s-dravec.png" alt="" width="118" height="35" loading="lazy" decoding="async"><span class="tier-tank">Vz. 60S Dravec</span></li>
+          <li class="tier-row"><span class="tier-rank r2">2</span><img class="tier-icon" src="/top-tanks/img/amx-50-b.png" alt="" width="132" height="36" loading="lazy" decoding="async"><span class="tier-tank">AMX 50 B</span></li>
+          <li class="tier-row"><span class="tier-rank r3">3</span><img class="tier-icon" src="/top-tanks/img/vk-72-01-k.png" alt="" width="86" height="36" loading="lazy" decoding="async"><span class="tier-tank">VK 72.01 (K)</span></li>
+          <li class="tier-row"><span class="tier-rank r4">4</span><img class="tier-icon" src="/top-tanks/img/type-5-heavy.png" alt="" width="128" height="42" loading="lazy" decoding="async"><span class="tier-tank">Type 5 Heavy</span></li>
+          <li class="tier-row"><span class="tier-rank r5">5</span><img class="tier-icon" src="/top-tanks/img/t95-fv4201-chieftain.png" alt="" width="122" height="36" loading="lazy" decoding="async"><span class="tier-tank">T95/FV4201 Chieftain</span></li>
       </ol>
     </article>
     <article class="tier-card">
@@ -576,11 +587,11 @@ window.addEventListener('load', function () {
         <span class="tier-lvl"><b>9</b> <span data-t="tier_lvl">рівень</span></span>
       </header>
       <ol class="tier-list">
-          <li class="tier-row"><span class="tier-rank r1">1</span><img class="tier-icon" src="img/serpente.png" alt="" width="129" height="43" loading="lazy" decoding="async"><span class="tier-tank">Serpente</span></li>
-          <li class="tier-row"><span class="tier-rank r2">2</span><img class="tier-icon" src="img/terrifiant.png" alt="" width="144" height="38" loading="lazy" decoding="async"><span class="tier-tank">Terrifiant</span></li>
-          <li class="tier-row"><span class="tier-rank r3">3</span><img class="tier-icon" src="img/predatore.png" alt="" width="129" height="44" loading="lazy" decoding="async"><span class="tier-tank">Predatore</span></li>
-          <li class="tier-row"><span class="tier-rank r4">4</span><img class="tier-icon" src="img/spht.png" alt="" width="124" height="44" loading="lazy" decoding="async"><span class="tier-tank">SPHT</span></li>
-          <li class="tier-row"><span class="tier-rank r5">5</span><img class="tier-icon" src="img/buryan.png" alt="" width="98" height="29" loading="lazy" decoding="async"><span class="tier-tank" data-t="tank_buryan">Бур&#x27;ян</span></li>
+          <li class="tier-row"><span class="tier-rank r1">1</span><img class="tier-icon" src="/top-tanks/img/serpente.png" alt="" width="129" height="43" loading="lazy" decoding="async"><span class="tier-tank">Serpente</span></li>
+          <li class="tier-row"><span class="tier-rank r2">2</span><img class="tier-icon" src="/top-tanks/img/terrifiant.png" alt="" width="144" height="38" loading="lazy" decoding="async"><span class="tier-tank">Terrifiant</span></li>
+          <li class="tier-row"><span class="tier-rank r3">3</span><img class="tier-icon" src="/top-tanks/img/predatore.png" alt="" width="129" height="44" loading="lazy" decoding="async"><span class="tier-tank">Predatore</span></li>
+          <li class="tier-row"><span class="tier-rank r4">4</span><img class="tier-icon" src="/top-tanks/img/spht.png" alt="" width="124" height="44" loading="lazy" decoding="async"><span class="tier-tank">SPHT</span></li>
+          <li class="tier-row"><span class="tier-rank r5">5</span><img class="tier-icon" src="/top-tanks/img/buryan.png" alt="" width="98" height="29" loading="lazy" decoding="async"><span class="tier-tank" data-t="tank_buryan">Бур&#x27;ян</span></li>
       </ol>
     </article>
     <article class="tier-card">
@@ -589,11 +600,11 @@ window.addEventListener('load', function () {
         <span class="tier-lvl"><b>8</b> <span data-t="tier_lvl">рівень</span></span>
       </header>
       <ol class="tier-list">
-          <li class="tier-row"><span class="tier-rank r1">1</span><img class="tier-icon" src="img/e-65-zwilling.png" alt="" width="135" height="42" loading="lazy" decoding="async"><span class="tier-tank">E 65 Zwilling</span></li>
-          <li class="tier-row"><span class="tier-rank r2">2</span><img class="tier-icon" src="img/pz-kpfw-55.png" alt="" width="139" height="41" loading="lazy" decoding="async"><span class="tier-tank">Pz.Kpfw. 55</span></li>
-          <li class="tier-row"><span class="tier-rank r3">3</span><img class="tier-icon" src="img/bz-176.png" alt="" width="102" height="41" loading="lazy" decoding="async"><span class="tier-tank">BZ-176</span></li>
-          <li class="tier-row"><span class="tier-rank r4">4</span><img class="tier-icon" src="img/prototipo-6.png" alt="" width="142" height="32" loading="lazy" decoding="async"><span class="tier-tank">Prototipo 6</span></li>
-          <li class="tier-row"><span class="tier-rank r5">5</span><img class="tier-icon" src="img/bat-chatillon-bourrasque.png" alt="" width="88" height="32" loading="lazy" decoding="async"><span class="tier-tank">Bat.-Châtillon Bourrasque</span></li>
+          <li class="tier-row"><span class="tier-rank r1">1</span><img class="tier-icon" src="/top-tanks/img/e-65-zwilling.png" alt="" width="135" height="42" loading="lazy" decoding="async"><span class="tier-tank">E 65 Zwilling</span></li>
+          <li class="tier-row"><span class="tier-rank r2">2</span><img class="tier-icon" src="/top-tanks/img/pz-kpfw-55.png" alt="" width="139" height="41" loading="lazy" decoding="async"><span class="tier-tank">Pz.Kpfw. 55</span></li>
+          <li class="tier-row"><span class="tier-rank r3">3</span><img class="tier-icon" src="/top-tanks/img/bz-176.png" alt="" width="102" height="41" loading="lazy" decoding="async"><span class="tier-tank">BZ-176</span></li>
+          <li class="tier-row"><span class="tier-rank r4">4</span><img class="tier-icon" src="/top-tanks/img/prototipo-6.png" alt="" width="142" height="32" loading="lazy" decoding="async"><span class="tier-tank">Prototipo 6</span></li>
+          <li class="tier-row"><span class="tier-rank r5">5</span><img class="tier-icon" src="/top-tanks/img/bat-chatillon-bourrasque.png" alt="" width="88" height="32" loading="lazy" decoding="async"><span class="tier-tank">Bat.-Châtillon Bourrasque</span></li>
       </ol>
     </article>
   </div>
@@ -644,18 +655,15 @@ let currentLang = 'uk';
 function setLang(lang) {
   if (!translations[lang]) return;
   currentLang = lang;
-  try { localStorage.setItem('wb_lang', lang); } catch (e) {}
   document.documentElement.lang = lang === 'en' ? 'en' : 'uk';
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('onclick') === "setLang('" + lang + "')"));
   const t = translations[lang];
   document.querySelectorAll('[data-t]').forEach(el => { const k = el.getAttribute('data-t'); if (t[k]) el.textContent = t[k]; });
   document.querySelectorAll('[data-t-html]').forEach(el => { const k = el.getAttribute('data-t-html'); if (t[k]) el.innerHTML = t[k]; });
   document.querySelectorAll('[data-t-aria]').forEach(el => { const k = el.getAttribute('data-t-aria'); if (t[k]) el.setAttribute('aria-label', t[k]); });
   if (t.page_title) document.title = t.page_title;
 }
-let startLang = 'uk';
-try { startLang = localStorage.getItem('wb_lang') || 'uk'; } catch (e) {}
-setLang(startLang);
+// мова сторінки задається адресою: /… — українська, /en/… — англійська
+setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
 
 // «Особистий топ» розтягуємо рівно на ширину «від WOT_BOOSTED» (без країв зліва і справа)
 function fitAuthor() {
