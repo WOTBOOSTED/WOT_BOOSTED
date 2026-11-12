@@ -13,7 +13,7 @@ META={
  'top-tanks':('Top Tanks — WOT BOOSTED','Personal World of Tanks top list by WOT BOOSTED: the best vehicles of tiers 8, 9, 10 and 11 — five tanks per tier worth grinding and getting.',None,None),
  'streams':('Streams — WOT BOOSTED','WOT BOOSTED streams and broadcast recordings for World of Tanks: tank reviews, order runs and live battles. Watch on the @wot_boosted YouTube channel.',None,None),
  'group':('Group — WOT BOOSTED','WOT BOOSTED Telegram group: World of Tanks boosting news, updates and fresh posts. Join and read the feed right on the site.',None,None),
- 'settings':('Settings — WOT BOOSTED','My World of Tanks settings by WOT BOOSTED: graphics, controls, reticle and interface. The page is in progress, the settings are coming soon.',None,None),
+ 'settings':('Settings — WOT BOOSTED','My World of Tanks settings by WOT BOOSTED: game, graphics, sound, reticle, markers and battle notifications — screenshots of the in-game settings window.',None,None),
  'modpack':('Modpack — WOT BOOSTED','WOT BOOSTED modpack for World of Tanks — a personal mod build by the booster. The page is in progress, the modpack is coming soon.',None,None),
 }
 HTML_KEYS={'services_title':'MY <span>SERVICES</span>','why_title':'WHY <span>ME</span>','cta_title':'READY TO <span>ORDER?</span>','how_title':'HOW IT <span>WORKS</span>'}

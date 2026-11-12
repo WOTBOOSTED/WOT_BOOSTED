@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Settings — WOT BOOSTED</title>
-<meta name="description" content="My World of Tanks settings by WOT BOOSTED: graphics, controls, reticle and interface. The page is in progress, the settings are coming soon.">
+<meta name="description" content="My World of Tanks settings by WOT BOOSTED: game, graphics, sound, reticle, markers and battle notifications — screenshots of the in-game settings window.">
 <link rel="canonical" href="https://wotboosted.com/en/settings/">
 <link rel="alternate" hreflang="uk" href="https://wotboosted.com/settings/">
 <link rel="alternate" hreflang="en" href="https://wotboosted.com/en/settings/">
@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="WOT BOOSTED">
 <meta property="og:url" content="https://wotboosted.com/en/settings/">
 <meta property="og:title" content="Settings — WOT BOOSTED">
-<meta property="og:description" content="My World of Tanks settings by WOT BOOSTED: graphics, controls, reticle and interface. The page is in progress, the settings are coming soon.">
+<meta property="og:description" content="My World of Tanks settings by WOT BOOSTED: game, graphics, sound, reticle, markers and battle notifications — screenshots of the in-game settings window.">
 <meta property="og:image" content="https://wotboosted.com/og-wotboosted-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -428,6 +428,18 @@
   /* довге слово «Налаштування» на телефоні — трохи менше, щоб вмістилося поруч зі значками */
   @media (max-width: 460px) { .page-title-row .section-title { font-size: 6.2vw; } }
   @media (max-width: 700px) { .nav-tg { padding: 7px 13px; } .nav-tg span { display: none; } }
+  /* вікно налаштувань гри 1:1 (806×608): вкладки клікаються, довгі вкладки гортаються */
+  .gs-wrap { margin-top: 26px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .gs { position: relative; margin: 0 auto; width: 100%; max-width: 806px; min-width: 600px; aspect-ratio: 806 / 608; background: #0c0d0e; box-shadow: 0 18px 50px rgba(0,0,0,.55); }
+  .gs-frame { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .gs-pane { position: absolute; overflow-y: auto; overflow-x: hidden; background: #0c0d0e; scrollbar-width: thin; scrollbar-color: #6b6a5e #17181a; overscroll-behavior: contain; }
+  .gs-pane::-webkit-scrollbar { width: 12px; } .gs-pane::-webkit-scrollbar-track { background: #17181a; }
+  .gs-pane::-webkit-scrollbar-thumb { background: #6b6a5e; border: 2px solid #17181a; }
+  .gs-pane img { display: block; width: 97.215%; height: auto; }
+  .gs-pane[hidden] { display: none; }
+  .gs-hot { position: absolute; background: transparent; border: 0; padding: 0; cursor: pointer; }
+  .gs-hot:hover { background: rgba(255,255,255,.06); }
+  .gs-hot[hidden] { display: none; }
 </style>
 <script>
 /* після оновлення сторінки завжди починаємо згори (телефон не «з'їдає» заголовок) */
@@ -486,7 +498,34 @@ window.addEventListener('load', function () {
           <a href="https://tiktok.com/@wot_boosted" target="_blank" rel="noopener" class="nav-soc nav-soc-tt" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#000"/><g transform="translate(4.2 4.2) scale(.65)"><path fill="#fff" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></g></svg></a>
         </div>
   </div>
-  <p class="section-sub" data-t="mp_soon">This page is under construction — my settings are coming soon.</p>
+  <p class="section-sub" data-t="mp_soon">My game client settings. Click the tabs like in the game; long tabs scroll inside the window.</p>
+  <div class="gs-wrap">
+    <div class="gs" id="gs">
+      <img class="gs-frame" id="gs-frame" src="/settings/img/gra.webp" width="806" height="608" alt="Налаштування World of Tanks — вкладка «Гра»" decoding="async">
+      <div class="gs-pane" id="gs-pane" tabindex="0"><img id="gs-strip" src="/settings/img/gra-strip.webp" width="768" height="1505" alt="" decoding="async"></div>
+      <button type="button" class="gs-hot" data-main="gra" aria-label="Гра" style="left:0.620%;top:4.770%;width:7.072%;height:4.112%"></button>
+      <button type="button" class="gs-hot" data-main="graf" aria-label="Графіка" style="left:7.692%;top:4.770%;width:10.670%;height:4.112%"></button>
+      <button type="button" class="gs-hot" data-main="zvuk" aria-label="Звук" style="left:18.362%;top:4.770%;width:8.313%;height:4.112%"></button>
+      <button type="button" class="gs-hot" data-main="pr" aria-label="Приціл" style="left:39.454%;top:4.770%;width:9.801%;height:4.112%"></button>
+      <button type="button" class="gs-hot" data-main="mk" aria-label="Маркер" style="left:49.256%;top:4.770%;width:10.546%;height:4.112%"></button>
+      <button type="button" class="gs-hot" data-main="inf" aria-label="Інформування в бою" style="left:59.801%;top:4.770%;width:19.603%;height:4.112%"></button>
+      <button type="button" class="gs-hot" data-for="pr" data-sub="ark" aria-label="Аркадний" style="left:0.620%;top:8.882%;width:11.290%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="pr" data-sub="sn" aria-label="Снайперський" style="left:11.911%;top:8.882%;width:14.392%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="pr" data-sub="art" aria-label="Артилерійський" style="left:26.303%;top:8.882%;width:15.633%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="pr" data-sub="obl" aria-label="Облямівка" style="left:41.935%;top:8.882%;width:11.663%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="pr" data-sub="pid" aria-label="Підсвітка броні" style="left:53.598%;top:8.882%;width:15.261%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="mk" data-sub="sup" aria-label="Супротивник" style="left:0.620%;top:8.882%;width:13.275%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="mk" data-sub="soyuz" aria-label="Союзники" style="left:13.896%;top:8.882%;width:11.911%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="mk" data-sub="zn" aria-label="Знищені" style="left:25.806%;top:8.882%;width:10.546%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="inf" data-sub="ind" aria-label="Індикатор обстрілу" style="left:0.620%;top:8.882%;width:16.998%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="inf" data-sub="podii" aria-label="Події у бою" style="left:17.618%;top:8.882%;width:12.407%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="inf" data-sub="ist" aria-label="Історія подій" style="left:30.025%;top:8.882%;width:13.400%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="inf" data-sub="mezha" aria-label="Межа мапи" style="left:43.424%;top:8.882%;width:13.027%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="inf" data-sub="zvit" aria-label="Бойовий звіт й ОБЗ" style="left:56.452%;top:8.882%;width:17.742%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="graf" data-sub="ekran" aria-label="Екран" style="left:33.747%;top:24.836%;width:16.377%;height:4.441%" hidden></button>
+      <button type="button" class="gs-hot" data-for="graf" data-sub="dokl" aria-label="Докладні" style="left:50.124%;top:24.836%;width:16.377%;height:4.441%" hidden></button>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -520,13 +559,13 @@ const translations = {
   uk: { page_title: 'Налаштування — WOT BOOSTED', nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
         nav_group: 'Група', nav_settings: 'Налаштування', nav_modpack: 'Модпак',
         mp_label: 'World of Tanks', mp_title: 'НАЛАШТУ<span>ВАННЯ</span>',
-        mp_soon: "Сторінка в розробці — скоро тут з'являться мої налаштування.",
+        mp_soon: 'Мої налаштування ігрового клієнта. Натискайте на вкладки, як у грі; довгі вкладки гортаються всередині вікна.',
         footer_tagline: 'Професійний буст WoT', footer_follow: 'Слідкуйте за мною',
         footer_copy: 'WOT\u00a0BOOSTED. Всі\u00a0права\u00a0захищені.' },
   en: { page_title: 'Settings — WOT BOOSTED', nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
         nav_group: 'Group', nav_settings: 'Settings', nav_modpack: 'Modpack',
         mp_label: 'World of Tanks', mp_title: 'SET<span>TINGS</span>',
-        mp_soon: 'This page is under construction — my settings are coming soon.',
+        mp_soon: 'My game client settings. Click the tabs like in the game; long tabs scroll inside the window.',
         footer_tagline: 'Professional WoT boosting', footer_follow: 'Follow me',
         footer_copy: 'WOT\u00a0BOOSTED. All\u00a0rights\u00a0reserved.' }
 };
@@ -544,6 +583,51 @@ function setLang(lang) {
 // мова сторінки задається адресою: /… — українська, /en/… — англійська
 setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
 
+</script>
+<script>
+// Вікно налаштувань: перемикання вкладок і підвкладок (знімки з гри), прокрутка довгих вкладок
+(function () {
+  var W = 806, H = 608, IMG = '/settings/img/';
+  var screens = {
+    gra: { '': { f: 'gra', pane: [8, 64, 790, 502], strip: 'gra-strip', sh: 1505 } },
+    graf: { ekran: { f: 'graf-ekran' }, dokl: { f: 'graf-dokl', pane: [8, 180, 790, 386], strip: 'graf-strip', sh: 752 } },
+    zvuk: { '': { f: 'zvuk' } },
+    pr: { ark: { f: 'pr-ark' }, sn: { f: 'pr-sn' }, art: { f: 'pr-art' }, obl: { f: 'pr-obl' }, pid: { f: 'pr-pid' } },
+    mk: { sup: { f: 'mk-sup' }, soyuz: { f: 'mk-soyuz' }, zn: { f: 'mk-zn' } },
+    inf: { ind: { f: 'inf-ind' }, podii: { f: 'inf-podii' }, ist: { f: 'inf-ist' }, mezha: { f: 'inf-mezha' }, zvit: { f: 'inf-zvit' } }
+  };
+  var names = { gra: 'Гра', graf: 'Графіка', zvuk: 'Звук', pr: 'Приціл', mk: 'Маркер', inf: 'Інформування в бою' };
+  var cur = { main: 'gra', sub: { gra: '', graf: 'ekran', zvuk: '', pr: 'ark', mk: 'sup', inf: 'ind' } };
+  var frame = document.getElementById('gs-frame'), pane = document.getElementById('gs-pane'), strip = document.getElementById('gs-strip');
+  var hots = document.querySelectorAll('.gs-hot');
+  function show() {
+    var sc = screens[cur.main][cur.sub[cur.main]];
+    frame.src = IMG + sc.f + '.webp';
+    frame.alt = 'Налаштування World of Tanks — вкладка «' + names[cur.main] + '»';
+    if (sc.pane) {
+      pane.style.left = sc.pane[0] / W * 100 + '%'; pane.style.top = sc.pane[1] / H * 100 + '%';
+      pane.style.width = sc.pane[2] / W * 100 + '%'; pane.style.height = sc.pane[3] / H * 100 + '%';
+      if (strip.getAttribute('src') !== IMG + sc.strip + '.webp') { strip.src = IMG + sc.strip + '.webp'; strip.height = sc.sh; }
+      pane.hidden = false; pane.scrollTop = 0;
+    } else { pane.hidden = true; }
+    hots.forEach(function (h) { if (h.dataset.for) h.hidden = h.dataset.for !== cur.main; });
+  }
+  hots.forEach(function (h) {
+    h.addEventListener('click', function () {
+      if (h.dataset.main) cur.main = h.dataset.main; else cur.sub[cur.main] = h.dataset.sub;
+      show();
+    });
+  });
+  show();
+  // решту знімків підвантажуємо у фоні, щоб вкладки перемикалися миттєво
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      Object.keys(screens).forEach(function (m) { Object.keys(screens[m]).forEach(function (k) {
+        var sc = screens[m][k]; new Image().src = IMG + sc.f + '.webp'; if (sc.strip) new Image().src = IMG + sc.strip + '.webp';
+      }); });
+    }, 600);
+  });
+})();
 </script>
 </body>
 </html>
