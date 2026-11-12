@@ -435,6 +435,11 @@
   @media (max-width: 1679px) { main.top-page { padding-top: 88px; } }
   @media (max-width: 900px) { main.top-page { padding-top: 90px; } main.top-page .gs-wrap { margin-top: 30px; } }
   @media (max-width: 600px) { main.top-page { padding-top: 89px; } main.top-page .gs-wrap { margin-top: 33px; } }
+  /* літери заголовка — рівно посередині між лінією шапки та вікном */
+  main.top-page .section-title { position: relative; top: 3px; }
+  @media (max-width: 1679px) { main.top-page .section-title { top: 4.5px; } }
+  @media (max-width: 900px) { main.top-page .section-title { top: 3px; } }
+  @media (max-width: 600px) { main.top-page .section-title { top: 2px; } }
   /* сетап: дві картки під вікном налаштувань */
   .setup { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1180px; margin: 44px auto 0; }
   .setup-card { background: linear-gradient(180deg, var(--dark3), var(--dark2)); border: 1px solid var(--border-subtle); border-top: 2px solid var(--gold); border-radius: 14px; padding: 22px 26px 18px; }
@@ -565,7 +570,7 @@ window.addEventListener('load', function () {
       <h2 data-t="st_pc">Computer</h2>
       <dl>
         <div class="setup-row"><dt data-t="st_cpu">CPU</dt><dd>AMD Ryzen 7 9850X3D</dd></div>
-        <div class="setup-row"><dt data-t="st_cool">Cooling</dt><dd data-t="st_cool_v">Deepcool LQ360 (360 mm AIO)</dd></div>
+        <div class="setup-row"><dt data-t="st_cool">Cooling</dt><dd data-t="st_cool_v">Deepcool LQ360</dd></div>
         <div class="setup-row"><dt data-t="st_gpu">Graphics card</dt><dd>ASUS ROG Astral GeForce RTX 5080</dd></div>
         <div class="setup-row"><dt data-t="st_ram">Memory</dt><dd data-t="st_ram_v">32 GB DDR5 6000 CL28 G.Skill Trident Z5 Neo</dd></div>
         <div class="setup-row"><dt data-t="st_mb">Motherboard</dt><dd>MSI MPG X870E EDGE TI WIFI</dd></div>
@@ -622,13 +627,13 @@ const translations = {
   uk: { page_title: 'Налаштування — WOT BOOSTED', nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
         nav_group: 'Група', nav_settings: 'Налаштування', nav_modpack: 'Модпак',
         mp_title: 'НАЛАШТУВАННЯ <span>ТА СЕТАП</span>',
-        st_pc: 'Комп’ютер', st_dev: 'Девайси', st_cpu: 'Процесор', st_cool: 'Охолодження', st_cool_v: 'Deepcool LQ360 (СРО 360 мм)', st_gpu: 'Відеокарта', st_ram: 'Оперативна пам’ять', st_ram_v: '32 ГБ DDR5 6000 CL28 G.Skill Trident Z5 Neo', st_mb: 'Материнська плата', st_ssd: 'SSD', st_ssd_v: 'Kingston FURY Renegade G5 2 ТБ', st_psu: 'Блок живлення', st_psu_v: 'Deepcool PX1000 (1000 Вт)', st_case: 'Корпус', st_m1: 'Монітор 1', st_m1_v: '26.5" ASUS ROG Strix XG27AQDMES (OLED, 240 Гц)', st_m2: 'Монітор 2', st_kb: 'Клавіатура', st_ms: 'Мишка', st_pad: 'Килимок', st_hp: 'Навушники', st_mix: 'Мікшер', st_desk: 'Стіл', st_chair: 'Крісло',
+        st_pc: 'Комп’ютер', st_dev: 'Девайси', st_cpu: 'Процесор', st_cool: 'Охолодження', st_cool_v: 'Deepcool LQ360', st_gpu: 'Відеокарта', st_ram: 'Оперативна пам’ять', st_ram_v: '32 ГБ DDR5 6000 CL28 G.Skill Trident Z5 Neo', st_mb: 'Материнська плата', st_ssd: 'SSD', st_ssd_v: 'Kingston FURY Renegade G5 2 ТБ', st_psu: 'Блок живлення', st_psu_v: 'Deepcool PX1000 (1000 Вт)', st_case: 'Корпус', st_m1: 'Монітор 1', st_m1_v: '26.5" ASUS ROG Strix XG27AQDMES (OLED, 240 Гц)', st_m2: 'Монітор 2', st_kb: 'Клавіатура', st_ms: 'Мишка', st_pad: 'Килимок', st_hp: 'Навушники', st_mix: 'Мікшер', st_desk: 'Стіл', st_chair: 'Крісло',
         footer_tagline: 'Професійний буст WoT', footer_follow: 'Слідкуйте за мною',
         footer_copy: 'WOT\u00a0BOOSTED. Всі\u00a0права\u00a0захищені.' },
   en: { page_title: 'Settings — WOT BOOSTED', nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
         nav_group: 'Group', nav_settings: 'Settings', nav_modpack: 'Modpack',
         mp_title: 'SETTINGS <span>&amp; SETUP</span>',
-        st_pc: 'Computer', st_dev: 'Gear', st_cpu: 'CPU', st_cool: 'Cooling', st_cool_v: 'Deepcool LQ360 (360 mm AIO)', st_gpu: 'Graphics card', st_ram: 'Memory', st_ram_v: '32 GB DDR5 6000 CL28 G.Skill Trident Z5 Neo', st_mb: 'Motherboard', st_ssd: 'SSD', st_ssd_v: 'Kingston FURY Renegade G5 2 TB', st_psu: 'Power supply', st_psu_v: 'Deepcool PX1000 (1000 W)', st_case: 'Case', st_m1: 'Monitor 1', st_m1_v: '26.5" ASUS ROG Strix XG27AQDMES (OLED, 240 Hz)', st_m2: 'Monitor 2', st_kb: 'Keyboard', st_ms: 'Mouse', st_pad: 'Mouse pad', st_hp: 'Headset', st_mix: 'Mixer', st_desk: 'Desk', st_chair: 'Chair',
+        st_pc: 'Computer', st_dev: 'Gear', st_cpu: 'CPU', st_cool: 'Cooling', st_cool_v: 'Deepcool LQ360', st_gpu: 'Graphics card', st_ram: 'Memory', st_ram_v: '32 GB DDR5 6000 CL28 G.Skill Trident Z5 Neo', st_mb: 'Motherboard', st_ssd: 'SSD', st_ssd_v: 'Kingston FURY Renegade G5 2 TB', st_psu: 'Power supply', st_psu_v: 'Deepcool PX1000 (1000 W)', st_case: 'Case', st_m1: 'Monitor 1', st_m1_v: '26.5" ASUS ROG Strix XG27AQDMES (OLED, 240 Hz)', st_m2: 'Monitor 2', st_kb: 'Keyboard', st_ms: 'Mouse', st_pad: 'Mouse pad', st_hp: 'Headset', st_mix: 'Mixer', st_desk: 'Desk', st_chair: 'Chair',
         footer_tagline: 'Professional WoT boosting', footer_follow: 'Follow me',
         footer_copy: 'WOT\u00a0BOOSTED. All\u00a0rights\u00a0reserved.' }
 };
