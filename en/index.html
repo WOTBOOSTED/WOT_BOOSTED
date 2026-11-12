@@ -1162,7 +1162,16 @@ window.addEventListener('load', function () {
       </div>
     </a>
 
-    <div class="service-slot" aria-hidden="true"></div>
+    <a href="#" class="service-card reveal" onclick="openModal(7); return false;">
+      <div class="scan-sheen" aria-hidden="true"></div>
+      <div class="service-floor" aria-hidden="true"></div>
+      <div class="service-img-wrap">
+        <picture><source srcset="/lbz3-br-v2-en.webp" type="image/webp"><img src="/lbz3-br-v2-en.jpg" alt="Personal Missions 3.0 for Black Rock" data-img="/lbz3-br-v2" data-alt-uk="ЛБЗ 3.0 на Black Rock" data-alt-en="Personal Missions 3.0 for Black Rock" class="service-img" loading="lazy" decoding="async" fetchpriority="low"></picture>
+      </div>
+      <div class="service-info">
+        <div class="service-name" data-t="s8_name">PM 3.0</div>
+      </div>
+    </a>
 
     <a href="#" class="service-card reveal" onclick="openModal(6); return false;">
       <div class="scan-sheen" aria-hidden="true"></div>
@@ -1316,7 +1325,7 @@ const translations = {
     s4_name: 'Бої на шкоду',
     s5_name: 'Відмітки',
     s6_name: 'Майстер',
-    s7_name: 'ЛБЗ 4.0',
+    s7_name: 'ЛБЗ 4.0', s8_name: 'ЛБЗ 3.0',
     how_label: 'Процес', how_title: 'ЯК ЦЕ ПРАЦЮЄ',
     step1_title: 'Обери послугу', step1_text: 'Вибери потрібну послугу зі списку і натисни кнопку замовити',
     step2_title: 'Напиши в Telegram', step2_text: 'Перейди в мій Telegram і опиши що потрібно',
@@ -1349,7 +1358,7 @@ const translations = {
     s4_name: 'Damage Battles',
     s5_name: 'Marks of Excellence',
     s6_name: 'Ace Tanker',
-    s7_name: 'PM 4.0',
+    s7_name: 'PM 4.0', s8_name: 'PM 3.0',
     how_label: 'Process', how_title: 'HOW IT WORKS',
     step1_title: 'Choose Service', step1_text: 'Pick the service you need and hit order',
     step2_title: 'Message me', step2_text: 'Go to my Telegram and describe what you need',
@@ -1498,7 +1507,10 @@ const services = [
     en: { name: 'Ace Tanker', desc: 'Ace Tanker mastery badge — the highest battle award. Awarded to players who earned the most XP in a battle among all players on that tank.' } },
   { img: '/fossa4-v11.jpg', img_en: '/fossa4-v11-en.jpg',
     uk: { name: 'ЛБЗ 4.0 на Fossa', desc: 'Виконую ЛБЗ 4.0 — операцію Fossa з оновлення 2.4: три гілки «Авангард», «Засідка» і «Підтримка» по 21 задачі, нагорода — Fossa VM 68, німецький колісний середній танк X рівня. Виконаю всі гілки або вибірково — на ваш вибір.' },
-    en: { name: 'PM 4.0 for Fossa', desc: 'I complete Personal Missions 4.0 — Operation Fossa from update 2.4: three branches, Vanguard, Ambush and Support, with 21 missions each; the reward is the Fossa VM 68, a German tier X wheeled medium tank. I complete all branches or only the ones you choose.' } }
+    en: { name: 'PM 4.0 for Fossa', desc: 'I complete Personal Missions 4.0 — Operation Fossa from update 2.4: three branches, Vanguard, Ambush and Support, with 21 missions each; the reward is the Fossa VM 68, a German tier X wheeled medium tank. I complete all branches or only the ones you choose.' } },
+  { img: '/lbz3-br-v2.jpg', img_en: '/lbz3-br-v2-en.jpg',
+    uk: { name: 'ЛБЗ 3.0 на Black Rock', desc: 'Виконую ЛБЗ 3.0 — кампанію «Сектор 3», операцію Black Rock: три серії «Авангард», «Засідка» і «Підтримка» по 15 задач, нагорода — Black Rock, важкий танк XI рівня. Виконаю всі серії або вибірково — на ваш вибір.' },
+    en: { name: 'PM 3.0 for Black Rock', desc: 'I complete Personal Missions 3.0 — the Sector 3 campaign, Operation Black Rock: three series, Vanguard, Ambush and Support, with 15 missions each; the reward is the Black Rock, a tier XI heavy tank. I complete all series or only the ones you choose.' } }
 ];
 
 let currentModal = -1;
