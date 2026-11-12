@@ -4,7 +4,7 @@
 Переклади беруться з об'єкта `translations.en` у самій сторінці (потрібен node)."""
 import re, json, subprocess, html, os, sys
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAGES={'':'index.html','top-tanks':'top-tanks/index.html','streams':'streams/index.html','group':'group/index.html','modpack':'modpack/index.html'}
+PAGES={'':'index.html','top-tanks':'top-tanks/index.html','streams':'streams/index.html','group':'group/index.html','settings':'settings/index.html','modpack':'modpack/index.html'}
 META={
  '':('WOT BOOSTED — WoT boosting: Personal Missions, Marks, Ace Tanker',
      'World of Tanks boosting by WOT BOOSTED: Personal Missions 1.0–4.0, Marks of Excellence, Ace Tanker, damage battles for WN8. Every order is streamed on YouTube for the customer.',
@@ -13,6 +13,7 @@ META={
  'top-tanks':('Top Tanks — WOT BOOSTED','Personal World of Tanks top list by WOT BOOSTED: the best vehicles of tiers 8, 9, 10 and 11 — five tanks per tier worth grinding and getting.',None,None),
  'streams':('Streams — WOT BOOSTED','WOT BOOSTED streams and broadcast recordings for World of Tanks: tank reviews, order runs and live battles. Watch on the @wot_boosted YouTube channel.',None,None),
  'group':('Group — WOT BOOSTED','WOT BOOSTED Telegram group: World of Tanks boosting news, updates and fresh posts. Join and read the feed right on the site.',None,None),
+ 'settings':('Settings — WOT BOOSTED','My World of Tanks settings by WOT BOOSTED: graphics, controls, reticle and interface. The page is in progress, the settings are coming soon.',None,None),
  'modpack':('Modpack — WOT BOOSTED','WOT BOOSTED modpack for World of Tanks — a personal mod build by the booster. The page is in progress, the modpack is coming soon.',None,None),
 }
 HTML_KEYS={'services_title':'MY <span>SERVICES</span>','why_title':'WHY <span>ME</span>','cta_title':'READY TO <span>ORDER?</span>','how_title':'HOW IT <span>WORKS</span>'}
@@ -38,7 +39,7 @@ def build(slug,f):
     def link(m):
         tag=m.group(0)
         if 'lang-btn' in tag: return tag
-        return re.sub(r'href="/((?:top-tanks|streams|group|modpack)/)?"',lambda k:'href="/en/'+(k.group(1) or '')+'"',tag)
+        return re.sub(r'href="/((?:top-tanks|streams|group|settings|modpack)/)?"',lambda k:'href="/en/'+(k.group(1) or '')+'"',tag)
     s=re.sub(r'<a\b[^>]*>',link,s)
     # active language button
     s=one(r'<a class="lang-btn active" href="([^"]*)" hreflang="uk"',r'<a class="lang-btn" href="\1" hreflang="uk"',s)

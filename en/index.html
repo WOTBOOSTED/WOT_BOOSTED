@@ -189,7 +189,7 @@
     font-family: 'Montserrat', sans-serif; font-weight: 800;
     font-size: 14px; letter-spacing: 0.6px; text-transform: uppercase;
     color: var(--text-muted); text-decoration: none;
-    padding: 10px 18px; border-radius: 999px;
+    padding: 10px 18px; border-radius: 999px; white-space: nowrap;
     transition: color .2s, background .2s;
   }
   .nav-link:hover { color: #fff; background: rgba(255,255,255,0.05); }
@@ -205,10 +205,10 @@
   .nav-soc svg { width: 26px; height: 26px; display: block; }
   .nav-soc-tt svg g { filter: drop-shadow(-1px -1px 0 #25f4ee) drop-shadow(1px 1px 0 #fe2c55); }
   /* ПК: меню по центру; на ноутбуках — по центру між логотипом і кнопками, щоб не налазило */
-  @media (min-width: 1600px) {
+  @media (min-width: 1680px) {
     .nav-center { position: static; transform: none; margin: 0 auto; }
   }
-  @media (min-width: 1880px) {
+  @media (min-width: 1900px) {
     .nav-center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; }
   }
   @media (max-width: 1100px) { .nav-socials { display: none; } }
@@ -225,8 +225,14 @@
     .nav-link { font-size: 16px; padding: 10px 20px; }
     .nav-link.active::after { left: 20px; right: 20px; }
   }
+  /* 6 пунктів у шапці: до 2120px — компактніше, щоб меню не налазило на кнопки праворуч */
+  @media (min-width: 1680px) and (max-width: 2119px) {
+    .nav-center { gap: 0; }
+    .nav-link { font-size: 15px; padding: 10px 10px; letter-spacing: 0.4px; }
+    .nav-link.active::after { left: 10px; right: 10px; }
+  }
   /* вузькі екрани: посилання окремою смужкою під шапкою */
-  @media (max-width: 1599px) {
+  @media (max-width: 1679px) {
     .nav-center {
       position: fixed; top: 64px; left: 0; right: 0; transform: none;
       justify-content: center; gap: 4px; height: 42px;
@@ -240,7 +246,7 @@
     body { padding-top: 48px; }
   }
   /* планшети: трохи компактніше, щоб 5 пунктів вміщалися */
-  @media (max-width: 760px) {
+  @media (max-width: 840px) {
     .nav-center { gap: 2px; height: 44px; }
     .nav-link { font-size: 14px; padding: 9px 12px; }
     .nav-link.active::after { left: 12px; right: 12px; }
@@ -251,15 +257,26 @@
     section { scroll-margin-top: 116px; }
     body { padding-top: 40px; }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 660px) {
     .nav-center { gap: 0; overflow-x: auto; scrollbar-width: none; }
     .nav-center::-webkit-scrollbar { display: none; }
-    .nav-link { font-size: 11px; padding: 8px 8px; letter-spacing: 0.2px; white-space: nowrap; }
-    .nav-link.active::after { left: 8px; right: 8px; }
+    .nav-link { font-size: 11px; padding: 8px 7px; letter-spacing: 0.2px; white-space: nowrap; }
+    .nav-link.active::after { left: 7px; right: 7px; }
   }
-  @media (max-width: 360px) {
-    .nav-link { font-size: 10px; padding: 8px 5px; letter-spacing: 0; }
-    .nav-link.active::after { left: 5px; right: 5px; }
+  @media (max-width: 460px) {
+    .nav-link { font-size: 10.5px; padding: 8px 4px; letter-spacing: 0; }
+    .nav-link.active::after { left: 4px; right: 4px; }
+  }
+  @media (max-width: 384px) {
+    .nav-link { font-size: 10px; padding: 8px 3px; }
+    .nav-link.active::after { left: 3px; right: 3px; }
+  }
+  @media (max-width: 355px) {
+    .nav-link { font-size: 9px; padding: 8px 3px; }
+  }
+  @media (max-width: 330px) {
+    .nav-link { padding: 8px 2px; }
+    .nav-link.active::after { left: 2px; right: 2px; }
   }
   /* фон без фото: графіт з м'яким червоним світінням, як у шапці */
   .btn-primary {
@@ -1073,6 +1090,7 @@ window.addEventListener('load', function () {
     <a href="/en/top-tanks/" class="nav-link" data-t="nav_top">Top tanks</a>
     <a href="/en/streams/" class="nav-link" data-t="nav_streams">Streams</a>
     <a href="/en/group/" class="nav-link" data-t="nav_group">Group</a>
+    <a href="/en/settings/" class="nav-link" data-t="nav_settings">Settings</a>
     <a href="/en/modpack/" class="nav-link" data-t="nav_modpack">Modpack</a>
   </div>
   <div class="nav-right">
@@ -1283,7 +1301,7 @@ window.addEventListener('load', function () {
 <script>
 const translations = {
   uk: {
-    nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми', nav_group: 'Група', nav_modpack: 'Модпак',
+    nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми', nav_group: 'Група', nav_settings: 'Налаштування', nav_modpack: 'Модпак',
     services_label: 'Послуги', services_title: 'НАШІ ПОСЛУГИ',
     services_desc: 'Натисніть на послугу щоб дізнатись деталі і зв\'язатись зі мною',
     s1_name: 'ЛБЗ 1.0',
@@ -1316,7 +1334,7 @@ const translations = {
     modal_btn: 'Замовити в Telegram'
   },
   en: {
-    nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams', nav_group: 'Group', nav_modpack: 'Modpack',
+    nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams', nav_group: 'Group', nav_settings: 'Settings', nav_modpack: 'Modpack',
     services_label: 'Services', services_title: 'OUR SERVICES',
     services_desc: 'Click on a service to learn details and contact me',
     s1_name: 'PM 1.0',
