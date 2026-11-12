@@ -470,10 +470,13 @@
   .gs-hot { position: absolute; background: transparent; border: 0; padding: 0; cursor: pointer; }
   .gs-hot[data-main] { border-radius: 4px 4px 0 0; }
   .gs-hot[data-sub] { border-radius: 3px; }
-  .gs-hot:hover { background: rgba(255,255,255,.06); }
+  /* червоне підсвічування вкладок — видно, що їх можна натискати */
+  .gs-hot { background: rgba(205,30,44,.38); transition: background .15s; }
+  .gs-hot.on { background: rgba(232,48,62,.55); }
+  .gs-hot:hover { background: rgba(240,60,74,.62); }
   /* без рамки навколо вкладки: з клавіатури фокус видно м’яким підсвічуванням, як при наведенні */
   .gs-hot:focus, .gs-hot:focus-visible { outline: none; }
-  .gs-hot:focus-visible { background: rgba(255,255,255,.1); }
+  .gs-hot:focus-visible { background: rgba(240,60,74,.7); }
   .gs-hot[hidden] { display: none; }
   /* телефон: вікно цілком на всю ширину екрана, від краю до краю */
   @media (max-width: 900px) { .gs { min-width: 0; } .gs-wrap { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); overflow-x: visible; } .gs-pane::-webkit-scrollbar { width: 5px; } }
@@ -540,7 +543,7 @@ window.addEventListener('load', function () {
       <div class="gs-pane gs-game" id="gs-pane" tabindex="0" hidden><img id="gs-strip" width="1085" height="2129" style="width:100%" alt="" decoding="async"></div>
       <div class="gs-fade gs-fade-t" id="gs-ft" hidden></div><div class="gs-fade gs-fade-b" id="gs-fb" hidden></div><div class="gs-thumb" id="gs-thumb" hidden></div>
       <button type="button" class="gs-hot" data-main="gra" aria-label="Гра" style="left:0.527%;top:4.651%;width:7.463%;height:4.186%"></button>
-      <button type="button" class="gs-hot" data-main="graf" aria-label="Графіка" style="left:8.077%;top:4.651%;width:10.711%;height:4.186%"></button>
+      <button type="button" class="gs-hot on" data-main="graf" aria-label="Графіка" style="left:8.077%;top:4.651%;width:10.711%;height:4.186%"></button>
       <button type="button" class="gs-hot" data-main="zvuk" aria-label="Звук" style="left:18.876%;top:4.651%;width:8.253%;height:4.186%"></button>
       <button type="button" class="gs-hot" data-main="ker" aria-label="Керування" style="left:27.217%;top:4.651%;width:12.423%;height:4.186%"></button>
       <button type="button" class="gs-hot" data-main="pr" aria-label="Приціл" style="left:39.728%;top:4.651%;width:9.745%;height:4.186%"></button>
@@ -561,7 +564,7 @@ window.addEventListener('load', function () {
       <button type="button" class="gs-hot" data-for="inf" data-sub="zvit" aria-label="Бойовий звіт й ОБЗ" style="left:56.558%;top:9.070%;width:17.682%;height:3.547%" hidden></button>
       <button type="button" class="gs-hot" data-for="zvuk" data-sub="zag" aria-label="Загальний рівень" style="left:32.836%;top:18.372%;width:17.076%;height:3.837%" hidden></button>
       <button type="button" class="gs-hot" data-for="zvuk" data-sub="golos" aria-label="Голосовий зв'язок" style="left:50.044%;top:18.372%;width:17.164%;height:3.837%" hidden></button>
-      <button type="button" class="gs-hot" data-for="graf" data-sub="ekran" aria-label="Екран" style="left:33.802%;top:24.767%;width:16.286%;height:3.837%"></button>
+      <button type="button" class="gs-hot on" data-for="graf" data-sub="ekran" aria-label="Екран" style="left:33.802%;top:24.767%;width:16.286%;height:3.837%"></button>
       <button type="button" class="gs-hot" data-for="graf" data-sub="dokl" aria-label="Докладні" style="left:50.088%;top:24.767%;width:16.286%;height:3.837%"></button>
     </div>
   </div>
@@ -698,7 +701,7 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
       thumb.style.left = G.x / W * 100 + '%'; thumb.style.width = G.w / W * 100 + '%'; thumb.style.height = G.h / H * 100 + '%';
       thumb.style.backgroundImage = 'url(' + IMG + G.th + EXT + ')'; place();
     }
-    hots.forEach(function (h) { if (h.dataset.for) h.hidden = h.dataset.for !== cur.main; });
+    hots.forEach(function (h) { if (h.dataset.for) h.hidden = h.dataset.for !== cur.main; h.classList.toggle('on', h.dataset.main ? h.dataset.main === cur.main : h.dataset.for === cur.main && h.dataset.sub === cur.sub[cur.main]); });
   }
   hots.forEach(function (h) {
     h.addEventListener('click', function () {
