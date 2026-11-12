@@ -536,9 +536,9 @@ window.addEventListener('load', function () {
   </div>
   <div class="gs-wrap">
     <div class="gs" id="gs">
-      <img class="gs-frame" id="gs-frame" src="/settings/img/gra-hd5.webp?v=3" width="1139" height="860" alt="Налаштування World of Tanks — вкладка «Гра»" decoding="async">
-      <div class="gs-pane gs-game" id="gs-pane" tabindex="0"><img id="gs-strip" src="/settings/img/gra-strip-hd3.webp?v=3" width="1085" height="2129" style="width:100%" alt="" decoding="async"></div>
-      <div class="gs-fade gs-fade-t" id="gs-ft"></div><div class="gs-fade gs-fade-b" id="gs-fb"></div><div class="gs-thumb" id="gs-thumb"></div>
+      <img class="gs-frame" id="gs-frame" src="/settings/img/graf-ekran-hd.webp?v=3" width="1139" height="860" alt="Налаштування World of Tanks — вкладка «Графіка»" decoding="async">
+      <div class="gs-pane gs-game" id="gs-pane" tabindex="0" hidden><img id="gs-strip" width="1085" height="2129" style="width:100%" alt="" decoding="async"></div>
+      <div class="gs-fade gs-fade-t" id="gs-ft" hidden></div><div class="gs-fade gs-fade-b" id="gs-fb" hidden></div><div class="gs-thumb" id="gs-thumb" hidden></div>
       <button type="button" class="gs-hot" data-main="gra" aria-label="Гра" style="left:0.527%;top:4.651%;width:7.463%;height:4.186%"></button>
       <button type="button" class="gs-hot" data-main="graf" aria-label="Графіка" style="left:8.077%;top:4.651%;width:10.711%;height:4.186%"></button>
       <button type="button" class="gs-hot" data-main="zvuk" aria-label="Звук" style="left:18.876%;top:4.651%;width:8.253%;height:4.186%"></button>
@@ -561,8 +561,8 @@ window.addEventListener('load', function () {
       <button type="button" class="gs-hot" data-for="inf" data-sub="zvit" aria-label="Бойовий звіт й ОБЗ" style="left:56.558%;top:9.070%;width:17.682%;height:3.547%" hidden></button>
       <button type="button" class="gs-hot" data-for="zvuk" data-sub="zag" aria-label="Загальний рівень" style="left:32.836%;top:18.372%;width:17.076%;height:3.837%" hidden></button>
       <button type="button" class="gs-hot" data-for="zvuk" data-sub="golos" aria-label="Голосовий зв'язок" style="left:50.044%;top:18.372%;width:17.164%;height:3.837%" hidden></button>
-      <button type="button" class="gs-hot" data-for="graf" data-sub="ekran" aria-label="Екран" style="left:33.802%;top:24.767%;width:16.286%;height:3.837%" hidden></button>
-      <button type="button" class="gs-hot" data-for="graf" data-sub="dokl" aria-label="Докладні" style="left:50.088%;top:24.767%;width:16.286%;height:3.837%" hidden></button>
+      <button type="button" class="gs-hot" data-for="graf" data-sub="ekran" aria-label="Екран" style="left:33.802%;top:24.767%;width:16.286%;height:3.837%"></button>
+      <button type="button" class="gs-hot" data-for="graf" data-sub="dokl" aria-label="Докладні" style="left:50.088%;top:24.767%;width:16.286%;height:3.837%"></button>
     </div>
   </div>
   <div class="setup">
@@ -665,7 +665,7 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
     inf: { ind: { f: 'inf-ind-hd' }, podii: { f: 'inf-podii-hd' }, ist: { f: 'inf-ist-hd' }, mezha: { f: 'inf-mezha-hd' }, zvit: { f: 'inf-zvit-hd' } }
   };
   var names = { gra: 'Гра', graf: 'Графіка', zvuk: 'Звук', ker: 'Керування', pr: 'Приціл', mk: 'Маркер', inf: 'Інформування в бою' };
-  var cur = { main: 'gra', sub: { gra: '', graf: 'ekran', zvuk: 'zag', ker: '', pr: 'ark', mk: 'sup', inf: 'ind' } };
+  var cur = { main: 'graf', sub: { gra: '', graf: 'ekran', zvuk: 'zag', ker: '', pr: 'ark', mk: 'sup', inf: 'ind' } };
   var frame = document.getElementById('gs-frame'), pane = document.getElementById('gs-pane'), strip = document.getElementById('gs-strip');
   var hots = document.querySelectorAll('.gs-hot');
   var ft = document.getElementById('gs-ft'), fb = document.getElementById('gs-fb'), thumb = document.getElementById('gs-thumb');
