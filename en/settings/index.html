@@ -447,6 +447,9 @@
   .gs-fade[hidden], .gs-thumb[hidden] { display: none; }
   .gs-hot { position: absolute; background: transparent; border: 0; padding: 0; cursor: pointer; }
   .gs-hot:hover { background: rgba(255,255,255,.06); }
+  /* без рамки навколо вкладки: з клавіатури фокус видно м’яким підсвічуванням, як при наведенні */
+  .gs-hot:focus, .gs-hot:focus-visible { outline: none; }
+  .gs-hot:focus-visible { background: rgba(255,255,255,.1); }
   .gs-hot[hidden] { display: none; }
   /* телефон: вікно цілком на всю ширину екрана, від краю до краю */
   @media (max-width: 900px) { .gs { min-width: 0; } .gs-wrap { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); overflow-x: visible; } .gs-pane::-webkit-scrollbar { width: 5px; } }
