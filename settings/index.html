@@ -437,6 +437,14 @@
   .gs-pane::-webkit-scrollbar-thumb { background: #6b6a5e; border: 2px solid #17181a; }
   .gs-pane img { display: block; width: 97.215%; height: auto; }
   .gs-pane[hidden] { display: none; }
+  /* вкладка зі знімками високої якості: смуга прокрутки, тінь зверху й згасання знизу — як у грі */
+  .gs-pane.gs-game { scrollbar-width: none; background: #151515; }
+  .gs-pane.gs-game::-webkit-scrollbar { display: none; }
+  .gs-fade { position: absolute; left: 0.9658%; width: 95.259%; pointer-events: none; }
+  .gs-fade-t { top: 10.465%; height: 1.977%; background: linear-gradient(to bottom, rgba(13,13,12,.93), rgba(13,13,12,.5) 45%, rgba(13,13,12,0)); }
+  .gs-fade-b { top: 90.814%; height: 2.209%; background: linear-gradient(to top, rgba(13,13,12,.98), rgba(13,13,12,.45) 50%, rgba(13,13,12,0)); }
+  .gs-thumb { position: absolute; left: 96.664%; width: 1.668%; height: 26.395%; top: 12.558%; background: url(/settings/img/gs-thumb.webp) 0 0 / 100% 100% no-repeat; cursor: pointer; touch-action: none; }
+  .gs-fade[hidden], .gs-thumb[hidden] { display: none; }
   .gs-hot { position: absolute; background: transparent; border: 0; padding: 0; cursor: pointer; }
   .gs-hot:hover { background: rgba(255,255,255,.06); }
   .gs-hot[hidden] { display: none; }
@@ -503,8 +511,9 @@ window.addEventListener('load', function () {
   <p class="section-sub" data-t="mp_soon">Мої налаштування ігрового клієнта. Натискайте на вкладки, як у грі; довгі вкладки гортаються всередині вікна.</p>
   <div class="gs-wrap">
     <div class="gs" id="gs">
-      <img class="gs-frame" id="gs-frame" src="/settings/img/gra-hd3.webp" width="1139" height="860" alt="Налаштування World of Tanks — вкладка «Гра»" decoding="async">
-      <div class="gs-pane" id="gs-pane" tabindex="0"><img id="gs-strip" src="/settings/img/gra-strip-hd3.webp" width="1085" height="2129" style="width:97.135%" alt="" decoding="async"></div>
+      <img class="gs-frame" id="gs-frame" src="/settings/img/gra-hd4.webp" width="1139" height="860" alt="Налаштування World of Tanks — вкладка «Гра»" decoding="async">
+      <div class="gs-pane gs-game" id="gs-pane" tabindex="0"><img id="gs-strip" src="/settings/img/gra-strip-hd3.webp" width="1085" height="2129" style="width:100%" alt="" decoding="async"></div>
+      <div class="gs-fade gs-fade-t" id="gs-ft"></div><div class="gs-fade gs-fade-b" id="gs-fb"></div><div class="gs-thumb" id="gs-thumb"></div>
       <button type="button" class="gs-hot" data-main="gra" aria-label="Гра" style="left:0.620%;top:4.770%;width:7.072%;height:4.112%"></button>
       <button type="button" class="gs-hot" data-main="graf" aria-label="Графіка" style="left:7.692%;top:4.770%;width:10.670%;height:4.112%"></button>
       <button type="button" class="gs-hot" data-main="zvuk" aria-label="Звук" style="left:18.362%;top:4.770%;width:8.313%;height:4.112%"></button>
@@ -594,7 +603,7 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
 (function () {
   var W = 806, H = 608, IMG = '/settings/img/';
   var screens = {
-    gra: { '': { f: 'gra-hd3', pane: [7.784, 63.688, 790.43, 502.42], strip: 'gra-strip-hd3', sw: 1085, sh: 2129, k: 97.135 } },
+    gra: { '': { f: 'gra-hd4', pane: [7.784, 63.688, 767.79, 502.42], strip: 'gra-strip-hd3', sw: 1085, sh: 2129, k: 100, game: 1 } },
     graf: { ekran: { f: 'graf-ekran-hd' }, dokl: { f: 'graf-dokl', pane: [8, 180, 790, 386], strip: 'graf-strip', sw: 768, sh: 752, k: 97.215 } },
     zvuk: { zag: { f: 'zvuk-hd' }, golos: { f: 'zvuk-golos-hd' } },
     ker: { '': { f: 'ker-hd' } },
@@ -606,6 +615,14 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
   var cur = { main: 'gra', sub: { gra: '', graf: 'ekran', zvuk: 'zag', ker: '', pr: 'ark', mk: 'sup', inf: 'ind' } };
   var frame = document.getElementById('gs-frame'), pane = document.getElementById('gs-pane'), strip = document.getElementById('gs-strip');
   var hots = document.querySelectorAll('.gs-hot');
+  var ft = document.getElementById('gs-ft'), fb = document.getElementById('gs-fb'), thumb = document.getElementById('gs-thumb');
+  // повзунок як у грі: хід від 108 до 552 px у вікні заввишки 860
+  function place() { var m = pane.scrollHeight - pane.clientHeight; thumb.style.top = (108 + (m > 0 ? pane.scrollTop / m : 0) * 444) / 860 * 100 + '%'; }
+  pane.addEventListener('scroll', place, { passive: true });
+  var drag = null;
+  thumb.addEventListener('pointerdown', function (e) { drag = { y: e.clientY, s: pane.scrollTop }; thumb.setPointerCapture(e.pointerId); e.preventDefault(); });
+  thumb.addEventListener('pointermove', function (e) { if (!drag) return; var hpx = frame.getBoundingClientRect().height * 444 / 860; pane.scrollTop = drag.s + (e.clientY - drag.y) / hpx * (pane.scrollHeight - pane.clientHeight); });
+  ['pointerup', 'pointercancel'].forEach(function (n) { thumb.addEventListener(n, function () { drag = null; }); });
   function show() {
     var sc = screens[cur.main][cur.sub[cur.main]];
     frame.src = IMG + sc.f + '.webp';
@@ -616,6 +633,7 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
       if (strip.getAttribute('src') !== IMG + sc.strip + '.webp') { strip.src = IMG + sc.strip + '.webp'; strip.width = sc.sw; strip.height = sc.sh; strip.style.width = sc.k + '%'; }
       pane.hidden = false; pane.scrollTop = 0;
     } else { pane.hidden = true; }
+    var g = !!sc.game; pane.classList.toggle('gs-game', g); ft.hidden = fb.hidden = thumb.hidden = !g; if (g) place();
     hots.forEach(function (h) { if (h.dataset.for) h.hidden = h.dataset.for !== cur.main; });
   }
   hots.forEach(function (h) {
