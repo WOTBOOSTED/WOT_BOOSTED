@@ -472,9 +472,9 @@
   .gs-hot[data-sub] { border-radius: 3px; }
   /* вкладки пульсують червоним — видно, що їх можна натискати */
   @keyframes gs-pulse { 0% { background: rgba(0,0,0,.2); } 50% { background: rgba(255,0,0,.2); } 100% { background: rgba(0,0,0,.2); } }
-  .gs-hot { background: rgba(0,0,255,.2); animation: gs-pulse 1s ease infinite alternate-reverse; }
+  .gs-hot { background: rgba(0,0,255,.2); animation: gs-pulse 2s ease infinite alternate-reverse; }
   /* пульсація працює і тоді, коли в системі вимкнено анімації (загальне правило сайту їх зупиняє) */
-  @media (prefers-reduced-motion: reduce) { .gs .gs-hot { animation: gs-pulse 1s ease infinite alternate-reverse !important; } }
+  @media (prefers-reduced-motion: reduce) { .gs .gs-hot { animation: gs-pulse 2s ease infinite alternate-reverse !important; } }
   /* без рамки навколо вкладки: з клавіатури фокус видно м’яким підсвічуванням, як при наведенні */
   .gs-hot:focus, .gs-hot:focus-visible { outline: none; }
   .gs-hot:focus-visible { animation: none; background: rgba(255,0,0,.35); }
