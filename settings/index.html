@@ -440,6 +440,8 @@
   .gs-hot { position: absolute; background: transparent; border: 0; padding: 0; cursor: pointer; }
   .gs-hot:hover { background: rgba(255,255,255,.06); }
   .gs-hot[hidden] { display: none; }
+  /* телефон: вікно цілком на всю ширину екрана, від краю до краю */
+  @media (max-width: 900px) { .gs { min-width: 0; } .gs-wrap { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); overflow-x: visible; } .gs-pane::-webkit-scrollbar { width: 5px; } }
 </style>
 <script>
 /* після оновлення сторінки завжди починаємо згори (телефон не «з'їдає» заголовок) */
