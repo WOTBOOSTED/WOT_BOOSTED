@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'wot-boosted-v15';
+const CACHE_VERSION = 'wot-boosted-v16';
 const STATIC_CACHE = [
   '/',
   '/index.html',
