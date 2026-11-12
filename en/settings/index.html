@@ -475,6 +475,9 @@
   .gs-hot { background: rgba(0,0,255,.2); animation: gs-pulse 2s ease infinite alternate-reverse; }
   /* пульсація працює і тоді, коли в системі вимкнено анімації (загальне правило сайту їх зупиняє) */
   @media (prefers-reduced-motion: reduce) { .gs .gs-hot { animation: gs-pulse 2s ease infinite alternate-reverse !important; } }
+  /* після першого натискання на верхню вкладку верхній ряд більше не блимає — лишаються тільки внутрішні */
+  .gs.gs-used .gs-hot[data-main] { animation: none !important; background: transparent; }
+  .gs.gs-used .gs-hot[data-main]:hover { background: rgba(255,255,255,.06); }
   /* без рамки навколо вкладки: з клавіатури фокус видно м’яким підсвічуванням, як при наведенні */
   .gs-hot:focus, .gs-hot:focus-visible { outline: none; }
   .gs-hot:focus-visible { animation: none; background: rgba(255,0,0,.35); }
@@ -706,7 +709,7 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
   }
   hots.forEach(function (h) {
     h.addEventListener('click', function () {
-      if (h.dataset.main) cur.main = h.dataset.main; else cur.sub[cur.main] = h.dataset.sub;
+      if (h.dataset.main) { cur.main = h.dataset.main; document.getElementById('gs').classList.add('gs-used'); } else cur.sub[cur.main] = h.dataset.sub;
       show();
     });
   });
