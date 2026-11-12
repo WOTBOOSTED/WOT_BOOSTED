@@ -506,6 +506,7 @@ window.addEventListener('load', function () {
       <button type="button" class="gs-hot" data-main="gra" aria-label="Гра" style="left:0.620%;top:4.770%;width:7.072%;height:4.112%"></button>
       <button type="button" class="gs-hot" data-main="graf" aria-label="Графіка" style="left:7.692%;top:4.770%;width:10.670%;height:4.112%"></button>
       <button type="button" class="gs-hot" data-main="zvuk" aria-label="Звук" style="left:18.362%;top:4.770%;width:8.313%;height:4.112%"></button>
+      <button type="button" class="gs-hot" data-main="ker" aria-label="Керування" style="left:26.675%;top:4.770%;width:12.779%;height:4.112%"></button>
       <button type="button" class="gs-hot" data-main="pr" aria-label="Приціл" style="left:39.454%;top:4.770%;width:9.801%;height:4.112%"></button>
       <button type="button" class="gs-hot" data-main="mk" aria-label="Маркер" style="left:49.256%;top:4.770%;width:10.546%;height:4.112%"></button>
       <button type="button" class="gs-hot" data-main="inf" aria-label="Інформування в бою" style="left:59.801%;top:4.770%;width:19.603%;height:4.112%"></button>
@@ -592,12 +593,13 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
     gra: { '': { f: 'gra', pane: [8, 64, 790, 502], strip: 'gra-strip', sh: 1505 } },
     graf: { ekran: { f: 'graf-ekran' }, dokl: { f: 'graf-dokl', pane: [8, 180, 790, 386], strip: 'graf-strip', sh: 752 } },
     zvuk: { '': { f: 'zvuk' } },
+    ker: { '': { f: 'ker' } },
     pr: { ark: { f: 'pr-ark' }, sn: { f: 'pr-sn' }, art: { f: 'pr-art' }, obl: { f: 'pr-obl' }, pid: { f: 'pr-pid' } },
     mk: { sup: { f: 'mk-sup' }, soyuz: { f: 'mk-soyuz' }, zn: { f: 'mk-zn' } },
     inf: { ind: { f: 'inf-ind' }, podii: { f: 'inf-podii' }, ist: { f: 'inf-ist' }, mezha: { f: 'inf-mezha' }, zvit: { f: 'inf-zvit' } }
   };
-  var names = { gra: 'Гра', graf: 'Графіка', zvuk: 'Звук', pr: 'Приціл', mk: 'Маркер', inf: 'Інформування в бою' };
-  var cur = { main: 'gra', sub: { gra: '', graf: 'ekran', zvuk: '', pr: 'ark', mk: 'sup', inf: 'ind' } };
+  var names = { gra: 'Гра', graf: 'Графіка', zvuk: 'Звук', ker: 'Керування', pr: 'Приціл', mk: 'Маркер', inf: 'Інформування в бою' };
+  var cur = { main: 'gra', sub: { gra: '', graf: 'ekran', zvuk: '', ker: '', pr: 'ark', mk: 'sup', inf: 'ind' } };
   var frame = document.getElementById('gs-frame'), pane = document.getElementById('gs-pane'), strip = document.getElementById('gs-strip');
   var hots = document.querySelectorAll('.gs-hot');
   function show() {
