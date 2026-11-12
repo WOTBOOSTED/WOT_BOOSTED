@@ -503,8 +503,8 @@ window.addEventListener('load', function () {
   <p class="section-sub" data-t="mp_soon">My game client settings. Click the tabs like in the game; long tabs scroll inside the window.</p>
   <div class="gs-wrap">
     <div class="gs" id="gs">
-      <img class="gs-frame" id="gs-frame" src="/settings/img/gra.webp" width="806" height="608" alt="Налаштування World of Tanks — вкладка «Гра»" decoding="async">
-      <div class="gs-pane" id="gs-pane" tabindex="0"><img id="gs-strip" src="/settings/img/gra-strip.webp" width="768" height="1505" alt="" decoding="async"></div>
+      <img class="gs-frame" id="gs-frame" src="/settings/img/gra-hd.webp" width="1139" height="860" alt="Налаштування World of Tanks — вкладка «Гра»" decoding="async">
+      <div class="gs-pane" id="gs-pane" tabindex="0"><img id="gs-strip" src="/settings/img/gra-strip-hd.webp" width="1085" height="2128" style="width:97.135%" alt="" decoding="async"></div>
       <button type="button" class="gs-hot" data-main="gra" aria-label="Гра" style="left:0.620%;top:4.770%;width:7.072%;height:4.112%"></button>
       <button type="button" class="gs-hot" data-main="graf" aria-label="Графіка" style="left:7.692%;top:4.770%;width:10.670%;height:4.112%"></button>
       <button type="button" class="gs-hot" data-main="zvuk" aria-label="Звук" style="left:18.362%;top:4.770%;width:8.313%;height:4.112%"></button>
@@ -525,6 +525,8 @@ window.addEventListener('load', function () {
       <button type="button" class="gs-hot" data-for="inf" data-sub="ist" aria-label="Історія подій" style="left:30.025%;top:8.882%;width:13.400%;height:3.783%" hidden></button>
       <button type="button" class="gs-hot" data-for="inf" data-sub="mezha" aria-label="Межа мапи" style="left:43.424%;top:8.882%;width:13.027%;height:3.783%" hidden></button>
       <button type="button" class="gs-hot" data-for="inf" data-sub="zvit" aria-label="Бойовий звіт й ОБЗ" style="left:56.452%;top:8.882%;width:17.742%;height:3.783%" hidden></button>
+      <button type="button" class="gs-hot" data-for="zvuk" data-sub="zag" aria-label="Загальний рівень" style="left:32.7%;top:17.6%;width:17.3%;height:4.4%" hidden></button>
+      <button type="button" class="gs-hot" data-for="zvuk" data-sub="golos" aria-label="Голосовий зв'язок" style="left:50%;top:17.6%;width:17.3%;height:4.4%" hidden></button>
       <button type="button" class="gs-hot" data-for="graf" data-sub="ekran" aria-label="Екран" style="left:33.747%;top:24.836%;width:16.377%;height:4.441%" hidden></button>
       <button type="button" class="gs-hot" data-for="graf" data-sub="dokl" aria-label="Докладні" style="left:50.124%;top:24.836%;width:16.377%;height:4.441%" hidden></button>
     </div>
@@ -592,16 +594,16 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
 (function () {
   var W = 806, H = 608, IMG = '/settings/img/';
   var screens = {
-    gra: { '': { f: 'gra', pane: [8, 64, 790, 502], strip: 'gra-strip', sh: 1505 } },
-    graf: { ekran: { f: 'graf-ekran' }, dokl: { f: 'graf-dokl', pane: [8, 180, 790, 386], strip: 'graf-strip', sh: 752 } },
-    zvuk: { '': { f: 'zvuk' } },
-    ker: { '': { f: 'ker' } },
-    pr: { ark: { f: 'pr-ark' }, sn: { f: 'pr-sn' }, art: { f: 'pr-art' }, obl: { f: 'pr-obl' }, pid: { f: 'pr-pid' } },
-    mk: { sup: { f: 'mk-sup' }, soyuz: { f: 'mk-soyuz' }, zn: { f: 'mk-zn' } },
-    inf: { ind: { f: 'inf-ind' }, podii: { f: 'inf-podii' }, ist: { f: 'inf-ist' }, mezha: { f: 'inf-mezha' }, zvit: { f: 'inf-zvit' } }
+    gra: { '': { f: 'gra-hd', pane: [7.784, 63.688, 790.43, 502.42], strip: 'gra-strip-hd', sw: 1085, sh: 2128, k: 97.135 } },
+    graf: { ekran: { f: 'graf-ekran-hd' }, dokl: { f: 'graf-dokl', pane: [8, 180, 790, 386], strip: 'graf-strip', sw: 768, sh: 752, k: 97.215 } },
+    zvuk: { zag: { f: 'zvuk-hd' }, golos: { f: 'zvuk-golos-hd' } },
+    ker: { '': { f: 'ker-hd' } },
+    pr: { ark: { f: 'pr-ark-hd' }, sn: { f: 'pr-sn-hd' }, art: { f: 'pr-art-hd' }, obl: { f: 'pr-obl-hd' }, pid: { f: 'pr-pid-hd' } },
+    mk: { sup: { f: 'mk-sup-hd' }, soyuz: { f: 'mk-soyuz-hd' }, zn: { f: 'mk-zn-hd' } },
+    inf: { ind: { f: 'inf-ind-hd' }, podii: { f: 'inf-podii-hd' }, ist: { f: 'inf-ist-hd' }, mezha: { f: 'inf-mezha-hd' }, zvit: { f: 'inf-zvit-hd' } }
   };
   var names = { gra: 'Гра', graf: 'Графіка', zvuk: 'Звук', ker: 'Керування', pr: 'Приціл', mk: 'Маркер', inf: 'Інформування в бою' };
-  var cur = { main: 'gra', sub: { gra: '', graf: 'ekran', zvuk: '', ker: '', pr: 'ark', mk: 'sup', inf: 'ind' } };
+  var cur = { main: 'gra', sub: { gra: '', graf: 'ekran', zvuk: 'zag', ker: '', pr: 'ark', mk: 'sup', inf: 'ind' } };
   var frame = document.getElementById('gs-frame'), pane = document.getElementById('gs-pane'), strip = document.getElementById('gs-strip');
   var hots = document.querySelectorAll('.gs-hot');
   function show() {
@@ -611,7 +613,7 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
     if (sc.pane) {
       pane.style.left = sc.pane[0] / W * 100 + '%'; pane.style.top = sc.pane[1] / H * 100 + '%';
       pane.style.width = sc.pane[2] / W * 100 + '%'; pane.style.height = sc.pane[3] / H * 100 + '%';
-      if (strip.getAttribute('src') !== IMG + sc.strip + '.webp') { strip.src = IMG + sc.strip + '.webp'; strip.height = sc.sh; }
+      if (strip.getAttribute('src') !== IMG + sc.strip + '.webp') { strip.src = IMG + sc.strip + '.webp'; strip.width = sc.sw; strip.height = sc.sh; strip.style.width = sc.k + '%'; }
       pane.hidden = false; pane.scrollTop = 0;
     } else { pane.hidden = true; }
     hots.forEach(function (h) { if (h.dataset.for) h.hidden = h.dataset.for !== cur.main; });
