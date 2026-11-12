@@ -470,13 +470,15 @@
   .gs-hot { position: absolute; background: transparent; border: 0; padding: 0; cursor: pointer; }
   .gs-hot[data-main] { border-radius: 4px 4px 0 0; }
   .gs-hot[data-sub] { border-radius: 3px; }
-  /* червоне підсвічування вкладок — видно, що їх можна натискати */
-  .gs-hot { background: rgba(205,30,44,.38); transition: background .15s; }
-  .gs-hot.on { background: rgba(232,48,62,.55); }
-  .gs-hot:hover { background: rgba(240,60,74,.62); }
+  /* вкладки пульсують червоним — видно, що їх можна натискати */
+  @keyframes gs-pulse { 0%, 100% { background: rgba(0,0,0,.2); } 50% { background: rgba(225,45,60,.34); } }
+  .gs-hot { animation: gs-pulse 2s ease infinite; }
+  .gs-hot.on { animation: none; background: rgba(225,45,60,.3); }
+  .gs-hot:hover { animation: none; background: rgba(240,60,74,.5); }
+  @media (prefers-reduced-motion: reduce) { .gs-hot { animation: none; background: rgba(225,45,60,.22); } }
   /* без рамки навколо вкладки: з клавіатури фокус видно м’яким підсвічуванням, як при наведенні */
   .gs-hot:focus, .gs-hot:focus-visible { outline: none; }
-  .gs-hot:focus-visible { background: rgba(240,60,74,.7); }
+  .gs-hot:focus-visible { animation: none; background: rgba(240,60,74,.6); }
   .gs-hot[hidden] { display: none; }
   /* телефон: вікно цілком на всю ширину екрана, від краю до краю */
   @media (max-width: 900px) { .gs { min-width: 0; } .gs-wrap { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); overflow-x: visible; } .gs-pane::-webkit-scrollbar { width: 5px; } }
