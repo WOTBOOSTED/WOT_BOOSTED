@@ -446,6 +446,8 @@
   .gs-thumb { position: absolute; background: url(/settings/img/gs-thumb.webp) 0 0 / 100% 100% no-repeat; cursor: pointer; touch-action: none; }
   .gs-fade[hidden], .gs-thumb[hidden] { display: none; }
   .gs-hot { position: absolute; background: transparent; border: 0; padding: 0; cursor: pointer; }
+  .gs-hot[data-main] { border-radius: 4px 4px 0 0; }
+  .gs-hot[data-sub] { border-radius: 3px; }
   .gs-hot:hover { background: rgba(255,255,255,.06); }
   /* без рамки навколо вкладки: з клавіатури фокус видно м’яким підсвічуванням, як при наведенні */
   .gs-hot:focus, .gs-hot:focus-visible { outline: none; }
@@ -517,13 +519,13 @@ window.addEventListener('load', function () {
       <img class="gs-frame" id="gs-frame" src="/settings/img/gra-hd5.webp" width="1139" height="860" alt="Налаштування World of Tanks — вкладка «Гра»" decoding="async">
       <div class="gs-pane gs-game" id="gs-pane" tabindex="0"><img id="gs-strip" src="/settings/img/gra-strip-hd3.webp" width="1085" height="2129" style="width:100%" alt="" decoding="async"></div>
       <div class="gs-fade gs-fade-t" id="gs-ft"></div><div class="gs-fade gs-fade-b" id="gs-fb"></div><div class="gs-thumb" id="gs-thumb"></div>
-      <button type="button" class="gs-hot" data-main="gra" aria-label="Гра" style="left:0.620%;top:4.770%;width:7.072%;height:4.112%"></button>
-      <button type="button" class="gs-hot" data-main="graf" aria-label="Графіка" style="left:7.692%;top:4.770%;width:10.670%;height:4.112%"></button>
-      <button type="button" class="gs-hot" data-main="zvuk" aria-label="Звук" style="left:18.362%;top:4.770%;width:8.313%;height:4.112%"></button>
-      <button type="button" class="gs-hot" data-main="ker" aria-label="Керування" style="left:26.675%;top:4.770%;width:12.779%;height:4.112%"></button>
-      <button type="button" class="gs-hot" data-main="pr" aria-label="Приціл" style="left:39.454%;top:4.770%;width:9.801%;height:4.112%"></button>
-      <button type="button" class="gs-hot" data-main="mk" aria-label="Маркер" style="left:49.256%;top:4.770%;width:10.546%;height:4.112%"></button>
-      <button type="button" class="gs-hot" data-main="inf" aria-label="Інформування в бою" style="left:59.801%;top:4.770%;width:19.603%;height:4.112%"></button>
+      <button type="button" class="gs-hot" data-main="gra" aria-label="Гра" style="left:0.527%;top:4.651%;width:7.463%;height:4.186%"></button>
+      <button type="button" class="gs-hot" data-main="graf" aria-label="Графіка" style="left:8.077%;top:4.651%;width:10.711%;height:4.186%"></button>
+      <button type="button" class="gs-hot" data-main="zvuk" aria-label="Звук" style="left:18.876%;top:4.651%;width:8.253%;height:4.186%"></button>
+      <button type="button" class="gs-hot" data-main="ker" aria-label="Керування" style="left:27.217%;top:4.651%;width:12.423%;height:4.186%"></button>
+      <button type="button" class="gs-hot" data-main="pr" aria-label="Приціл" style="left:39.728%;top:4.651%;width:9.745%;height:4.186%"></button>
+      <button type="button" class="gs-hot" data-main="mk" aria-label="Маркер" style="left:49.561%;top:4.651%;width:10.316%;height:4.186%"></button>
+      <button type="button" class="gs-hot" data-main="inf" aria-label="Інформування в бою" style="left:59.965%;top:4.651%;width:19.491%;height:4.186%"></button>
       <button type="button" class="gs-hot" data-for="pr" data-sub="ark" aria-label="Аркадний" style="left:0.620%;top:8.882%;width:11.290%;height:3.783%" hidden></button>
       <button type="button" class="gs-hot" data-for="pr" data-sub="sn" aria-label="Снайперський" style="left:11.911%;top:8.882%;width:14.392%;height:3.783%" hidden></button>
       <button type="button" class="gs-hot" data-for="pr" data-sub="art" aria-label="Артилерійський" style="left:26.303%;top:8.882%;width:15.633%;height:3.783%" hidden></button>
