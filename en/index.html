@@ -762,8 +762,8 @@
   .modal-img {
     width: 100%;
     height: auto;
-    max-height: 300px;
-    object-fit: contain;
+    aspect-ratio: 16 / 9;   /* картинка завжди на всю ширину вікна, без смуг по боках */
+    object-fit: cover;
     background: var(--dark);
     display: block;
     transition: opacity 0.25s ease;
@@ -787,11 +787,11 @@
     line-height: 1.7; margin-bottom: 32px; font-weight: 300;
   }
   .modal-close {
-    position: absolute; top: 16px; right: 16px;
+    position: absolute; top: 8px; right: 8px; z-index: 2;   /* у кутку, щоб не закривати заголовок на картинці */
     background: rgba(10,11,13,0.8);
     border: 1px solid rgba(255,255,255,0.1);
     color: var(--text-muted);
-    width: 36px; height: 36px;
+    width: 30px; height: 30px;
     cursor: pointer; font-size: 16px;
     display: flex; align-items: center; justify-content: center;
     transition: all 0.2s;
