@@ -229,6 +229,12 @@
     .nav-link { font-size: 15px; padding: 10px 10px; letter-spacing: 0.4px; }
     .nav-link.active::after { left: 10px; right: 10px; }
   }
+  /* великі монітори: пункти меню ростуть разом з екраном — при 100% виглядають як при 150% */
+  @media (min-width: 1700px) {
+    .nav-center { gap: 0; }
+    .nav-link { font-size: min(0.88vw, 30px); padding: 0.62em 0.66em; letter-spacing: 0.03em; }
+    .nav-link.active::after { left: 0.66em; right: 0.66em; }
+  }
   /* вузькі екрани: посилання окремою смужкою під шапкою */
   @media (max-width: 1679px) {
     .nav-center {
