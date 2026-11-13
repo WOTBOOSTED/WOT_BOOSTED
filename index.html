@@ -814,6 +814,9 @@
     .services { padding: 88px 20px 16px; }
     .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .service-slot { display: none; }
+    /* на планшеті й телефоні «Бої на шкоду» йдуть після ЛБЗ 4.0 */
+    .services-grid > .service-card:nth-child(3) { order: 1; }
+    .services-grid > .service-card:nth-child(6) { order: 2; }
     .how { padding: 60px 20px; }
     .steps { grid-template-columns: 1fr 1fr; gap: 40px; }
     .steps::before { display: none; }
