@@ -486,6 +486,17 @@
   .gs-hot[hidden] { display: none; }
   /* телефон: вікно цілком на всю ширину екрана, від краю до краю */
   @media (max-width: 900px) { .gs { min-width: 0; } .gs-wrap { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); overflow-x: visible; } .gs-pane::-webkit-scrollbar { width: 5px; } }
+  /* великі монітори (від 1600px): шапка як на «Бусті» — вища, більший логотип; вміст зсунуто на ті ж 8px */
+  @media (min-width: 1600px) {
+    nav { height: 72px; padding: 0 60px; }
+    .nav-logo { font-size: 26px; }
+    .nav-logo-img { height: 44px; }
+    body { padding-top: 8px; }
+  }
+  @media (min-width: 1600px) and (max-width: 1679px) {
+    .nav-center { top: 72px; }
+    body { padding-top: 56px; }
+  }
 </style>
 <script>
 /* після оновлення сторінки завжди починаємо згори (телефон не «з'їдає» заголовок) */

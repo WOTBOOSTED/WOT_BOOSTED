@@ -1028,6 +1028,11 @@
   @media (max-width: 1599px) { .services .section-title { top: 7.5px; } }
   @media (max-width: 900px) { .services .section-title { top: 5px; } }
   @media (max-width: 600px) { .services .section-title { top: 2.5px; } }
+  /* 1600–1679px: шапка тут 72px, тож смужка меню — одразу під нею */
+  @media (min-width: 1600px) and (max-width: 1679px) {
+    .nav-center { top: 72px; }
+    body { padding-top: 56px; }
+  }
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z32GCKDDHZ"></script>

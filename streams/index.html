@@ -477,6 +477,17 @@
   @media (max-width: 360px) { nav { padding: 0 8px; } .nav-logo { font-size: 12px; gap: 6px; } .nav-logo-img { height: 24px; } .nav-right { gap: 6px; } }
   @media (max-width: 360px) { .page-title-row .section-title { font-size: 24px; } .svc-socials { gap: 2px; } .svc-socials .nav-soc { width: 30px; height: 30px; } .svc-socials .nav-soc svg { width: 22px; height: 22px; } }
   @media (max-width: 700px) { .nav-tg { padding: 7px 13px; } .nav-tg span { display: none; } }
+  /* великі монітори (від 1600px): шапка як на «Бусті» — вища, більший логотип; вміст зсунуто на ті ж 8px */
+  @media (min-width: 1600px) {
+    nav { height: 72px; padding: 0 60px; }
+    .nav-logo { font-size: 26px; }
+    .nav-logo-img { height: 44px; }
+    body { padding-top: 8px; }
+  }
+  @media (min-width: 1600px) and (max-width: 1679px) {
+    .nav-center { top: 72px; }
+    body { padding-top: 56px; }
+  }
 </style>
 <script>
 /* після оновлення сторінки завжди починаємо згори (телефон не «з'їдає» заголовок) */
