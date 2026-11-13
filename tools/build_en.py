@@ -6,10 +6,10 @@ import re, json, subprocess, html, os, sys
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES={'':'index.html','top-tanks':'top-tanks/index.html','streams':'streams/index.html','group':'group/index.html','settings':'settings/index.html','modpack':'modpack/index.html'}
 META={
- '':('WOT BOOSTED — WoT boosting: Personal Missions, Marks, Ace Tanker',
-     'World of Tanks boosting by WOT BOOSTED: Personal Missions 1.0–4.0, Marks of Excellence, Ace Tanker, damage battles for WN8. Every order is streamed on YouTube for the customer.',
+ '':('WOT BOOSTED — WoT boosting: Personal Missions, Marks, Damage Battles',
+     'World of Tanks boosting by WOT BOOSTED: Personal Missions 1.0–4.0, Marks of Excellence, damage battles for WN8.',
      'WOT BOOSTED — professional World of Tanks boosting',
-     'Personal Missions, Marks of Excellence, Ace Tanker, damage battles. Fast, safe, honest.'),
+     'Personal Missions 1.0–4.0, Marks of Excellence, damage battles for WN8. Fast, safe, honest.'),
  'top-tanks':('Top Tanks — WOT BOOSTED','Personal World of Tanks top list by WOT BOOSTED: the best vehicles of tiers 8, 9, 10 and 11 — five tanks per tier worth grinding and getting.',None,None),
  'streams':('Streams — WOT BOOSTED','WOT BOOSTED streams and broadcast recordings for World of Tanks: tank reviews, order runs and live battles. Watch on the @wot_boosted YouTube channel.',None,None),
  'group':('Group — WOT BOOSTED','WOT BOOSTED Telegram group: World of Tanks boosting news, updates and fresh posts. Join and read the feed right on the site.',None,None),
