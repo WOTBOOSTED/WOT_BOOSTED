@@ -440,6 +440,8 @@
   @media (max-width: 1679px) { main.top-page .section-title { top: 4.5px; } }
   @media (max-width: 900px) { main.top-page .section-title { top: 3px; } }
   @media (max-width: 600px) { main.top-page .section-title { top: 2px; } }
+  /* заголовок по центру над вікном (на телефоні праворуч від нього ще іконки соцмереж) */
+  @media (min-width: 1101px) { main.top-page .page-title-row { justify-content: center; } main.top-page .section-title { text-align: center; } }
   /* сетап: дві картки під вікном налаштувань */
   .setup { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1180px; margin: 44px auto 0; }
   .setup-card { background: linear-gradient(180deg, var(--dark3), var(--dark2)); border: 1px solid var(--border-subtle); border-top: 2px solid var(--gold); border-radius: 14px; padding: 22px 26px 18px; }
