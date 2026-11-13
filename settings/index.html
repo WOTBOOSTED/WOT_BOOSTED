@@ -508,6 +508,12 @@
   @font-face { font-family: 'Rubik Nav'; font-style: normal; font-weight: 700; font-display: swap;
     src: url('/fonts/rubik700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
   .nav-link { font-family: 'Rubik Nav', 'Montserrat', sans-serif; font-weight: 700; }
+  /* телефон: розділи меню від краю до краю, шрифт підлаштовується під ширину екрана */
+  @media (max-width: 660px) {
+    .nav-center { justify-content: space-between; gap: 0; padding: 0 12px; box-sizing: border-box; overflow: visible; }
+    .nav-link { font-size: min(calc((100vw - 58px) / 30.6), 15px); padding: 8px 0; letter-spacing: 0.02em; }
+    .nav-link.active::after { left: 0; right: 0; }
+  }
 </style>
 <script>
 /* після оновлення сторінки завжди починаємо згори (телефон не «з'їдає» заголовок) */
