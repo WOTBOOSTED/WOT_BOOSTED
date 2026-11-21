@@ -583,9 +583,27 @@
   .contact-banner-bg {
     position: absolute; inset: 0;
     /* фон: темний силует танка з червоним контуром і смугами */
-    background-image: url('/cta-rim-v1.jpg');
-    background-image: image-set(url('/cta-rim-v1.webp') type('image/webp'), url('/cta-rim-v1.jpg') type('image/jpeg'));
+    background-image: linear-gradient(180deg, #141319 0%, #0a0910 100%);
     background-size: cover; background-position: center;
+  }
+  /* смуги по центру банера */
+  .contact-banner-bg::before {
+    content: ''; position: absolute; inset: 0; opacity: .2;
+    background: repeating-linear-gradient(-60deg, rgba(225,45,60,0) 0 22px, rgba(225,45,60,.55) 22px 26px);
+    -webkit-mask-image: linear-gradient(90deg, transparent 38%, #000 54%, #000 76%, transparent 90%);
+            mask-image: linear-gradient(90deg, transparent 38%, #000 54%, #000 76%, transparent 90%);
+  }
+  /* силует танка: окремим шаром між текстом і кнопкою, за будь-якого масштабу цілий */
+  .cta-tank { flex: 1 1 0; align-self: stretch; position: relative; min-width: 0; margin: -14px 20px; }
+  .cta-tank::before {
+    content: ''; position: absolute; left: 50%; top: 58%; width: min(115%, 640px); aspect-ratio: 3 / 1; transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,70,85,.78), rgba(225,45,60,.26) 45%, rgba(225,45,60,0) 75%);
+    pointer-events: none;
+  }
+  .cta-tank img {
+    position: absolute; left: 0; right: 0; bottom: -4%; width: 100%; height: 96%;
+    object-fit: contain; object-position: 50% 100%;
+    filter: drop-shadow(0 0 1px rgba(255,120,130,.95)) drop-shadow(0 0 6px rgba(255,60,75,.6));
   }
   .contact-banner::after {
     content: '';
@@ -830,11 +848,12 @@
     .why-img-wrap, .why-left .why-img-wrap { flex: none; height: 400px; min-height: 0; margin-top: 0; }
     .contact-banner { margin: 0 20px 60px; }
     .contact-banner-bg {
-      background-image: url('/cta-rim-m-v1.jpg');
-      background-image: image-set(url('/cta-rim-m-v1.webp') type('image/webp'), url('/cta-rim-m-v1.jpg') type('image/jpeg'));
+      background-image: url('/cta-rim-m-v2.jpg');
+      background-image: image-set(url('/cta-rim-m-v2.webp') type('image/webp'), url('/cta-rim-m-v2.jpg') type('image/jpeg'));
       background-position: right bottom;
     }
     .contact-banner::after { background: linear-gradient(90deg, rgba(10,11,13,0.55) 0%, rgba(10,11,13,0) 60%); }
+    .cta-tank, .contact-banner-bg::before { display: none; }
     .contact-banner-content { padding: 16px 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
     footer { padding: 22px 20px 28px; }
     .service-name { font-size: 19px; }
@@ -1281,6 +1300,7 @@ window.addEventListener('load', function () {
       <h2 data-t="cta_title">READY TO <span>ORDER?</span></h2>
       <p data-t="cta_sub">Message me on Telegram — I reply fast</p>
     </div>
+    <div class="cta-tank" aria-hidden="true"><picture><source srcset="/cta-tank-v1.webp" type="image/webp"><img src="/cta-tank-v1.png" alt="" width="600" height="367" loading="lazy" decoding="async"></picture></div>
     <div class="contact-links">
       <a href="https://t.me/wot_boosted" target="_blank" class="contact-link tg">
         <svg class="btn-tg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path fill="#d24d58" d="M5.43 11.87 16.9 7.45c.53-.19 1 .13.82.94l-1.95 9.2c-.15.65-.53.81-1.08.5l-2.98-2.2-1.44 1.39c-.16.16-.29.29-.6.29l.21-3.03 5.52-4.99c.24-.21-.05-.33-.37-.12l-6.82 4.3-2.94-.92c-.64-.2-.65-.64.14-.95z"/></svg><span data-t="nav_tg">Order</span>
