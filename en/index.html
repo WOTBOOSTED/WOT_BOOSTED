@@ -596,12 +596,12 @@
   /* силует танка: окремим шаром між текстом і кнопкою, за будь-якого масштабу цілий */
   .cta-tank { flex: 1 1 0; align-self: stretch; position: relative; min-width: 0; margin: -14px 20px; }
   .cta-tank::before {
-    content: ''; position: absolute; left: 50%; top: 52%; width: min(115%, 640px); aspect-ratio: 3 / 1; transform: translate(-50%, -50%);
+    content: ''; position: absolute; left: 50%; top: 50%; width: min(115%, 640px); aspect-ratio: 3 / 1; transform: translate(-50%, -50%);
     background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,70,85,.78), rgba(225,45,60,.26) 45%, rgba(225,45,60,0) 75%);
     pointer-events: none;
   }
   .cta-tank img {
-    position: absolute; left: 0; right: 0; bottom: 10%; width: 100%; height: 84%;
+    position: absolute; left: 0; right: 0; bottom: 4%; width: 100%; height: 92%;
     object-fit: contain; object-position: 50% 100%;
     filter: drop-shadow(0 0 1px rgba(255,120,130,.95)) drop-shadow(0 0 6px rgba(255,60,75,.6));
   }
