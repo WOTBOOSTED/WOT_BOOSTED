@@ -847,14 +847,18 @@
     .why-grid { grid-template-columns: 1fr; gap: 40px; }
     .why-img-wrap, .why-left .why-img-wrap { flex: none; height: 400px; min-height: 0; margin-top: 0; }
     .contact-banner { margin: 0 20px 60px; }
-    .contact-banner-bg {
-      background-image: url('/cta-rim-m-v2.jpg');
-      background-image: image-set(url('/cta-rim-m-v2.webp') type('image/webp'), url('/cta-rim-m-v2.jpg') type('image/jpeg'));
-      background-position: right bottom;
+    .contact-banner-bg::before {
+      -webkit-mask-image: linear-gradient(90deg, transparent 35%, #000 60%, #000 100%);
+              mask-image: linear-gradient(90deg, transparent 35%, #000 60%, #000 100%);
     }
     .contact-banner::after { background: linear-gradient(90deg, rgba(10,11,13,0.55) 0%, rgba(10,11,13,0) 60%); }
-    .cta-tank, .contact-banner-bg::before { display: none; }
-    .contact-banner-content { padding: 16px 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
+    /* телефон: текст на всю ширину, нижче — кнопка зліва й танк справа, нічого не перекривається */
+    .contact-banner-content { padding: 16px 24px; flex-direction: row; flex-wrap: wrap; align-items: stretch; gap: 12px 10px; }
+    .contact-banner-content > div:first-child { flex: 1 0 100%; }
+    .contact-links { order: 1; align-self: center; }
+    .cta-tank { order: 2; flex: 1 1 0; margin: -6px 0 -16px; min-height: 78px; }
+    .cta-tank img { bottom: 10%; height: 86%; object-position: 50% 100%; }
+    .cta-tank::before { width: 130%; top: 55%; }
     footer { padding: 22px 20px 28px; }
     .service-name { font-size: 19px; }
   }
