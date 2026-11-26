@@ -10,8 +10,8 @@
   gtag('js', new Date());
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modpack — WOT BOOSTED</title>
-<meta name="description" content="WOT BOOSTED modpack for World of Tanks — a personal mod build by the booster. The page is in progress, the modpack is coming soon.">
+<title>WB Modpack — WOT BOOSTED</title>
+<meta name="description" content="WB modpack for World of Tanks: reticle, HP in the team panels, traffic light, distance to target, WN8 statistics, replays manager and more. One installer — install only what you need.">
 <link rel="canonical" href="https://wotboosted.com/en/modpack/">
 <link rel="alternate" hreflang="uk" href="https://wotboosted.com/modpack/">
 <link rel="alternate" hreflang="en" href="https://wotboosted.com/en/modpack/">
@@ -19,8 +19,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="WOT BOOSTED">
 <meta property="og:url" content="https://wotboosted.com/en/modpack/">
-<meta property="og:title" content="Modpack — WOT BOOSTED">
-<meta property="og:description" content="WOT BOOSTED modpack for World of Tanks — a personal mod build by the booster. The page is in progress, the modpack is coming soon.">
+<meta property="og:title" content="WB Modpack — WOT BOOSTED">
+<meta property="og:description" content="WB modpack for World of Tanks: reticle, HP in the team panels, traffic light, distance to target, WN8 statistics, replays manager and more. One installer — install only what you need.">
 <meta property="og:image" content="https://wotboosted.com/og-wotboosted-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -461,6 +461,86 @@
     .nav-link { font-size: min(calc((100vw - 58px) / 30.6), 15px); padding: 8px 0; letter-spacing: 0.02em; }
     .nav-link.active::after { left: 0; right: 0; }
   }
+
+  /* ===== Модпак ===== */
+  /* відступи заголовка — як на «Налаштуваннях» */
+  main.top-page { padding-top: 91px; }
+  @media (max-width: 1679px) { main.top-page { padding-top: 88px; } }
+  main.top-page .section-title { position: relative; top: 3px; }
+  @media (max-width: 1679px) { main.top-page .section-title { top: 4.5px; } }
+  @media (max-width: 900px) { main.top-page { padding-top: 90px; } main.top-page .section-title { top: 3px; } }
+  @media (max-width: 600px) { main.top-page { padding-top: 89px; } main.top-page .section-title { top: 2px; } }
+  @media (min-width: 1101px) { main.top-page .page-title-row { justify-content: center; } main.top-page .section-title { text-align: center; } }
+  .mp { max-width: 1180px; margin: 0 auto; }
+  .mp-card { background: linear-gradient(180deg, var(--dark3), var(--dark2)); border: 1px solid var(--border-subtle); border-top: 2px solid var(--gold); border-radius: 14px; }
+  /* головна картка: значок, назва, кнопка */
+  .mp-hero { margin-top: 29px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 30px; padding: 28px 34px;
+    background: radial-gradient(ellipse 60% 120% at 0% 50%, rgba(225,45,60,.14), transparent 70%), linear-gradient(180deg, var(--dark3), var(--dark2)); }
+  .mp-icon { width: 120px; height: 120px; display: block; border-radius: 22px; box-shadow: 0 14px 36px rgba(0,0,0,.5), 0 0 34px rgba(225,45,60,.18); }
+  .mp-name { font-family: 'WB Head', 'Russo One', sans-serif; font-weight: 400; font-size: 26px; line-height: 1.15; text-transform: uppercase; letter-spacing: .5px; }
+  .mp-name span { display: block; }
+  .mp-name span { color: var(--gold); }
+  .mp-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 12px; }
+  .mp-chip { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 11px; border-radius: 6px; border: 1px solid var(--border-subtle); color: var(--text-muted); background: rgba(255,255,255,.03); }
+  .mp-chip.hot { color: #fff; border-color: rgba(225,45,60,.55); background: rgba(225,45,60,.14); }
+  .mp-desc { color: var(--text-muted); font-size: 15px; line-height: 1.6; font-weight: 300; max-width: 560px; }
+  .mp-dl { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .mp-btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 17px 44px; text-decoration: none;
+    font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; color: #fff;
+    background: linear-gradient(180deg, #e65c66 0%, #c9434e 100%); clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+    transition: background .2s, transform .2s, filter .2s; }
+  .mp-btn:hover { background: linear-gradient(180deg, #ee6d76 0%, #d44f5a 100%); transform: translateY(-1px); filter: drop-shadow(0 8px 18px rgba(225,45,60,.3)); }
+  .mp-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .mp-meta { color: var(--text-muted); font-size: 13px; letter-spacing: .3px; white-space: nowrap; }
+  /* заголовки блоків */
+  .mp-h2 { font-family: 'WB Head', 'Russo One', sans-serif; font-weight: 400; font-size: 26px; text-transform: uppercase; letter-spacing: 1px; text-align: center; margin: 56px 0 22px; }
+  .mp-h2 span { color: var(--gold); }
+  /* моди за розділами */
+  .mp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+  .mp-stack { display: grid; gap: 20px; }
+  .mp-cat { padding: 18px 22px 8px; }
+  .mp-cat h3 { font-family: 'WB Head', 'Russo One', sans-serif; font-weight: 400; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; text-align: center; color: var(--gold); padding-bottom: 12px; margin-bottom: 4px; border-bottom: 1px solid var(--border-subtle); }
+  .mp-mod { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+  .mp-mod:last-child { border-bottom: 0; }
+  .mp-mod b { display: block; font-size: 15px; font-weight: 700; color: var(--text); }
+  .mp-mod p { margin-top: 3px; font-size: 13.5px; line-height: 1.5; color: var(--text-muted); font-weight: 300; }
+  .mp-libs { margin-top: 16px; text-align: center; color: var(--text-muted); font-size: 13.5px; line-height: 1.6; font-weight: 300; }
+  /* встановлення в 3 кроки */
+  .mp-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .mp-step { padding: 22px 24px 20px; display: flex; gap: 16px; align-items: flex-start; }
+  /* шестикутник з рівною червоною обводкою: зовнішній — червоний, внутрішній — темний */
+  .mp-num { position: relative; flex-shrink: 0; width: 44px; height: 50px; display: flex; align-items: center; justify-content: center; background: var(--gold);
+    font-family: 'WB Head', 'Russo One', sans-serif; font-size: 19px; color: var(--gold); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+  .mp-num::before { content: ''; position: absolute; inset: 2px; background: var(--dark); clip-path: inherit; }
+  .mp-num::after { content: attr(data-n); position: relative; }
+  .mp-step b { display: block; font-family: 'WB Head', 'Russo One', sans-serif; font-weight: 400; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; margin: 2px 0 6px; }
+  .mp-step p { color: var(--text-muted); font-size: 14px; line-height: 1.55; font-weight: 300; }
+  .mp-notes { margin-top: 20px; padding: 18px 26px; }
+  .mp-notes ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+  .mp-notes li { position: relative; padding-left: 20px; color: var(--text-muted); font-size: 14px; line-height: 1.55; font-weight: 300; }
+  .mp-notes li::before { content: ''; position: absolute; left: 2px; top: .62em; width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+  .mp-notes li b { color: var(--text); font-weight: 700; }
+  @media (max-width: 1000px) {
+    .mp-hero { grid-template-columns: auto 1fr; }
+    .mp-dl { grid-column: 1 / -1; }
+    .mp-grid { grid-template-columns: 1fr 1fr; }
+    .mp-stack { grid-column: 1 / -1; grid-template-columns: repeat(3, 1fr); align-items: start; }
+    .mp-steps { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 700px) {
+    .mp-hero { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 18px; padding: 24px 18px; }
+    .mp-icon { width: 96px; height: 96px; border-radius: 18px; }
+    .mp-name { font-size: 21px; }
+    .mp-chips { justify-content: center; }
+    .mp-dl { width: 100%; }
+    .mp-btn { width: 100%; max-width: 360px; padding: 16px 20px; }
+    .mp-grid, .mp-stack { grid-template-columns: 1fr; gap: 16px; }
+    .mp-stack { grid-column: auto; }
+    .mp-cat { padding: 16px 16px 6px; }
+    .mp-h2 { font-size: 22px; margin: 44px 0 18px; }
+    .mp-step { padding: 18px 16px; }
+    .mp-notes { padding: 16px 16px; }
+  }
 </style>
 <script>
 /* після оновлення сторінки завжди починаємо згори (телефон не «з'їдає» заголовок) */
@@ -502,16 +582,87 @@ window.addEventListener('load', function () {
 </nav>
 
 <main class="top-page">
-  <div class="section-label" data-t="mp_label">World of Tanks</div>
   <div class="page-title-row">
-    <h1 class="section-title" data-t-html="mp_title">MOD<span>PACK</span></h1>
+    <h1 class="section-title" data-t-html="mp_title"><span>WB</span> MODPACK</h1>
         <div class="svc-socials">
           <a href="https://www.youtube.com/@wot_boosted" target="_blank" rel="noopener" class="nav-soc" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff0033" d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.87.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81z"/><path fill="#fff" d="M9.55 15.57V8.43L15.82 12z"/></svg></a>
           <a href="https://t.me/wot_boosted" target="_blank" rel="noopener" class="nav-soc" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2aabee"/><path fill="#fff" d="M5.43 11.87 16.9 7.45c.53-.19 1 .13.82.94l-1.95 9.2c-.15.65-.53.81-1.08.5l-2.98-2.2-1.44 1.39c-.16.16-.29.29-.6.29l.21-3.03 5.52-4.99c.24-.21-.05-.33-.37-.12l-6.82 4.3-2.94-.92c-.64-.2-.65-.64.14-.95z"/></svg></a>
           <a href="https://tiktok.com/@wot_boosted" target="_blank" rel="noopener" class="nav-soc nav-soc-tt" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#000"/><g transform="translate(4.2 4.2) scale(.65)"><path fill="#fff" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></g></svg></a>
         </div>
   </div>
-  <p class="section-sub" data-t="mp_soon">This page is under construction — my modpack is coming soon.</p>
+  <div class="mp">
+  <section class="mp-card mp-hero" aria-labelledby="mpName">
+    <picture><source srcset="/modpack/img/wb-icon.webp" type="image/webp"><img class="mp-icon" src="/modpack/img/wb-icon.png" alt="WB" width="120" height="120" decoding="async"></picture>
+    <div class="mp-info">
+      <h2 class="mp-name" id="mpName" data-t-html="mp_name">All my mods — <span>in one installer</span></h2>
+      <div class="mp-chips"><span class="mp-chip hot" data-t="mp_ver">Version 75</span><span class="mp-chip">Windows</span><span class="mp-chip" data-t="mp_size">42 MB</span></div>
+      <p class="mp-desc" data-t="mp_desc">Tick only what you need. The installer finds the game by itself, cleans out old mods and remembers your choice.</p>
+    </div>
+    <div class="mp-dl">
+      <a class="mp-btn" id="mpDownload" href="https://github.com/WOTBOOSTED/WOT_BOOSTED/releases/latest/download/WB_26.exe" rel="nofollow"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6.5 10 5.5 5.5 5.5-5.5"/><path d="M4 20h16"/></svg><span data-t="mp_btn">Download</span></a>
+      <div class="mp-meta">WB_26.exe</div>
+    </div>
+  </section>
+
+  <h2 class="mp-h2" data-t-html="mp_inside">What’s <span>inside</span></h2>
+  <div class="mp-grid">
+    <section class="mp-card mp-cat">
+      <h3 data-t="c_battle">Battle UI</h3>
+      <div class="mp-mod"><b data-t="m_hp">HP in the team panels</b><p data-t="m_hp_d">Current HP of every tank in the team panels — for allies and enemies.</p></div>
+      <div class="mp-mod"><b data-t="m_eq">Equipment in battle</b><p data-t="m_eq_d">Shows your tank’s equipment during a battle.</p></div>
+      <div class="mp-mod"><b data-t="m_dist">Distance to target</b><p data-t="m_dist_d">Shows the distance in meters above the marker of every visible tank.</p></div>
+      <div class="mp-mod"><b data-t="m_hc">High Caliber in battle</b><p data-t="m_hc_d">How much more damage you need to deal to earn the High Caliber medal.</p></div>
+      <div class="mp-mod"><b data-t="m_marks">Gun marks in battle</b><p data-t="m_marks_d">A gun mark progress panel right in battle.</p></div>
+      <div class="mp-mod"><b data-t="m_light">Traffic light</b><p data-t="m_light_d">How many enemies outside your view are spotted, how many of them can shoot you in the back, and whether there are enemies within 50 meters.</p></div>
+      <div class="mp-mod"><b data-t="m_hit">Hitmarker — hit indicator</b><p data-t="m_hit_d">A hit marker with the sound from Call of Duty.</p></div>
+      <div class="mp-mod"><b data-t="m_rc">Fast reconnect</b><p data-t="m_rc_d">Lost the connection and it won’t come back? Ctrl + K drops you straight to the login screen, from where you can quickly get back into the battle.</p></div>
+    </section>
+    <section class="mp-card mp-cat">
+      <h3 data-t="c_hangar">Garage UI</h3>
+      <div class="mp-mod"><b data-t="m_wbh">WB garage</b><p data-t="m_wbh_d">A big garage UI in HD and an FPS unlock: 120, 165 or 240 frames.</p></div>
+      <div class="mp-mod"><b data-t="m_stats">Garage statistics</b><p data-t="m_stats_d">Your own WN8 statistics right in the garage.</p></div>
+      <div class="mp-mod"><b data-t="m_clock">Clock in battle and garage</b><p data-t="m_clock_d">Time and date in the garage, time in battle. Drag the clock with the mouse; color and format are in the mod settings.</p></div>
+      <div class="mp-mod"><b data-t="m_hits">Hit history</b><p data-t="m_hits_d">After a battle, shows on a 3D model of your tank where and how you were penetrated.</p></div>
+      <div class="mp-mod"><b data-t="m_rep">Replays manager</b><p data-t="m_rep_d">A list of battles from your replays right in the garage: battle results, play or delete a replay.</p></div>
+      <div class="mp-mod"><b data-t="m_claim">Reward auto-claim</b><p data-t="m_claim_d">Claims Clan Supply rewards and your pet’s gifts by itself.</p></div>
+      <div class="mp-mod"><b data-t="m_anom">Anomaizer — nickname changer</b><p data-t="m_anom_d">Visually replaces your nickname and clan tag in the garage and in battle. Handy for streaming.</p></div>
+    </section>
+    <div class="mp-stack">
+      <section class="mp-card mp-cat">
+        <h3 data-t="c_sight">Reticle</h3>
+        <div class="mp-mod"><b data-t="m_ret">WB reticle</b><p data-t="m_ret_d">The aiming circle moves smoothly with a 1 ms response, and the circle itself is smaller and tuned. You can take only the smoothness or only the circle.</p></div>
+        <div class="mp-mod"><b data-t="m_clean">Clean sight</b><p data-t="m_clean_d">No reticle sway, darkening or green tint in sniper mode, no red flash or camera shake when you get hit.</p></div>
+      </section>
+      <section class="mp-card mp-cat">
+        <h3 data-t="c_gfx">Graphics</h3>
+        <div class="mp-mod"><b data-t="m_fog">Fog removal</b><p data-t="m_fog_d">Removes fog on 60 maps — can give you more FPS.</p></div>
+        <div class="mp-mod"><b data-t="m_fx">Effects off</b><p data-t="m_fx_d">Turns off unnecessary visual effects in battle.</p></div>
+        <div class="mp-mod"><b data-t="m_tags">No dog tags</b><p data-t="m_tags_d">Hides players’ dog tags at the start of a battle.</p></div>
+      </section>
+      <section class="mp-card mp-cat">
+        <h3 data-t="c_equip">Equipment</h3>
+        <div class="mp-mod"><b data-t="m_aeq">Auto equipment return</b><p data-t="m_aeq_d">With WoT Plus, remembers the equipment on a tank and moves it over by itself when you switch tanks.</p></div>
+        <div class="mp-mod"><b data-t="m_qd">Quick equipment removal</b><p data-t="m_qd_d">Removes equipment from any tank in one click.</p></div>
+      </section>
+    </div>
+  </div>
+  <p class="mp-libs" data-t="mp_libs">The libraries the mods run on are installed along with them: ModsSettingsAPI (mod settings window), ModsListAPI (mod list in the garage) and OpenWG.</p>
+
+  <h2 class="mp-h2" data-t-html="mp_how">How to <span>install</span></h2>
+  <div class="mp-steps">
+    <div class="mp-card mp-step"><div class="mp-num" data-n="1" aria-hidden="true"></div><div><b data-t="s1">Download</b><p data-t="s1_d">Press “Download” at the top of the page — you’ll get the WB_26.exe file.</p></div></div>
+    <div class="mp-card mp-step"><div class="mp-num" data-n="2" aria-hidden="true"></div><div><b data-t="s2">Close the game and run it</b><p data-t="s2_d">The installer finds your game folder by itself. If it doesn’t, pick it with “Browse…”.</p></div></div>
+    <div class="mp-card mp-step"><div class="mp-num" data-n="3" aria-hidden="true"></div><div><b data-t="s3">Pick your mods</b><p data-t="s3_d">Tick the boxes and press “Install”. Launch the game — the mod list will be in the garage.</p></div></div>
+  </div>
+  <div class="mp-card mp-notes">
+    <ul>
+      <li data-t-html="n_ver"><b>The modpack is built for the current game version.</b> If the game has updated and the modpack hasn’t yet, the installer won’t let you install the old mods — wait for the update on this page.</li>
+      <li data-t-html="n_keep"><b>Your mod selection is remembered</b> — after a game update the ticks stay the same.</li>
+      <li data-t-html="n_clean"><b>Before installing you can clean</b> the mods and res_mods folders and the game cache and logs — game and mod settings stay.</li>
+      <li data-t-html="n_ss"><b>Windows may warn about an unknown file</b> (SmartScreen) — press “More info” → “Run anyway”.</li>
+    </ul>
+  </div>
+  </div>
 </main>
 
 <footer>
@@ -542,16 +693,148 @@ window.addEventListener('load', function () {
 
 <script>
 const translations = {
-  uk: { page_title: 'Модпак — WOT BOOSTED', nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
+  uk: { page_title: 'Модпак WB — WOT BOOSTED', nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
         nav_group: 'Група', nav_settings: 'Налаштування', nav_modpack: 'Модпак',
-        mp_label: 'World of Tanks', mp_title: 'МОД<span>ПАК</span>',
-        mp_soon: "Сторінка в розробці — скоро тут з'явиться мій модпак.",
+        mp_title: 'МОДПАК <span>WB</span>',
+        mp_name: "Усі мої моди — <span>в одному встановлювачі</span>",
+        mp_ver: "Версія 75",
+        mp_desc: "Ставиш галочками лише те, що потрібно. Встановлювач сам знайде гру, почистить старі моди й запам’ятає твій вибір.",
+        mp_btn: "Завантажити",
+        mp_size: "42 МБ",
+        mp_inside: "Що <span>всередині</span>",
+        mp_how: "Як <span>встановити</span>",
+        mp_libs: "Разом із модами ставляться бібліотеки, на яких вони працюють: ModsSettingsAPI (вікно налаштувань модів), ModsListAPI (список модів в ангарі) та OpenWG.",
+        s1: "Завантаж",
+        s1_d: "Натисни «Завантажити» вгорі сторінки — скачається файл WB_26.exe.",
+        s2: "Закрий гру й запусти",
+        s2_d: "Встановлювач сам знайде папку з грою. Якщо ні — вкажи її через «Огляд…».",
+        s3: "Вибери моди",
+        s3_d: "Постав галочки й натисни «Встановити». Запускай гру — список модів буде в ангарі.",
+        n_ver: "<b>Модпак зібраний під поточну версію гри.</b> Якщо гра оновилась, а модпак ще ні, встановлювач не дасть поставити старі моди — дочекайся оновлення на цій сторінці.",
+        n_keep: "<b>Вибір модів запам’ятовується</b> — після оновлення гри галочки стоятимуть так само.",
+        n_clean: "<b>Перед встановленням можна почистити</b> папки mods і res_mods, кеш і логи гри — налаштування гри й модів не зачіпаються.",
+        n_ss: "<b>Windows може попередити про невідомий файл</b> (SmartScreen) — натисни «Докладніше» → «Усе одно запустити».",
+        c_battle: "Інтерфейс бою",
+        m_hp: "HP у вухах команд",
+        m_hp_d: "Цифри поточного HP кожного танка у вухах команд — у союзників і в противників.",
+        m_eq: "Обладнання в бою",
+        m_eq_d: "Показує в бою обладнання твого танка.",
+        m_dist: "Відстань до цілі",
+        m_dist_d: "Показує відстань у метрах над маркером кожного видимого танка.",
+        m_hc: "Основний калібр у бою",
+        m_hc_d: "Скільки шкоди ще треба завдати, щоб отримати медаль «Основний калібр».",
+        m_marks: "Відмітки в бою",
+        m_marks_d: "Панель прогресу відміток на стволі прямо в бою.",
+        m_light: "Світлофор",
+        m_light_d: "Скільки противників поза полем зору світяться, скільки з них мають по тобі простріл зі спини і чи є вороги в радіусі 50 метрів.",
+        m_hit: "Hitmarker — позначка влучання",
+        m_hit_d: "Позначка влучання зі звуком з гри Call of Duty.",
+        m_rc: "Швидкий реконект",
+        m_rc_d: "Зв’язок зник і не повертається? Ctrl + K — і гра одразу викине на екран входу, звідки можна швидко повернутися в бій.",
+        c_hangar: "Інтерфейс ангара",
+        m_wbh: "Ангар від WB",
+        m_wbh_d: "Великий інтерфейс ангара в HD і розблокування FPS: 120, 165 або 240 кадрів.",
+        m_stats: "Статистика в ангарі",
+        m_stats_d: "Власна статистика WN8 прямо в ангарі.",
+        m_clock: "Годинник в бою та ангарі",
+        m_clock_d: "Час і дата в ангарі, час у бою. Годинник перетягується мишею, колір і формат — у налаштуваннях модів.",
+        m_hits: "Історія влучань",
+        m_hits_d: "Після бою показує на 3D-моделі твого танка, куди і як тебе пробили.",
+        m_rep: "Менеджер реплеїв",
+        m_rep_d: "Список боїв за реплеями прямо в ангарі: результати бою, запуск або видалення реплея.",
+        m_claim: "Автозбір нагород",
+        m_claim_d: "Сам забирає нагороди кланового постачання та подарунки улюбленця.",
+        m_anom: "Anomaizer — зміна ніку",
+        m_anom_d: "Візуально підміняє твій нік і клан-тег в ангарі та в бою. Зручно для стріму.",
+        c_sight: "Приціл",
+        m_ret: "Приціл як у WB",
+        m_ret_d: "Коло зведення рухається плавно, з відгуком 1 мс, а саме коло зменшене й налаштоване. Можна взяти лише плавність або лише коло.",
+        m_clean: "Чистий приціл",
+        m_clean_d: "Без похитування, затемнення й зеленого відтінку в снайперському режимі, без червоного спалаху й тряски камери при влучанні в тебе.",
+        c_gfx: "Графіка",
+        m_fog: "Прибирання туману",
+        m_fog_d: "Прибирає туман на 60 мапах — може додати FPS.",
+        m_fx: "Вимкнення ефектів",
+        m_fx_d: "Вимикає зайві візуальні ефекти в бою.",
+        m_tags: "Вимкнення жетонів",
+        m_tags_d: "Не показує жетони гравців на початку бою.",
+        c_equip: "Обладнання",
+        m_aeq: "Автоповернення обладнання",
+        m_aeq_d: "З підпискою WoT Plus запам’ятовує обладнання на танку й сам перекидає його при зміні танка.",
+        m_qd: "Швидке зняття обладнання",
+        m_qd_d: "Знімає обладнання з будь-якого танка одним кліком.",
         footer_tagline: 'Професійний буст WoT', footer_follow: 'Слідкуйте за мною',
         footer_copy: 'WOT\u00a0BOOSTED. Всі\u00a0права\u00a0захищені.' },
-  en: { page_title: 'Modpack — WOT BOOSTED', nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
+  en: { page_title: 'WB Modpack — WOT BOOSTED', nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
         nav_group: 'Group', nav_settings: 'Settings', nav_modpack: 'Modpack',
-        mp_label: 'World of Tanks', mp_title: 'MOD<span>PACK</span>',
-        mp_soon: 'This page is under construction — my modpack is coming soon.',
+        mp_title: '<span>WB</span> MODPACK',
+        mp_name: "All my mods — <span>in one installer</span>",
+        mp_ver: "Version 75",
+        mp_desc: "Tick only what you need. The installer finds the game by itself, cleans out old mods and remembers your choice.",
+        mp_btn: "Download",
+        mp_size: "42 MB",
+        mp_inside: "What’s <span>inside</span>",
+        mp_how: "How to <span>install</span>",
+        mp_libs: "The libraries the mods run on are installed along with them: ModsSettingsAPI (mod settings window), ModsListAPI (mod list in the garage) and OpenWG.",
+        s1: "Download",
+        s1_d: "Press “Download” at the top of the page — you’ll get the WB_26.exe file.",
+        s2: "Close the game and run it",
+        s2_d: "The installer finds your game folder by itself. If it doesn’t, pick it with “Browse…”.",
+        s3: "Pick your mods",
+        s3_d: "Tick the boxes and press “Install”. Launch the game — the mod list will be in the garage.",
+        n_ver: "<b>The modpack is built for the current game version.</b> If the game has updated and the modpack hasn’t yet, the installer won’t let you install the old mods — wait for the update on this page.",
+        n_keep: "<b>Your mod selection is remembered</b> — after a game update the ticks stay the same.",
+        n_clean: "<b>Before installing you can clean</b> the mods and res_mods folders and the game cache and logs — game and mod settings stay.",
+        n_ss: "<b>Windows may warn about an unknown file</b> (SmartScreen) — press “More info” → “Run anyway”.",
+        c_battle: "Battle UI",
+        c_hangar: "Garage UI",
+        c_sight: "Reticle",
+        c_gfx: "Graphics",
+        c_equip: "Equipment",
+        m_hp: "HP in the team panels",
+        m_hp_d: "Current HP of every tank in the team panels — for allies and enemies.",
+        m_eq: "Equipment in battle",
+        m_eq_d: "Shows your tank’s equipment during a battle.",
+        m_dist: "Distance to target",
+        m_dist_d: "Shows the distance in meters above the marker of every visible tank.",
+        m_hc: "High Caliber in battle",
+        m_hc_d: "How much more damage you need to deal to earn the High Caliber medal.",
+        m_marks: "Gun marks in battle",
+        m_marks_d: "A gun mark progress panel right in battle.",
+        m_light: "Traffic light",
+        m_light_d: "How many enemies outside your view are spotted, how many of them can shoot you in the back, and whether there are enemies within 50 meters.",
+        m_hit: "Hitmarker — hit indicator",
+        m_hit_d: "A hit marker with the sound from Call of Duty.",
+        m_rc: "Fast reconnect",
+        m_rc_d: "Lost the connection and it won’t come back? Ctrl + K drops you straight to the login screen, from where you can quickly get back into the battle.",
+        m_wbh: "WB garage",
+        m_wbh_d: "A big garage UI in HD and an FPS unlock: 120, 165 or 240 frames.",
+        m_stats: "Garage statistics",
+        m_stats_d: "Your own WN8 statistics right in the garage.",
+        m_clock: "Clock in battle and garage",
+        m_clock_d: "Time and date in the garage, time in battle. Drag the clock with the mouse; color and format are in the mod settings.",
+        m_hits: "Hit history",
+        m_hits_d: "After a battle, shows on a 3D model of your tank where and how you were penetrated.",
+        m_rep: "Replays manager",
+        m_rep_d: "A list of battles from your replays right in the garage: battle results, play or delete a replay.",
+        m_claim: "Reward auto-claim",
+        m_claim_d: "Claims Clan Supply rewards and your pet’s gifts by itself.",
+        m_anom: "Anomaizer — nickname changer",
+        m_anom_d: "Visually replaces your nickname and clan tag in the garage and in battle. Handy for streaming.",
+        m_ret: "WB reticle",
+        m_ret_d: "The aiming circle moves smoothly with a 1 ms response, and the circle itself is smaller and tuned. You can take only the smoothness or only the circle.",
+        m_clean: "Clean sight",
+        m_clean_d: "No reticle sway, darkening or green tint in sniper mode, no red flash or camera shake when you get hit.",
+        m_fog: "Fog removal",
+        m_fog_d: "Removes fog on 60 maps — can give you more FPS.",
+        m_fx: "Effects off",
+        m_fx_d: "Turns off unnecessary visual effects in battle.",
+        m_tags: "No dog tags",
+        m_tags_d: "Hides players’ dog tags at the start of a battle.",
+        m_aeq: "Auto equipment return",
+        m_aeq_d: "With WoT Plus, remembers the equipment on a tank and moves it over by itself when you switch tanks.",
+        m_qd: "Quick equipment removal",
+        m_qd_d: "Removes equipment from any tank in one click.",
         footer_tagline: 'Professional WoT boosting', footer_follow: 'Follow me',
         footer_copy: 'WOT\u00a0BOOSTED. All\u00a0rights\u00a0reserved.' }
 };
@@ -568,6 +851,9 @@ function setLang(lang) {
 }
 // мова сторінки задається адресою: /… — українська, /en/… — англійська
 setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
+// аналітика: скільки разів натиснули «Завантажити»
+var mpDl = document.getElementById('mpDownload');
+if (mpDl) mpDl.addEventListener('click', function () { try { gtag('event', 'modpack_download', { event_category: 'modpack', event_label: 'WB_26.exe' }); } catch (e) {} });
 
 </script>
 </body>
