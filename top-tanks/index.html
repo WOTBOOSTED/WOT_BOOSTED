@@ -356,11 +356,13 @@
     padding: 12px 22px; min-height: 56px;
   }
   .tier-row + .tier-row { border-top: 1px solid rgba(255,255,255,0.04); }
+  /* номер місця: скошена плашка, як кнопки сайту */
   .tier-rank {
-    flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+    flex-shrink: 0; width: 36px; height: 26px;
+    clip-path: polygon(7px 0, 100% 0, calc(100% - 7px) 100%, 0 100%);
     display: flex; align-items: center; justify-content: center;
     font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13px;
-    color: #fff; background: rgba(255,255,255,0.06);
+    color: #fff; background: rgba(255,255,255,0.07);
   }
   .tier-rank.r1 { background: linear-gradient(180deg, #ffd34d, #e0a100); color: #3a2600; }
   .tier-rank.r2 { background: linear-gradient(180deg, #e6ebf2, #aab3c0); color: #2a2f38; }
