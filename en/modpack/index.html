@@ -485,9 +485,13 @@
   .mp-name { font-family: 'WB Head', 'Russo One', sans-serif; font-weight: 400; font-size: 26px; line-height: 1.15; text-transform: uppercase; letter-spacing: .5px; }
   .mp-name span { display: block; }
   .mp-name span { color: var(--gold); }
-  .mp-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 12px; }
-  .mp-chip { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 11px; border-radius: 6px; border: 1px solid var(--border-subtle); color: var(--text-muted); background: rgba(255,255,255,.03); }
-  .mp-chip.hot { color: #fff; border-color: rgba(225,45,60,.55); background: rgba(225,45,60,.14); }
+  /* версія / клієнт / дата: підпис зверху, значення знизу */
+  .mp-specs { display: flex; margin: 14px 0 14px; }
+  .mp-specs > div { padding: 0 22px; border-left: 1px solid rgba(255,255,255,.1); }
+  .mp-specs > div:first-child { padding-left: 0; border-left: 0; }
+  .mp-specs small { display: block; font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 5px; white-space: nowrap; }
+  .mp-specs b { display: block; font-family: 'WB Head', 'Russo One', sans-serif; font-weight: 400; font-size: 21px; line-height: 1.1; color: #fff; letter-spacing: .5px; white-space: nowrap; }
+  .mp-specs b.r { color: var(--gold); }
   .mp-desc { color: var(--text-muted); font-size: 15px; line-height: 1.6; font-weight: 300; max-width: 560px; }
   .mp-dl { display: flex; flex-direction: column; align-items: center; gap: 10px; }
   .mp-btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 17px 44px; text-decoration: none;
@@ -536,7 +540,12 @@
     .mp-hero { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 18px; padding: 24px 18px; }
     .mp-icon { width: 96px; height: 96px; border-radius: 18px; }
     .mp-name { font-size: 21px; }
-    .mp-chips { justify-content: center; }
+    .mp-specs { justify-content: center; }
+    .mp-specs > div { padding: 0 14px; }
+    .mp-specs > div:first-child { padding-left: 0; }
+    .mp-specs > div:last-child { padding-right: 0; }
+    .mp-specs small { font-size: 10px; letter-spacing: 1.2px; }
+    .mp-specs b { font-size: 18px; }
     .mp-dl { width: 100%; }
     .mp-btn { width: 100%; max-width: 360px; padding: 16px 20px; }
     .mp-grid, .mp-stack { grid-template-columns: 1fr; gap: 16px; }
@@ -559,7 +568,7 @@
   /* шапка Санти над значком: сам значок лишається того ж розміру, шапка виходить вгору */
   .mp-icon-ny { display: block; width: 125px; height: auto; margin: -26px -2.5px 0; filter: drop-shadow(0 14px 22px rgba(0,0,0,.45)) drop-shadow(0 0 26px rgba(225,45,60,.16)); }
   .ny .mp-hero { padding-top: 40px; }
-  .ny .mp-ny-text { display: block; margin-top: 12px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 12.5px; letter-spacing: 3px; text-transform: uppercase; color: #dfe6f2; white-space: nowrap; }
+  .ny .mp-ny-text { display: block; margin-top: 12px; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 2.6px; text-transform: uppercase; color: #dfe6f2; white-space: nowrap; }
   .ny .mp-ny-text::before, .ny .mp-ny-text::after { content: '❄'; color: #9fc3ff; margin: 0 7px; font-size: 11px; }
   /* сніжна шапка на верхньому краї головної картки */
   .ny .mp-hero::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 16px; z-index: 2; pointer-events: none;
@@ -629,7 +638,7 @@ window.addEventListener('load', function () {
     </div>
     <div class="mp-info">
       <h2 class="mp-name" id="mpName" data-t-html="mp_name">All my mods — <span>in one installer</span></h2>
-      <div class="mp-chips"><span class="mp-chip hot" data-t="mp_ver">Version 75</span><span class="mp-chip" data-t="mp_client">For client 2.4.2.0</span><span class="mp-chip" data-t="mp_date">Released 26 Nov 2026</span></div>
+      <div class="mp-specs"><div><small data-t="mp_ver_l">Version</small><b class="r">75</b></div><div><small data-t="mp_client_l">For client</small><b>2.4.2.0</b></div><div><small data-t="mp_date_l">Released</small><b data-t="mp_date_v">26 Nov 2026</b></div></div>
       <p class="mp-desc" data-t="mp_desc">Tick only what you need. The installer finds the game by itself, cleans out old mods and remembers your choice.</p>
     </div>
     <div class="mp-dl">
@@ -729,9 +738,8 @@ window.addEventListener('load', function () {
 const translations = {
   uk: { page_title: 'Модпак WB — WOT BOOSTED', nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
         nav_group: 'Група', nav_settings: 'Налаштування', nav_modpack: 'Модпак',
-        mp_title: 'МОДПАК <span>WB</span>', mp_ny: 'З Новим роком', mp_date: 'Викладено 26.11.2026', mp_client: 'Під клієнт 2.4.2.0',
+        mp_title: 'МОДПАК <span>WB</span>', mp_ny: 'З Новим роком', mp_ver_l: 'Версія', mp_client_l: 'Під клієнт', mp_date_l: 'Викладено', mp_date_v: '26.11.2026',
         mp_name: "Усі мої моди — <span>в одному встановлювачі</span>",
-        mp_ver: "Версія 75",
         mp_desc: "Ставиш галочками лише те, що потрібно. Встановлювач сам знайде гру, почистить старі моди й запам’ятає твій вибір.",
         mp_btn: "Завантажити",
         mp_size: "42 МБ",
@@ -801,9 +809,8 @@ const translations = {
         footer_copy: 'WOT\u00a0BOOSTED. Всі\u00a0права\u00a0захищені.' },
   en: { page_title: 'WB Modpack — WOT BOOSTED', nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
         nav_group: 'Group', nav_settings: 'Settings', nav_modpack: 'Modpack',
-        mp_title: '<span>WB</span> MODPACK', mp_ny: 'Happy New Year', mp_date: 'Released 26 Nov 2026', mp_client: 'For client 2.4.2.0',
+        mp_title: '<span>WB</span> MODPACK', mp_ny: 'Happy New Year', mp_ver_l: 'Version', mp_client_l: 'For client', mp_date_l: 'Released', mp_date_v: '26 Nov 2026',
         mp_name: "All my mods — <span>in one installer</span>",
-        mp_ver: "Version 75",
         mp_desc: "Tick only what you need. The installer finds the game by itself, cleans out old mods and remembers your choice.",
         mp_btn: "Download",
         mp_size: "42 MB",
