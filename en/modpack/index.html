@@ -10,6 +10,11 @@
   gtag('js', new Date());
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* новорічне оформлення модпака: само вмикається з 20 листопада по 20 січня */
+(function () { var d = new Date(), m = d.getMonth() + 1, n = d.getDate();
+  if ((m === 11 && n >= 20) || m === 12 || (m === 1 && n <= 20)) document.documentElement.classList.add('ny'); })();
+</script>
 <title>WB Modpack — WOT BOOSTED</title>
 <meta name="description" content="WB modpack for World of Tanks: reticle, HP in the team panels, traffic light, distance to target, WN8 statistics, replays manager and more. One installer — install only what you need.">
 <link rel="canonical" href="https://wotboosted.com/en/modpack/">
@@ -541,6 +546,30 @@
     .mp-step { padding: 18px 16px; }
     .mp-notes { padding: 16px 16px; }
   }
+
+  /* ===== Новорічне оформлення (клас .ny на <html>, 20.11–20.01) ===== */
+  .mp-hero { position: relative; overflow: hidden; }
+  .mp-hero > *:not(.mp-snow) { position: relative; z-index: 1; }
+  .mp-snow { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; display: none; }
+  .ny .mp-snow { display: block; }
+  .mp-logo { display: flex; flex-direction: column; align-items: center; }
+  .mp-pic-ny, .mp-ny-text { display: none; }
+  .ny .mp-pic-plain { display: none; }
+  .ny .mp-pic-ny { display: block; }
+  /* шапка Санти над значком: сам значок лишається того ж розміру, шапка виходить вгору */
+  .mp-icon-ny { display: block; width: 125px; height: auto; margin: -26px -2.5px 0; filter: drop-shadow(0 14px 22px rgba(0,0,0,.45)) drop-shadow(0 0 26px rgba(225,45,60,.16)); }
+  .ny .mp-hero { padding-top: 40px; }
+  .ny .mp-ny-text { display: block; margin-top: 12px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 12.5px; letter-spacing: 3px; text-transform: uppercase; color: #dfe6f2; white-space: nowrap; }
+  .ny .mp-ny-text::before, .ny .mp-ny-text::after { content: '❄'; color: #9fc3ff; margin: 0 7px; font-size: 11px; }
+  /* сніжна шапка на верхньому краї головної картки */
+  .ny .mp-hero::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 16px; z-index: 2; pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='16' viewBox='0 0 240 16'%3E%3Cpath fill='%23f3f6fb' d='M0 0H240V7.23L240 7.23L239.5 7.20L239 7.16L238.5 7.10L238 7.04L237.5 6.96L237 6.87L236.5 6.77L236 6.65L235.5 6.53L235 6.39L234.5 6.25L234 6.10L233.5 5.94L233 5.78L232.5 5.61L232 5.44L231.5 5.27L231 5.09L230.5 4.92L230 4.75L229.5 4.58L229 4.41L228.5 4.25L228 4.10L227.5 3.95L227 3.82L226.5 3.69L226 3.57L225.5 3.46L225 3.36L224.5 3.28L224 3.20L223.5 3.14L223 3.09L222.5 3.05L222 3.02L221.5 3.00L221 2.99L220.5 3.00L220 3.02L219.5 3.06L219 3.13L218.5 3.25L218 3.46L217.5 3.79L217 4.27L216.5 4.91L216 5.67L215.5 6.49L215 7.24L214.5 7.78L214 8.00L213.5 7.87L213 7.42L212.5 6.77L212 6.03L211.5 5.35L211 4.78L210.5 4.37L210 4.10L209.5 3.94L209 3.85L208.5 3.81L208 3.79L207.5 3.77L207 3.76L206.5 3.75L206 3.73L205.5 3.72L205 3.70L204.5 3.69L204 3.67L203.5 3.66L203 3.65L202.5 3.64L202 3.64L201.5 3.64L201 3.64L200.5 3.65L200 3.67L199.5 3.69L199 3.71L198.5 3.75L198 3.78L197.5 3.83L197 3.87L196.5 3.93L196 3.99L195.5 4.05L195 4.11L194.5 4.18L194 4.25L193.5 4.32L193 4.40L192.5 4.47L192 4.54L191.5 4.61L191 4.67L190.5 4.73L190 4.79L189.5 4.84L189 4.88L188.5 4.92L188 4.95L187.5 4.97L187 4.98L186.5 4.99L186 4.98L185.5 4.96L185 4.94L184.5 4.90L184 4.86L183.5 4.81L183 4.75L182.5 4.68L182 4.61L181.5 4.53L181 4.44L180.5 4.35L180 4.26L179.5 4.17L179 4.08L178.5 3.98L178 3.89L177.5 3.80L177 3.72L176.5 3.64L176 3.57L175.5 3.52L175 3.49L174.5 3.53L174 3.67L173.5 3.95L173 4.41L172.5 5.02L172 5.65L171.5 6.15L171 6.37L170.5 6.23L170 5.81L169.5 5.25L169 4.73L168.5 4.35L168 4.14L167.5 4.08L167 4.11L166.5 4.21L166 4.33L165.5 4.47L165 4.61L164.5 4.76L164 4.92L163.5 5.07L163 5.22L162.5 5.37L162 5.52L161.5 5.67L161 5.81L160.5 5.95L160 6.08L159.5 6.20L159 6.31L158.5 6.42L158 6.52L157.5 6.61L157 6.69L156.5 6.76L156 6.82L155.5 6.87L155 6.92L154.5 6.95L154 6.98L153.5 7.00L153 7.01L152.5 7.02L152 7.02L151.5 7.01L151 7.00L150.5 6.99L150 6.98L149.5 6.96L149 6.94L148.5 6.93L148 6.91L147.5 6.90L147 6.88L146.5 6.87L146 6.86L145.5 6.85L145 6.85L144.5 6.85L144 6.85L143.5 6.85L143 6.86L142.5 6.87L142 6.89L141.5 6.90L141 6.92L140.5 6.94L140 6.96L139.5 6.99L139 7.04L138.5 7.12L138 7.25L137.5 7.47L137 7.79L136.5 8.27L136 8.91L135.5 9.69L135 10.57L134.5 11.44L134 12.19L133.5 12.67L133 12.81L132.5 12.56L132 11.97L131.5 11.11L131 10.13L130.5 9.14L130 8.24L129.5 7.49L129 6.90L128.5 6.46L128 6.13L127.5 5.89L127 5.70L126.5 5.54L126 5.39L125.5 5.26L125 5.13L124.5 5.01L124 4.89L123.5 4.78L123 4.67L122.5 4.57L122 4.48L121.5 4.40L121 4.32L120.5 4.26L120 4.21L119.5 4.17L119 4.14L118.5 4.12L118 4.12L117.5 4.12L117 4.14L116.5 4.17L116 4.21L115.5 4.25L115 4.31L114.5 4.38L114 4.45L113.5 4.53L113 4.62L112.5 4.71L112 4.80L111.5 4.90L111 4.99L110.5 5.09L110 5.18L109.5 5.27L109 5.36L108.5 5.44L108 5.52L107.5 5.59L107 5.65L106.5 5.70L106 5.74L105.5 5.77L105 5.79L104.5 5.80L104 5.80L103.5 5.79L103 5.77L102.5 5.74L102 5.70L101.5 5.65L101 5.59L100.5 5.52L100 5.44L99.5 5.35L99 5.26L98.5 5.17L98 5.06L97.5 4.96L97 4.85L96.5 4.75L96 4.64L95.5 4.53L95 4.43L94.5 4.32L94 4.22L93.5 4.13L93 4.04L92.5 3.95L92 3.87L91.5 3.80L91 3.73L90.5 3.67L90 3.61L89.5 3.57L89 3.52L88.5 3.49L88 3.46L87.5 3.44L87 3.42L86.5 3.40L86 3.39L85.5 3.39L85 3.38L84.5 3.38L84 3.38L83.5 3.38L83 3.38L82.5 3.38L82 3.39L81.5 3.42L81 3.49L80.5 3.62L80 3.88L79.5 4.28L79 4.83L78.5 5.47L78 6.09L77.5 6.53L77 6.67L76.5 6.46L76 5.94L75.5 5.25L75 4.54L74.5 3.92L74 3.46L73.5 3.15L73 2.96L72.5 2.84L72 2.77L71.5 2.72L71 2.69L70.5 2.67L70 2.65L69.5 2.64L69 2.64L68.5 2.65L68 2.67L67.5 2.69L67 2.73L66.5 2.78L66 2.84L65.5 2.91L65 2.99L64.5 3.08L64 3.18L63.5 3.30L63 3.42L62.5 3.55L62 3.69L61.5 3.83L61 3.98L60.5 4.14L60 4.30L59.5 4.46L59 4.63L58.5 4.79L58 4.96L57.5 5.12L57 5.28L56.5 5.43L56 5.58L55.5 5.72L55 5.85L54.5 5.98L54 6.09L53.5 6.20L53 6.29L52.5 6.37L52 6.44L51.5 6.50L51 6.55L50.5 6.58L50 6.60L49.5 6.61L49 6.60L48.5 6.59L48 6.56L47.5 6.53L47 6.48L46.5 6.43L46 6.37L45.5 6.30L45 6.23L44.5 6.16L44 6.08L43.5 6.00L43 5.92L42.5 5.84L42 5.76L41.5 5.69L41 5.61L40.5 5.55L40 5.48L39.5 5.43L39 5.38L38.5 5.34L38 5.30L37.5 5.27L37 5.25L36.5 5.24L36 5.24L35.5 5.24L35 5.25L34.5 5.27L34 5.30L33.5 5.33L33 5.37L32.5 5.42L32 5.48L31.5 5.56L31 5.67L30.5 5.85L30 6.12L29.5 6.52L29 7.08L28.5 7.79L28 8.62L27.5 9.49L27 10.26L26.5 10.80L26 11.02L25.5 10.86L25 10.38L24.5 9.67L24 8.87L23.5 8.09L23 7.43L22.5 6.93L22 6.57L21.5 6.34L21 6.21L20.5 6.12L20 6.07L19.5 6.04L19 6.01L18.5 5.99L18 5.97L17.5 5.95L17 5.94L16.5 5.92L16 5.91L15.5 5.91L15 5.91L14.5 5.91L14 5.92L13.5 5.94L13 5.96L12.5 5.99L12 6.03L11.5 6.07L11 6.12L10.5 6.17L10 6.23L9.5 6.29L9 6.36L8.5 6.43L8 6.50L7.5 6.57L7 6.65L6.5 6.73L6 6.80L5.5 6.87L5 6.94L4.5 7.01L4 7.06L3.5 7.12L3 7.16L2.5 7.20L2 7.23L1.5 7.24L1 7.25L0.5 7.24L0 7.23Z'/%3E%3Cpath fill='%23c9d6ea' opacity='.6' d='M0 7.23L0 7.23L0.5 7.24L1 7.25L1.5 7.24L2 7.23L2.5 7.20L3 7.16L3.5 7.12L4 7.06L4.5 7.01L5 6.94L5.5 6.87L6 6.80L6.5 6.73L7 6.65L7.5 6.57L8 6.50L8.5 6.43L9 6.36L9.5 6.29L10 6.23L10.5 6.17L11 6.12L11.5 6.07L12 6.03L12.5 5.99L13 5.96L13.5 5.94L14 5.92L14.5 5.91L15 5.91L15.5 5.91L16 5.91L16.5 5.92L17 5.94L17.5 5.95L18 5.97L18.5 5.99L19 6.01L19.5 6.04L20 6.07L20.5 6.12L21 6.21L21.5 6.34L22 6.57L22.5 6.93L23 7.43L23.5 8.09L24 8.87L24.5 9.67L25 10.38L25.5 10.86L26 11.02L26.5 10.80L27 10.26L27.5 9.49L28 8.62L28.5 7.79L29 7.08L29.5 6.52L30 6.12L30.5 5.85L31 5.67L31.5 5.56L32 5.48L32.5 5.42L33 5.37L33.5 5.33L34 5.30L34.5 5.27L35 5.25L35.5 5.24L36 5.24L36.5 5.24L37 5.25L37.5 5.27L38 5.30L38.5 5.34L39 5.38L39.5 5.43L40 5.48L40.5 5.55L41 5.61L41.5 5.69L42 5.76L42.5 5.84L43 5.92L43.5 6.00L44 6.08L44.5 6.16L45 6.23L45.5 6.30L46 6.37L46.5 6.43L47 6.48L47.5 6.53L48 6.56L48.5 6.59L49 6.60L49.5 6.61L50 6.60L50.5 6.58L51 6.55L51.5 6.50L52 6.44L52.5 6.37L53 6.29L53.5 6.20L54 6.09L54.5 5.98L55 5.85L55.5 5.72L56 5.58L56.5 5.43L57 5.28L57.5 5.12L58 4.96L58.5 4.79L59 4.63L59.5 4.46L60 4.30L60.5 4.14L61 3.98L61.5 3.83L62 3.69L62.5 3.55L63 3.42L63.5 3.30L64 3.18L64.5 3.08L65 2.99L65.5 2.91L66 2.84L66.5 2.78L67 2.73L67.5 2.69L68 2.67L68.5 2.65L69 2.64L69.5 2.64L70 2.65L70.5 2.67L71 2.69L71.5 2.72L72 2.77L72.5 2.84L73 2.96L73.5 3.15L74 3.46L74.5 3.92L75 4.54L75.5 5.25L76 5.94L76.5 6.46L77 6.67L77.5 6.53L78 6.09L78.5 5.47L79 4.83L79.5 4.28L80 3.88L80.5 3.62L81 3.49L81.5 3.42L82 3.39L82.5 3.38L83 3.38L83.5 3.38L84 3.38L84.5 3.38L85 3.38L85.5 3.39L86 3.39L86.5 3.40L87 3.42L87.5 3.44L88 3.46L88.5 3.49L89 3.52L89.5 3.57L90 3.61L90.5 3.67L91 3.73L91.5 3.80L92 3.87L92.5 3.95L93 4.04L93.5 4.13L94 4.22L94.5 4.32L95 4.43L95.5 4.53L96 4.64L96.5 4.75L97 4.85L97.5 4.96L98 5.06L98.5 5.17L99 5.26L99.5 5.35L100 5.44L100.5 5.52L101 5.59L101.5 5.65L102 5.70L102.5 5.74L103 5.77L103.5 5.79L104 5.80L104.5 5.80L105 5.79L105.5 5.77L106 5.74L106.5 5.70L107 5.65L107.5 5.59L108 5.52L108.5 5.44L109 5.36L109.5 5.27L110 5.18L110.5 5.09L111 4.99L111.5 4.90L112 4.80L112.5 4.71L113 4.62L113.5 4.53L114 4.45L114.5 4.38L115 4.31L115.5 4.25L116 4.21L116.5 4.17L117 4.14L117.5 4.12L118 4.12L118.5 4.12L119 4.14L119.5 4.17L120 4.21L120.5 4.26L121 4.32L121.5 4.40L122 4.48L122.5 4.57L123 4.67L123.5 4.78L124 4.89L124.5 5.01L125 5.13L125.5 5.26L126 5.39L126.5 5.54L127 5.70L127.5 5.89L128 6.13L128.5 6.46L129 6.90L129.5 7.49L130 8.24L130.5 9.14L131 10.13L131.5 11.11L132 11.97L132.5 12.56L133 12.81L133.5 12.67L134 12.19L134.5 11.44L135 10.57L135.5 9.69L136 8.91L136.5 8.27L137 7.79L137.5 7.47L138 7.25L138.5 7.12L139 7.04L139.5 6.99L140 6.96L140.5 6.94L141 6.92L141.5 6.90L142 6.89L142.5 6.87L143 6.86L143.5 6.85L144 6.85L144.5 6.85L145 6.85L145.5 6.85L146 6.86L146.5 6.87L147 6.88L147.5 6.90L148 6.91L148.5 6.93L149 6.94L149.5 6.96L150 6.98L150.5 6.99L151 7.00L151.5 7.01L152 7.02L152.5 7.02L153 7.01L153.5 7.00L154 6.98L154.5 6.95L155 6.92L155.5 6.87L156 6.82L156.5 6.76L157 6.69L157.5 6.61L158 6.52L158.5 6.42L159 6.31L159.5 6.20L160 6.08L160.5 5.95L161 5.81L161.5 5.67L162 5.52L162.5 5.37L163 5.22L163.5 5.07L164 4.92L164.5 4.76L165 4.61L165.5 4.47L166 4.33L166.5 4.21L167 4.11L167.5 4.08L168 4.14L168.5 4.35L169 4.73L169.5 5.25L170 5.81L170.5 6.23L171 6.37L171.5 6.15L172 5.65L172.5 5.02L173 4.41L173.5 3.95L174 3.67L174.5 3.53L175 3.49L175.5 3.52L176 3.57L176.5 3.64L177 3.72L177.5 3.80L178 3.89L178.5 3.98L179 4.08L179.5 4.17L180 4.26L180.5 4.35L181 4.44L181.5 4.53L182 4.61L182.5 4.68L183 4.75L183.5 4.81L184 4.86L184.5 4.90L185 4.94L185.5 4.96L186 4.98L186.5 4.99L187 4.98L187.5 4.97L188 4.95L188.5 4.92L189 4.88L189.5 4.84L190 4.79L190.5 4.73L191 4.67L191.5 4.61L192 4.54L192.5 4.47L193 4.40L193.5 4.32L194 4.25L194.5 4.18L195 4.11L195.5 4.05L196 3.99L196.5 3.93L197 3.87L197.5 3.83L198 3.78L198.5 3.75L199 3.71L199.5 3.69L200 3.67L200.5 3.65L201 3.64L201.5 3.64L202 3.64L202.5 3.64L203 3.65L203.5 3.66L204 3.67L204.5 3.69L205 3.70L205.5 3.72L206 3.73L206.5 3.75L207 3.76L207.5 3.77L208 3.79L208.5 3.81L209 3.85L209.5 3.94L210 4.10L210.5 4.37L211 4.78L211.5 5.35L212 6.03L212.5 6.77L213 7.42L213.5 7.87L214 8.00L214.5 7.78L215 7.24L215.5 6.49L216 5.67L216.5 4.91L217 4.27L217.5 3.79L218 3.46L218.5 3.25L219 3.13L219.5 3.06L220 3.02L220.5 3.00L221 2.99L221.5 3.00L222 3.02L222.5 3.05L223 3.09L223.5 3.14L224 3.20L224.5 3.28L225 3.36L225.5 3.46L226 3.57L226.5 3.69L227 3.82L227.5 3.95L228 4.10L228.5 4.25L229 4.41L229.5 4.58L230 4.75L230.5 4.92L231 5.09L231.5 5.27L232 5.44L232.5 5.61L233 5.78L233.5 5.94L234 6.10L234.5 6.25L235 6.39L235.5 6.53L236 6.65L236.5 6.77L237 6.87L237.5 6.96L238 7.04L238.5 7.10L239 7.16L239.5 7.20L240 7.23L240 5.83L239.5 5.80L239 5.76L238.5 5.70L238 5.64L237.5 5.56L237 5.47L236.5 5.37L236 5.25L235.5 5.13L235 4.99L234.5 4.85L234 4.70L233.5 4.54L233 4.38L232.5 4.21L232 4.04L231.5 3.87L231 3.69L230.5 3.52L230 3.35L229.5 3.18L229 3.01L228.5 2.85L228 2.70L227.5 2.55L227 2.42L226.5 2.29L226 2.17L225.5 2.06L225 1.96L224.5 1.88L224 1.80L223.5 1.74L223 1.69L222.5 1.65L222 1.62L221.5 1.60L221 1.59L220.5 1.60L220 1.62L219.5 1.66L219 1.73L218.5 1.85L218 2.06L217.5 2.39L217 2.87L216.5 3.51L216 4.27L215.5 5.09L215 5.84L214.5 6.38L214 6.60L213.5 6.47L213 6.02L212.5 5.37L212 4.63L211.5 3.95L211 3.38L210.5 2.97L210 2.70L209.5 2.54L209 2.45L208.5 2.41L208 2.39L207.5 2.37L207 2.36L206.5 2.35L206 2.33L205.5 2.32L205 2.30L204.5 2.29L204 2.27L203.5 2.26L203 2.25L202.5 2.24L202 2.24L201.5 2.24L201 2.24L200.5 2.25L200 2.27L199.5 2.29L199 2.31L198.5 2.35L198 2.38L197.5 2.43L197 2.47L196.5 2.53L196 2.59L195.5 2.65L195 2.71L194.5 2.78L194 2.85L193.5 2.92L193 3.00L192.5 3.07L192 3.14L191.5 3.21L191 3.27L190.5 3.33L190 3.39L189.5 3.44L189 3.48L188.5 3.52L188 3.55L187.5 3.57L187 3.58L186.5 3.59L186 3.58L185.5 3.56L185 3.54L184.5 3.50L184 3.46L183.5 3.41L183 3.35L182.5 3.28L182 3.21L181.5 3.13L181 3.04L180.5 2.95L180 2.86L179.5 2.77L179 2.68L178.5 2.58L178 2.49L177.5 2.40L177 2.32L176.5 2.24L176 2.17L175.5 2.12L175 2.09L174.5 2.13L174 2.27L173.5 2.55L173 3.01L172.5 3.62L172 4.25L171.5 4.75L171 4.97L170.5 4.83L170 4.41L169.5 3.85L169 3.33L168.5 2.95L168 2.74L167.5 2.68L167 2.71L166.5 2.81L166 2.93L165.5 3.07L165 3.21L164.5 3.36L164 3.52L163.5 3.67L163 3.82L162.5 3.97L162 4.12L161.5 4.27L161 4.41L160.5 4.55L160 4.68L159.5 4.80L159 4.91L158.5 5.02L158 5.12L157.5 5.21L157 5.29L156.5 5.36L156 5.42L155.5 5.47L155 5.52L154.5 5.55L154 5.58L153.5 5.60L153 5.61L152.5 5.62L152 5.62L151.5 5.61L151 5.60L150.5 5.59L150 5.58L149.5 5.56L149 5.54L148.5 5.53L148 5.51L147.5 5.50L147 5.48L146.5 5.47L146 5.46L145.5 5.45L145 5.45L144.5 5.45L144 5.45L143.5 5.45L143 5.46L142.5 5.47L142 5.49L141.5 5.50L141 5.52L140.5 5.54L140 5.56L139.5 5.59L139 5.64L138.5 5.72L138 5.85L137.5 6.07L137 6.39L136.5 6.87L136 7.51L135.5 8.29L135 9.17L134.5 10.04L134 10.79L133.5 11.27L133 11.41L132.5 11.16L132 10.57L131.5 9.71L131 8.73L130.5 7.74L130 6.84L129.5 6.09L129 5.50L128.5 5.06L128 4.73L127.5 4.49L127 4.30L126.5 4.14L126 3.99L125.5 3.86L125 3.73L124.5 3.61L124 3.49L123.5 3.38L123 3.27L122.5 3.17L122 3.08L121.5 3.00L121 2.92L120.5 2.86L120 2.81L119.5 2.77L119 2.74L118.5 2.72L118 2.72L117.5 2.72L117 2.74L116.5 2.77L116 2.81L115.5 2.85L115 2.91L114.5 2.98L114 3.05L113.5 3.13L113 3.22L112.5 3.31L112 3.40L111.5 3.50L111 3.59L110.5 3.69L110 3.78L109.5 3.87L109 3.96L108.5 4.04L108 4.12L107.5 4.19L107 4.25L106.5 4.30L106 4.34L105.5 4.37L105 4.39L104.5 4.40L104 4.40L103.5 4.39L103 4.37L102.5 4.34L102 4.30L101.5 4.25L101 4.19L100.5 4.12L100 4.04L99.5 3.95L99 3.86L98.5 3.77L98 3.66L97.5 3.56L97 3.45L96.5 3.35L96 3.24L95.5 3.13L95 3.03L94.5 2.92L94 2.82L93.5 2.73L93 2.64L92.5 2.55L92 2.47L91.5 2.40L91 2.33L90.5 2.27L90 2.21L89.5 2.17L89 2.12L88.5 2.09L88 2.06L87.5 2.04L87 2.02L86.5 2.00L86 1.99L85.5 1.99L85 1.98L84.5 1.98L84 1.98L83.5 1.98L83 1.98L82.5 1.98L82 1.99L81.5 2.02L81 2.09L80.5 2.22L80 2.48L79.5 2.88L79 3.43L78.5 4.07L78 4.69L77.5 5.13L77 5.27L76.5 5.06L76 4.54L75.5 3.85L75 3.14L74.5 2.52L74 2.06L73.5 1.75L73 1.56L72.5 1.44L72 1.37L71.5 1.32L71 1.29L70.5 1.27L70 1.25L69.5 1.24L69 1.24L68.5 1.25L68 1.27L67.5 1.29L67 1.33L66.5 1.38L66 1.44L65.5 1.51L65 1.59L64.5 1.68L64 1.78L63.5 1.90L63 2.02L62.5 2.15L62 2.29L61.5 2.43L61 2.58L60.5 2.74L60 2.90L59.5 3.06L59 3.23L58.5 3.39L58 3.56L57.5 3.72L57 3.88L56.5 4.03L56 4.18L55.5 4.32L55 4.45L54.5 4.58L54 4.69L53.5 4.80L53 4.89L52.5 4.97L52 5.04L51.5 5.10L51 5.15L50.5 5.18L50 5.20L49.5 5.21L49 5.20L48.5 5.19L48 5.16L47.5 5.13L47 5.08L46.5 5.03L46 4.97L45.5 4.90L45 4.83L44.5 4.76L44 4.68L43.5 4.60L43 4.52L42.5 4.44L42 4.36L41.5 4.29L41 4.21L40.5 4.15L40 4.08L39.5 4.03L39 3.98L38.5 3.94L38 3.90L37.5 3.87L37 3.85L36.5 3.84L36 3.84L35.5 3.84L35 3.85L34.5 3.87L34 3.90L33.5 3.93L33 3.97L32.5 4.02L32 4.08L31.5 4.16L31 4.27L30.5 4.45L30 4.72L29.5 5.12L29 5.68L28.5 6.39L28 7.22L27.5 8.09L27 8.86L26.5 9.40L26 9.62L25.5 9.46L25 8.98L24.5 8.27L24 7.47L23.5 6.69L23 6.03L22.5 5.53L22 5.17L21.5 4.94L21 4.81L20.5 4.72L20 4.67L19.5 4.64L19 4.61L18.5 4.59L18 4.57L17.5 4.55L17 4.54L16.5 4.52L16 4.51L15.5 4.51L15 4.51L14.5 4.51L14 4.52L13.5 4.54L13 4.56L12.5 4.59L12 4.63L11.5 4.67L11 4.72L10.5 4.77L10 4.83L9.5 4.89L9 4.96L8.5 5.03L8 5.10L7.5 5.17L7 5.25L6.5 5.33L6 5.40L5.5 5.47L5 5.54L4.5 5.61L4 5.66L3.5 5.72L3 5.76L2.5 5.80L2 5.83L1.5 5.84L1 5.85L0.5 5.84L0 5.83Z'/%3E%3C/svg%3E") repeat-x 0 0 / 240px 16px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.35)); }
+  @media (max-width: 700px) {
+    .mp-icon-ny { width: 100px; margin: -21px -2px 0; }
+    .ny .mp-hero { padding-top: 36px; }
+    .ny .mp-ny-text { margin-top: 10px; }
+  }
 </style>
 <script>
 /* після оновлення сторінки завжди починаємо згори (телефон не «з'їдає» заголовок) */
@@ -592,15 +621,20 @@ window.addEventListener('load', function () {
   </div>
   <div class="mp">
   <section class="mp-card mp-hero" aria-labelledby="mpName">
-    <picture><source srcset="/modpack/img/wb-icon.webp" type="image/webp"><img class="mp-icon" src="/modpack/img/wb-icon.png" alt="WB" width="120" height="120" decoding="async"></picture>
+    <canvas class="mp-snow" aria-hidden="true"></canvas>
+    <div class="mp-logo">
+      <picture class="mp-pic-plain"><source srcset="/modpack/img/wb-icon.webp" type="image/webp"><img class="mp-icon" src="/modpack/img/wb-icon.png" alt="WB" width="120" height="120" decoding="async"></picture>
+      <picture class="mp-pic-ny"><source srcset="/modpack/img/wb-icon-ny.webp" type="image/webp"><img class="mp-icon-ny" src="/modpack/img/wb-icon-ny.png" alt="WB" width="266" height="311" decoding="async"></picture>
+      <div class="mp-ny-text" data-t="mp_ny">Happy New Year</div>
+    </div>
     <div class="mp-info">
       <h2 class="mp-name" id="mpName" data-t-html="mp_name">All my mods — <span>in one installer</span></h2>
-      <div class="mp-chips"><span class="mp-chip hot" data-t="mp_ver">Version 75</span><span class="mp-chip">Windows</span><span class="mp-chip" data-t="mp_size">42 MB</span></div>
+      <div class="mp-chips"><span class="mp-chip hot" data-t="mp_ver">Version 75</span><span class="mp-chip" data-t="mp_client">For client 2.4.2.0</span><span class="mp-chip" data-t="mp_date">Released 26 Nov 2026</span></div>
       <p class="mp-desc" data-t="mp_desc">Tick only what you need. The installer finds the game by itself, cleans out old mods and remembers your choice.</p>
     </div>
     <div class="mp-dl">
       <a class="mp-btn" id="mpDownload" href="https://github.com/WOTBOOSTED/WOT_BOOSTED/releases/latest/download/WB_26.exe" rel="nofollow"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6.5 10 5.5 5.5 5.5-5.5"/><path d="M4 20h16"/></svg><span data-t="mp_btn">Download</span></a>
-      <div class="mp-meta">WB_26.exe</div>
+      <div class="mp-meta">WB_26.exe · <span data-t="mp_size">42 MB</span> · Windows</div>
     </div>
   </section>
 
@@ -695,7 +729,7 @@ window.addEventListener('load', function () {
 const translations = {
   uk: { page_title: 'Модпак WB — WOT BOOSTED', nav_tg: 'Замовити', nav_boost: 'Буст', nav_top: 'Топ танків', nav_streams: 'Стріми',
         nav_group: 'Група', nav_settings: 'Налаштування', nav_modpack: 'Модпак',
-        mp_title: 'МОДПАК <span>WB</span>',
+        mp_title: 'МОДПАК <span>WB</span>', mp_ny: 'З Новим роком', mp_date: 'Викладено 26.11.2026', mp_client: 'Під клієнт 2.4.2.0',
         mp_name: "Усі мої моди — <span>в одному встановлювачі</span>",
         mp_ver: "Версія 75",
         mp_desc: "Ставиш галочками лише те, що потрібно. Встановлювач сам знайде гру, почистить старі моди й запам’ятає твій вибір.",
@@ -767,7 +801,7 @@ const translations = {
         footer_copy: 'WOT\u00a0BOOSTED. Всі\u00a0права\u00a0захищені.' },
   en: { page_title: 'WB Modpack — WOT BOOSTED', nav_tg: 'Order', nav_boost: 'Boost', nav_top: 'Top tanks', nav_streams: 'Streams',
         nav_group: 'Group', nav_settings: 'Settings', nav_modpack: 'Modpack',
-        mp_title: '<span>WB</span> MODPACK',
+        mp_title: '<span>WB</span> MODPACK', mp_ny: 'Happy New Year', mp_date: 'Released 26 Nov 2026', mp_client: 'For client 2.4.2.0',
         mp_name: "All my mods — <span>in one installer</span>",
         mp_ver: "Version 75",
         mp_desc: "Tick only what you need. The installer finds the game by itself, cleans out old mods and remembers your choice.",
@@ -851,6 +885,37 @@ function setLang(lang) {
 }
 // мова сторінки задається адресою: /… — українська, /en/… — англійська
 setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
+// новорічний сніг у головній картці (лише коли ввімкнено .ny)
+(function () {
+  if (!document.documentElement.classList.contains('ny')) return;
+  var cv = document.querySelector('.mp-snow'); if (!cv || !cv.getContext) return;
+  var ctx = cv.getContext('2d'), box = cv.parentNode, W = 0, H = 0, dpr = 1, flakes = [], run = false, seen = true;
+  function size() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2); W = box.clientWidth; H = box.clientHeight;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var want = Math.round(Math.min(70, Math.max(24, W / 16)));
+    while (flakes.length < want) flakes.push(mk(true)); flakes.length = want;
+  }
+  function mk(any) {
+    var r = 0.8 + Math.random() * 1.9;
+    return { x: Math.random() * W, y: any ? Math.random() * H : -6, r: r, v: 0.18 + r * 0.17 + Math.random() * 0.15,
+             a: 0.25 + Math.random() * 0.55, ph: Math.random() * 6.28, sw: 0.25 + Math.random() * 0.5 };
+  }
+  function tick(t) {
+    if (!run) return;
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < flakes.length; i++) {
+      var f = flakes[i]; f.y += f.v; f.x += Math.sin(t / 1400 + f.ph) * f.sw * 0.35;
+      if (f.y > H + 6) { flakes[i] = mk(false); continue; }
+      ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.283); ctx.fillStyle = 'rgba(235,242,255,' + f.a + ')'; ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+  function go() { var on = seen && !document.hidden; if (on && !run) { run = true; requestAnimationFrame(tick); } else if (!on) run = false; }
+  size(); window.addEventListener('resize', size);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { seen = e[0].isIntersecting; go(); }).observe(box);
+  document.addEventListener('visibilitychange', go); go();
+})();
 // аналітика: скільки разів натиснули «Завантажити»
 var mpDl = document.getElementById('mpDownload');
 if (mpDl) mpDl.addEventListener('click', function () { try { gtag('event', 'modpack_download', { event_category: 'modpack', event_label: 'WB_26.exe' }); } catch (e) {} });
