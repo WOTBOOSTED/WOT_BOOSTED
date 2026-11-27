@@ -1,0 +1,63 @@
+{
+  "streamID": "TuQEzaYcMi",
+  "state": true,
+  "settings": {
+    "urls": [],
+    "groups": [],
+    "botReply": [],
+    "chatCommand": [],
+    "timedMessage": [],
+    "midiCommand": [],
+    "ttsprovider": {
+      "optionparam1": "system",
+      "optionparam2": "system",
+      "optionparam10": "system"
+    },
+    "ttsProvider": {
+      "optionsetting": "system",
+      "optionsetting2": "system",
+      "optionsetting10": "system"
+    },
+    "showtime": {
+      "numbersetting30": 30000
+    },
+    "showviewercount": {
+      "param1": true
+    },
+    "reserveviewercountspace": {
+      "param1": true
+    },
+    "nooutline": {
+      "param1": true
+    },
+    "thinner": {
+      "param1": true
+    },
+    "fontweight": {
+      "textparam1": "500"
+    },
+    "googlefont": {
+      "textparam1": "Inter"
+    },
+    "randomcolor": {
+      "param1": true
+    }
+  },
+  "ssapp": {
+    "format": "ssapp-settings-backup",
+    "version": 1,
+    "exportedAt": "2026-11-27T11:59:19.369Z",
+    "includesLocalAppSettings": true
+  },
+  "localStorage": {
+    "socialStreamState": "{\"sources\":[[\"tiktok-user-wot_boosted\",{\"id\":\"tiktok-user-wot_boosted\",\"target\":\"tiktok\",\"url\":\"https://www.tiktok.com/@wot_boosted/live\",\"username\":\"wot_boosted\",\"videoId\":\"\",\"isAutoDiscovered\":false,\"connectionMode\":\"tiktok-websocket\",\"isVisible\":true,\"isMuted\":true,\"autoActivate\":true,\"vid\":900001,\"wssId\":null,\"tiktokWssId\":1,\"status\":\"active\",\"groupId\":null,\"replyOnly\":false,\"accountRole\":\"normal\",\"supportsWSS\":true,\"activeConnectionMode\":\"tiktok-websocket\",\"disableTikTokAutoFallback\":false,\"tiktokSigningApiKey\":null,\"tiktokSigningServiceUrl\":null,\"tiktokSigningParameters\":null,\"showTikTokSigningTools\":false,\"tiktokSigningProvider\":\"auto\",\"tiktokSigningRoomId\":null,\"tiktokSigningEmail\":null,\"tiktokSigningAutoValidate\":false,\"error\":null,\"tiktokConnectionMethod\":\"Euler signing (auto)\",\"tiktokFallbackMode\":null}]],\"groups\":[[\"youtube-wot_boosted\",{\"id\":\"youtube-wot_boosted\",\"target\":\"youtube\",\"username\":\"wot_boosted\",\"isChannel\":false,\"connectionMode\":\"classic\",\"autoActivate\":true,\"groupVisible\":true,\"groupMuted\":false,\"streams\":[]}]],\"global\":{\"betaMode\":false,\"forceTikTokClassic\":false,\"preferTikTokLegacy\":false,\"tiktokModeExplicitlySelected\":true,\"lastTikTokMode\":\"tiktok-websocket\",\"youtubeAutoAdd\":false,\"youtubeAutoCleanup\":false,\"youtubeCheckInterval\":300000,\"currentPage\":\"streams\",\"rootOrder\":[\"s:tiktok-user-wot_boosted\",\"g:youtube-wot_boosted\"],\"sessionBindings\":{}}}",
+    "settings": "{\"urls\":[{\"target\":\"tiktok\",\"URL\":\"https://www.tiktok.com/@wot_boosted/live\",\"username\":\"wot_boosted\",\"videoId\":\"\",\"state\":{\"connectionMode\":\"tiktok-websocket\",\"togglehtml\":\"true\",\"togglemute\":\"true\",\"togglelock\":\"true\"}}],\"groups\":[{\"target\":\"youtube\",\"username\":\"wot_boosted\",\"isChannel\":\"false\",\"state\":{\"connectionMode\":\"classic\",\"togglelock\":\"true\",\"groupVisible\":\"true\",\"groupMuted\":\"false\"}}]}",
+    "betaMode": "false",
+    "youtubeAutoAdd": "false",
+    "youtubeAutoCleanup": "false",
+    "youtubeCheckInterval": "300000",
+    "tiktokModeExplicitlySelected": "true",
+    "lastTikTokMode": "tiktok-websocket",
+    "language": "uk"
+  }
+}
