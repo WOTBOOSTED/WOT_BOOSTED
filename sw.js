@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'wot-boosted-v80';
+const CACHE_VERSION = 'wot-boosted-v81';
 const STATIC_CACHE = [
   '/',
   '/index.html',
@@ -29,8 +29,6 @@ self.addEventListener('fetch', event => {
   const url = new URL(request.url);
   // свіжі дані (стрічка Telegram) не кешуємо
   if (url.pathname.startsWith('/api/')) return;
-  // файли за прихованими посиланнями (/f/) не кешуємо
-  if (url.pathname.startsWith('/f/')) return;
   const isHTML = request.destination === 'document' || url.pathname.endsWith('.html') || url.pathname === '/';
 
   if (isHTML) {
