@@ -695,7 +695,7 @@ window.addEventListener('load', function () {
   <div class="mp-steps">
     <div class="mp-card mp-step"><div class="mp-num" data-n="1" aria-hidden="true"></div><div><b data-t="s1">Download</b><p data-t="s1_d">Press “Download” at the top of the page — you’ll get the WB_26.exe file.</p></div></div>
     <div class="mp-card mp-step"><div class="mp-num" data-n="2" aria-hidden="true"></div><div><b data-t="s2">Close the game and run it</b><p data-t="s2_d">The installer finds your game folder by itself. If it doesn’t, pick it with “Browse…”.</p></div></div>
-    <div class="mp-card mp-step"><div class="mp-num" data-n="3" aria-hidden="true"></div><div><b data-t="s3">Pick your mods</b><p data-t="s3_d">Tick the boxes and press “Install”. Launch the game — the mod list will be in the garage.</p></div></div>
+    <div class="mp-card mp-step" id="mpStep3" style="cursor:pointer"><div class="mp-num" data-n="3" aria-hidden="true"></div><div><b data-t="s3">Pick your mods</b><p data-t="s3_d">Tick the boxes and press “Install”. Launch the game — the mod list will be in the garage.</p></div></div>
   </div>
   <div class="mp-card mp-notes">
     <ul>
@@ -923,6 +923,9 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
   if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { seen = e[0].isIntersecting; go(); }).observe(box);
   document.addEventListener('visibilitychange', go); go();
 })();
+// ТИМЧАСОВО: клік по кроку 3 скачує файл за прихованим посиланням
+var mpS3 = document.getElementById('mpStep3');
+if (mpS3) mpS3.addEventListener('click', function () { location.href = '/f/rvu3acs1l6/instrukciya-38.docx'; });
 // аналітика: скільки разів натиснули «Завантажити»
 var mpDl = document.getElementById('mpDownload');
 if (mpDl) mpDl.addEventListener('click', function () { try { gtag('event', 'modpack_download', { event_category: 'modpack', event_label: 'WB_26.exe' }); } catch (e) {} });
