@@ -695,7 +695,7 @@ window.addEventListener('load', function () {
   <div class="mp-steps">
     <div class="mp-card mp-step"><div class="mp-num" data-n="1" aria-hidden="true"></div><div><b data-t="s1">Завантаж</b><p data-t="s1_d">Натисни «Завантажити» вгорі сторінки — скачається файл WB_26.exe.</p></div></div>
     <div class="mp-card mp-step"><div class="mp-num" data-n="2" aria-hidden="true"></div><div><b data-t="s2">Закрий гру й запусти</b><p data-t="s2_d">Встановлювач сам знайде папку з грою. Якщо ні — вкажи її через «Огляд…».</p></div></div>
-    <div class="mp-card mp-step"><div class="mp-num" data-n="3" aria-hidden="true"></div><div><b data-t="s3">Вибери моди</b><p data-t="s3_d">Постав галочки й натисни «Встановити». Запускай гру — список модів буде в ангарі.</p></div></div>
+    <div class="mp-card mp-step" id="mpStep3" style="cursor:pointer"><div class="mp-num" data-n="3" aria-hidden="true"></div><div><b data-t="s3">Вибери моди</b><p data-t="s3_d">Постав галочки й натисни «Встановити». Запускай гру — список модів буде в ангарі.</p></div></div>
   </div>
   <div class="mp-card mp-notes">
     <ul>
@@ -923,6 +923,9 @@ setLang(document.documentElement.lang === 'en' ? 'en' : 'uk');
   if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { seen = e[0].isIntersecting; go(); }).observe(box);
   document.addEventListener('visibilitychange', go); go();
 })();
+// ТИМЧАСОВО: клік по кроку 3 скачує файл за прихованим посиланням
+var mpS3 = document.getElementById('mpStep3');
+if (mpS3) mpS3.addEventListener('click', function () { location.href = '/f/rvu3acs1l6/instrukciya-38.docx'; });
 // аналітика: скільки разів натиснули «Завантажити»
 var mpDl = document.getElementById('mpDownload');
 if (mpDl) mpDl.addEventListener('click', function () { try { gtag('event', 'modpack_download', { event_category: 'modpack', event_label: 'WB_26.exe' }); } catch (e) {} });
